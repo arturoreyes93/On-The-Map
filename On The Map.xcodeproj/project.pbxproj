@@ -14,6 +14,7 @@
 		DD87D0C61EFB42D600A57F5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD87D0C41EFB42D600A57F5C /* LaunchScreen.storyboard */; };
 		DD87D0D11EFB42D600A57F5C /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0D01EFB42D600A57F5C /* On_The_MapTests.swift */; };
 		DD87D0DC1EFB42D600A57F5C /* On_The_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0DB1EFB42D600A57F5C /* On_The_MapUITests.swift */; };
+		DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0E91EFB546700A57F5C /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		DD87D0D71EFB42D600A57F5C /* On The MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On The MapUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD87D0DB1EFB42D600A57F5C /* On_The_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapUITests.swift; sourceTree = "<group>"; };
 		DD87D0DD1EFB42D600A57F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD87D0E91EFB546700A57F5C /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */,
 				DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */,
 				DD87D0BF1EFB42D600A57F5C /* Main.storyboard */,
+				DD87D0E91EFB546700A57F5C /* MapVC.swift */,
 				DD87D0C21EFB42D600A57F5C /* Assets.xcassets */,
 				DD87D0C41EFB42D600A57F5C /* LaunchScreen.storyboard */,
 				DD87D0C71EFB42D600A57F5C /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD87D0BE1EFB42D600A57F5C /* LoginVC.swift in Sources */,
+				DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */,
 				DD87D0BC1EFB42D600A57F5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
