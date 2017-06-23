@@ -21,6 +21,8 @@ class LoginVC: UIViewController, UITextFieldDelegate, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        configure(username)
+        configure(password)
     }
     
     
@@ -31,8 +33,35 @@ class LoginVC: UIViewController, UITextFieldDelegate, UINavigationControllerDele
     }
     
     
-    
     let logInTextAttributes:[String:Any] = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 18)!]
+    
+    func configure(_ textField: UITextField) {
+        textField.delegate = self
+        textField.defaultTextAttributes = logInTextAttributes
+        textField.textAlignment = NSTextAlignment.left
+        
+        if textField == username {
+            textField.text = "Email"
+        } else if textField == password {
+            textField.text = "Password"
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "Email" || textField.text == "Password" {
+            textField.text = ""
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text == "" {
+            if textField == username {
+                username.text = "Email"
+            } else if textField == password {
+                password.text = "Password"
+            }
+        }
+    }
     
     
 
