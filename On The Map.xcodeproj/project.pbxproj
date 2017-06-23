@@ -17,6 +17,9 @@
 		DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0E91EFB546700A57F5C /* MapVC.swift */; };
 		DDCB478E1EFC88B000BB7355 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */; };
 		DDCB47901EFC99B200BB7355 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB478F1EFC99B200BB7355 /* SignUpButton.swift */; };
+		DDE0576E1EFDB4B000298A74 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */; };
+		DDE057701EFDB62300298A74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0576F1EFDB62300298A74 /* Constants.swift */; };
+		DDE057721EFDBDEF00298A74 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE057711EFDBDEF00298A74 /* UdacityClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		DD87D0E91EFB546700A57F5C /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		DDCB478F1EFC99B200BB7355 /* SignUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		DDE0576F1EFDB62300298A74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DDE057711EFDBDEF00298A74 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,9 @@
 			children = (
 				DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */,
 				DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */,
+				DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */,
+				DDE0576F1EFDB62300298A74 /* Constants.swift */,
+				DDE057711EFDBDEF00298A74 /* UdacityClient.swift */,
 				DD87D0BF1EFB42D600A57F5C /* Main.storyboard */,
 				DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */,
 				DDCB478F1EFC99B200BB7355 /* SignUpButton.swift */,
@@ -271,10 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDE057721EFDBDEF00298A74 /* UdacityClient.swift in Sources */,
 				DD87D0BE1EFB42D600A57F5C /* LoginVC.swift in Sources */,
 				DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */,
 				DDCB478E1EFC88B000BB7355 /* BorderedButton.swift in Sources */,
 				DD87D0BC1EFB42D600A57F5C /* AppDelegate.swift in Sources */,
+				DDE057701EFDB62300298A74 /* Constants.swift in Sources */,
+				DDE0576E1EFDB4B000298A74 /* GCDBlackBox.swift in Sources */,
 				DDCB47901EFC99B200BB7355 /* SignUpButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

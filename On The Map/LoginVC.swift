@@ -9,13 +9,15 @@
 import UIKit
 import Foundation
 
-class LoginVC: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: BorderedButton!
     @IBOutlet weak var signUpButton: SignUpButton!
     @IBOutlet weak var debugTextLabel: UILabel!
+    
+    var session: URLSession!
    
     
     override func viewDidLoad() {
@@ -25,8 +27,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, UINavigationControllerDele
         configure(password)
     }
     
-    
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         debugTextLabel.text = ""
@@ -61,6 +61,11 @@ class LoginVC: UIViewController, UITextFieldDelegate, UINavigationControllerDele
                 password.text = "Password"
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
