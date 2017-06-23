@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import Foundation
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var loginButton: BorderedButton!
+    @IBOutlet weak var signUpButton: SignUpButton!
+    @IBOutlet weak var debugTextLabel: UILabel!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        debugTextLabel.text = ""
     }
+    
+    
+    
+    let logInTextAttributes:[String:Any] = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 18)!]
+    
+    
 
 
 }
