@@ -61,7 +61,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LBf-UH-UUR"/>
-                                            <outletCollection property="gestureRecognizers" destination="bWa-hv-TpU" appends="YES" id="jYp-e7-jor"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-BB-hrc">
@@ -102,11 +101,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="bWa-hv-TpU">
-                    <connections>
-                        <action selector="userDidTaView:" destination="BYZ-38-t0r" id="3Tn-Cy-VKE"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="140" y="129.98500749625188"/>
         </scene>
