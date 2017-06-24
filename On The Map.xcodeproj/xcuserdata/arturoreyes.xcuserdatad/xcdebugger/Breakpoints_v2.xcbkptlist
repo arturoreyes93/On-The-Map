@@ -42,12 +42,138 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/LoginVC.swift"
-            timestampString = "519941062.959911"
+            timestampString = "519957216.151875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/LoginVC.swift"
+            timestampString = "519957216.151875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "LoginVC"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/LoginVC.swift"
+            timestampString = "519957216.151875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "userDidTaView(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/LoginVC.swift"
+            timestampString = "519957216.151875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "LoginVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.appDelegate.getter : Swift.ImplicitlyUnwrappedOptional&lt;On_The_Map.AppDelegate&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "519957219.457136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.appDelegate.setter : Swift.ImplicitlyUnwrappedOptional&lt;On_The_Map.AppDelegate&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "519957219.459496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "519957219.461404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "519957219.463205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/LoginVC.swift"
+            timestampString = "519957558.324713"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getSessionID(username:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

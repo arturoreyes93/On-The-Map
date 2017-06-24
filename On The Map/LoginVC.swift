@@ -9,7 +9,10 @@
 import UIKit
 import Foundation
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController {
+    
+    var appDelegate: AppDelegate!
+    var udacity : [String:String]?
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -17,12 +20,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: SignUpButton!
     @IBOutlet weak var debugTextLabel: UILabel!
     
-    var session: URLSession!
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
         configure(username)
         configure(password)
     }
@@ -32,35 +33,37 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         debugTextLabel.text = ""
     }
     
+    @IBAction func logInPressed(_ sender: Any) {
+        if username.text!.isEmpty || password.text!.isEmpty {
+            debugTextLabel.text = "Username or Password Empty."
+        } else {
+            udacity = [username.text!:password.text!]
+            
+        }
+    }
     
     let logInTextAttributes:[String:Any] = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 18)!]
     
+    private func getSessionID( username: String, password: String) {
+        let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
+
+        
+        
+    }
+    
+}
+
+extension LoginVC: UITextFieldDelegate {
+
     func configure(_ textField: UITextField) {
         textField.delegate = self
         textField.defaultTextAttributes = logInTextAttributes
         textField.textAlignment = NSTextAlignment.left
         
-        if textField == username {
-            textField.text = "Email"
-        } else if textField == password {
-            textField.text = "Password"
-        }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text == "Email" || textField.text == "Password" {
-            textField.text = ""
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField.text == "" {
-            if textField == username {
-                username.text = "Email"
-            } else if textField == password {
-                password.text = "Password"
-            }
-        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -68,7 +71,16 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    private func resignIfFirstResponder(_ textField: UITextField) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
     
+    @IBAction func userDidTaView(_ sender: AnyObject) {
+        resignIfFirstResponder(username)
+        resignIfFirstResponder(password)
+    }
 
 
 }

@@ -14,7 +14,8 @@ struct Constants {
     struct Udacity {
         static let APIScheme = "https"
         static let APIHost = "www.udacity.com"
-        static let APIPath = "/api"
+        static let UserAPIPath = "/api/users"
+        static let SessionAPIPath = "/api/session"
         
         
     }
