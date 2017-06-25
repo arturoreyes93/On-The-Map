@@ -10,8 +10,7 @@ import UIKit
 import Foundation
 
 class LoginVC: UIViewController {
-    
-    var appDelegate: AppDelegate!
+
     var udacity : [String:String]?
 
     @IBOutlet weak var username: UITextField!
@@ -23,7 +22,6 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        appDelegate = UIApplication.shared.delegate as! AppDelegate
         configure(username)
         configure(password)
     }
@@ -58,7 +56,7 @@ class LoginVC: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
         print(request)
-        let task = appDelegate.sharedSession.dataTask(with: request as URLRequest) { (data, response, error) in
+        let task = UdacityClient.sharedInstance().session.dataTask(with: request as URLRequest) { (data, response, error) in
             
             func displayError(_ error: String, debugLabelText: String? = nil) {
                 print(error)
@@ -99,8 +97,20 @@ class LoginVC: UIViewController {
                 return
             }
             
+            guard (parsedResult["error"] == nil) else {
+                print(parsedResult["error"])
+                return
+            }
+            
+            guard let account = parsedResult["account"] as? NSDictionary else {
+                print("The account dictionary was not found in the parsed data")
+                return
+            }
+            
             print(parsedResult)
             
+            UdacityClient.sharedInstance().userKey = account["key"] as! String
+            UdacityClient.sharedInstance().getUserData()
             
         }
         
@@ -109,10 +119,6 @@ class LoginVC: UIViewController {
         
     }
     
-    private func getUserData(_ accountKey: String) {
-        
-        
-    }
     
 }
 
