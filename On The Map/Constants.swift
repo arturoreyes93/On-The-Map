@@ -9,20 +9,37 @@
 import Foundation
 import UIKit
 
-struct Constants {
+extension UdacityClient {
     
-    struct Udacity {
-        static let APIScheme = "https"
-        static let APIHost = "www.udacity.com"
-        static let UserAPIPath = "/api/users"
-        static let SessionAPIPath = "/api/session"
+    struct Constants {
         
+        struct Udacity {
+            static let APIScheme = "https"
+            static let APIHost = "www.udacity.com"
+            static let UserAPIPath = "/api/users"
+            static let SessionAPIPath = "/api/session"
+            
+            
+        }
+        
+        struct Parse {
+            
+            static let APIScheme = "https"
+            static let APIHost = "parse.udacity.com"
+            static let APIPath = "/parse/classes/"
+        }
         
     }
     
     struct Methods {
-        static let User = "/users"
+        
+        struct Udacity {
+            var users = "/users"
+            var session = "/session"
+            var userID = ""
+            var sessionID = ""
+            
+        }
     }
-    
-    
 }
+
