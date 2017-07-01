@@ -58,19 +58,41 @@ class UdacityClient : NSObject {
         completionHandlerForConvertData(parsedResult, nil)
     }
     
+    
     func getUserData() {
         let request = URLRequest(url: URL(string: "https://www.udacity.com/api/users/\(userKey!)")!)
         let task = session.dataTask(with: request) { (data, response, error) in
-            if error != nil {
-                print(error!)
+        
+            func displayError(_ error: String) {
+                print(error)
+                
+                
             }
-            let range = Range(5..<data!.count)
-            let newData = data?.subdata(in: range) /* subset response data! */
-            print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
+            
+            guard (error == nil) else {
+                displayError("There was an error with your request: \(error)")
+                return
+            }
+            
+            /* GUARD: Did we get a successful 2XX response? */
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                displayError("Your request returned a status code other than 2xx!")
+                return
+            }
+            
+            /* GUARD: Was there any data returned? */
+            guard let data = data else {
+                displayError("No data was returned by the request!")
+                return
+            }
+            
+            let range = Range(5..<data.count)
+            let newData = data.subdata(in: range) /* subset response data! */
+            print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)
             
             let parsedResult: [String:AnyObject]!
             do {
-                parsedResult = try JSONSerialization.jsonObject(with: newData!, options: .allowFragments) as! NSDictionary as! [String : AnyObject]
+                parsedResult = try JSONSerialization.jsonObject(with: newData, options: .allowFragments) as! NSDictionary as! [String : AnyObject]
             } catch {
                 print("Could not parse the data as JSON: '\(newData)'")
                 return
