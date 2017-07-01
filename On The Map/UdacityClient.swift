@@ -144,15 +144,8 @@ class UdacityClient : NSObject {
                 sendError("No data was returned by the request!")
                 return
             }
-            
-            if client == "udacity" {
-                let range = Range(5..<data!.count)
-                let newData = data!.subdata(in: range) /* subset response data! */
-                print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)
-                self.convertDataWithCompletionHandler(newData, completionHandlerForConvertData: completionHandlerForGET)
-            } else {
-                self.convertDataWithCompletionHandler(data!, completionHandlerForConvertData: completionHandlerForGET)
-            }
+
+            self.convertDataWithCompletionHandler(data!, completionHandlerForConvertData: completionHandlerForGET)
         }
         
         task.resume()
