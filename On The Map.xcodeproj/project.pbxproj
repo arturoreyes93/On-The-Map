@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD69D16B1F07118D001B673D /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69D16A1F07118D001B673D /* ParseClient.swift */; };
 		DD87D0BC1EFB42D600A57F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */; };
 		DD87D0BE1EFB42D600A57F5C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */; };
 		DD87D0C11EFB42D600A57F5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD87D0BF1EFB42D600A57F5C /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		DD87D0DC1EFB42D600A57F5C /* On_The_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0DB1EFB42D600A57F5C /* On_The_MapUITests.swift */; };
 		DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0E91EFB546700A57F5C /* MapVC.swift */; };
 		DD9883E31F05C15F00A666C7 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9883E21F05C15F00A666C7 /* ListVC.swift */; };
-		DD9883E51F05CE7A00A666C7 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9883E41F05CE7A00A666C7 /* Student.swift */; };
 		DDCB478E1EFC88B000BB7355 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */; };
 		DDCB47901EFC99B200BB7355 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB478F1EFC99B200BB7355 /* SignUpButton.swift */; };
 		DDE0576E1EFDB4B000298A74 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */; };
@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD69D16A1F07118D001B673D /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		DD87D0B81EFB42D600A57F5C /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		DD87D0DD1EFB42D600A57F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD87D0E91EFB546700A57F5C /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		DD9883E21F05C15F00A666C7 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
-		DD9883E41F05CE7A00A666C7 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		DDCB478F1EFC99B200BB7355 /* SignUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 				DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */,
 				DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */,
 				DDE0576F1EFDB62300298A74 /* Constants.swift */,
-				DD9883E41F05CE7A00A666C7 /* Student.swift */,
+				DD69D16A1F07118D001B673D /* ParseClient.swift */,
 				DDE057711EFDBDEF00298A74 /* UdacityClient.swift */,
 				DD87D0BF1EFB42D600A57F5C /* Main.storyboard */,
 				DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */,
@@ -289,13 +289,13 @@
 				DDE057721EFDBDEF00298A74 /* UdacityClient.swift in Sources */,
 				DD87D0BE1EFB42D600A57F5C /* LoginVC.swift in Sources */,
 				DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */,
-				DD9883E51F05CE7A00A666C7 /* Student.swift in Sources */,
 				DD9883E31F05C15F00A666C7 /* ListVC.swift in Sources */,
 				DDCB478E1EFC88B000BB7355 /* BorderedButton.swift in Sources */,
 				DD87D0BC1EFB42D600A57F5C /* AppDelegate.swift in Sources */,
 				DDE057701EFDB62300298A74 /* Constants.swift in Sources */,
 				DDE0576E1EFDB4B000298A74 /* GCDBlackBox.swift in Sources */,
 				DDCB47901EFC99B200BB7355 /* SignUpButton.swift in Sources */,
+				DD69D16B1F07118D001B673D /* ParseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

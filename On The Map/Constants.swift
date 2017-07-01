@@ -9,37 +9,53 @@
 import Foundation
 import UIKit
 
-extension UdacityClient {
+struct Constants {
     
-    struct Constants {
-        
-        struct Udacity {
-            static let APIScheme = "https"
-            static let APIHost = "www.udacity.com"
-            static let UserAPIPath = "/api/users"
-            static let SessionAPIPath = "/api/session"
-            
-            
-        }
-        
-        struct Parse {
-            
-            static let APIScheme = "https"
-            static let APIHost = "parse.udacity.com"
-            static let APIPath = "/parse/classes/"
-        }
+    static let udacity = "udacity"
+    static let parse = "parse"
+    
+    struct Udacity {
+        static let APIScheme = "https"
+        static let APIHost = "www.udacity.com"
+        static let APIPath = "/api"
+        static let userPathExtension = "/user"
+        static let sessionPathExtension = "/session"
+        static let userID = ""
         
     }
     
-    struct Methods {
+    struct Parse {
+        static let AppID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
+        static let APIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
         
-        struct Udacity {
-            var users = "/users"
-            var session = "/session"
-            var userID = ""
-            var sessionID = ""
-            
+        static let APIScheme = "https"
+        static let APIHost = "parse.udacity.com"
+        static let APIPath = "/parse/classes/StudentLocation"
+        static let objectID = ""
+        
+        struct ParameterKeys {
+            static let limit = "limit"
+            static let skip = "skip"
+            static let order = "order"
+            static let at = "where"
         }
     }
+    
+    struct Student {
+        
+        var objectID = ""
+        var uniqueKey = ""
+        var firstName = ""
+        var lastName = ""
+        var mapString = ""
+        var mediaURL = ""
+        var latitude = ""
+        var longitude = ""
+        var createdAt = ""
+        var updatedAt = ""
+        var ACL = ""
+        
+    }
+    
 }
 

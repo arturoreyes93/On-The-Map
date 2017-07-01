@@ -42,14 +42,14 @@ class LoginVC: UIViewController {
         } else {
             setUIEnabled(false)
             udacity = [username.text!:password.text!]
-            getSessionID(username: username.text!, password: password.text!)
+            postSessionID(username: username.text!, password: password.text!)
             
         }
     }
     
     let logInTextAttributes:[String:Any] = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 18)!]
     
-    private func getSessionID( username: String, password: String) {
+    private func postSessionID( username: String, password: String) {
         let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")

@@ -56,7 +56,30 @@ class UdacityClient : NSObject {
         task.resume()
     }
     
-    
+    private func urlFromParameters(_client: String, paremeters: [String:AnyObject], withPathExtension: String? = nil) -> URL {
+        
+        var components = URLComponents()
+        
+        if _client == "udacity" {
+            components.scheme = Constants.Udacity.APIScheme
+            components.host = Constants.Udacity.APIHost
+            components.path = Constants.Udacity.APIPath
+        } else {
+            components.scheme = Constants.Parse.APIScheme
+            components.host = Constants.Parse.APIHost
+            components.path = Constants.Parse.APIPath
+        }
+        
+        components.queryItems = [URLQueryItem]()
+        
+        for (key, value) in paremeters {
+            let queryItem = URLQueryItem(name: key, value: "\(value)")
+            components.queryItems?.append(queryItem)
+        }
+        
+        return components.url!
+        
+    }
     
     class func sharedInstance() -> UdacityClient {
         struct Singleton {
