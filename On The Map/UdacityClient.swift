@@ -96,22 +96,20 @@ class UdacityClient : NSObject {
                 return
             }
             
+            print(parsedResult)
+            UdacityClient.sharedInstance().userKey = account["key"] as? String
+            print(self.userKey!)
+            
+            
             if error != nil {
                 completionHandlerForSession(false, "Login Failed. Unable to Post Session")
             } else {
-                if let sessionID = parsedResult {
+                if (parsedResult) != nil {
                     completionHandlerForSession(true, nil)
                 } else {
                     completionHandlerForSession(false, "Login Failed. Unable to Post Session")
                 }
             }
-            
-            
-            print(parsedResult)
-            
-            UdacityClient.sharedInstance().userKey = account["key"] as? String
-            print(self.userKey!)
-            
         }
         
         task.resume()
@@ -172,7 +170,7 @@ class UdacityClient : NSObject {
             if error != nil {
                 completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
             } else {
-                if let userData = parsedResult {
+                if (parsedResult) != nil {
                     completionHandlerUserData(true, nil)
                 } else {
                     completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
