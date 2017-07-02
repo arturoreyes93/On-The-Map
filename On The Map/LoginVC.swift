@@ -41,14 +41,24 @@ class LoginVC: UIViewController {
             debugTextLabel.text = "Username or Password Empty."
         } else {
             setUIEnabled(false)
-            udacity = [username.text!:password.text!]
-            UdacityClient.sharedInstance().postSessionID(username: username.text!, password: password.text!)
+            let studentLogin = ["username" : username.text!, "password" : password.text!]
+            UdacityClient.sharedInstance().logInWithVC(studentLogin) { (success, errorString) in
+                if success {
+                    print("success")
+                } else {
+                    self.displayError(errorString)
+                }
+            }
             
         }
     }
     
-    let logInTextAttributes:[String:Any] = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 18)!]
     
+    private func completeLogin() {
+        debugTextLabel.text = ""
+        let controller = storyboard!.instantiateViewController(withIdentifier: "ManagerNavigationController") as! UINavigationController
+        present(controller, animated: true, completion: nil)
+    }
     
 }
 
@@ -56,7 +66,7 @@ extension LoginVC: UITextFieldDelegate {
 
     func configure(_ textField: UITextField) {
         textField.delegate = self
-        textField.defaultTextAttributes = logInTextAttributes
+        textField.defaultTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 18)!]
         textField.textAlignment = NSTextAlignment.left
         
     }
@@ -96,6 +106,13 @@ private extension LoginVC {
             loginButton.alpha = 0.5
         }
     }
+    
+    func displayError(_ errorString: String?) {
+        if let errorString = errorString {
+            debugTextLabel.text = errorString
+        }
+    }
+
     
     
 }

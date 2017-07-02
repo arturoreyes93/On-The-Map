@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/LoginVC.swift"
-            timestampString = "520638034.400887"
+            timestampString = "520646212.960883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "resignIfFirstResponder(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/LoginVC.swift"
-            timestampString = "520044433.28436"
+            timestampString = "520646212.960883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "logInPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,12 +90,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520044433.28436"
+            timestampString = "520647825.789637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "urlFromParameters(client:paremeters:withPathExtension:)"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "getUserData(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.UdacityClient.(getUserData ((Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "520647825.867517"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.UdacityClient.(getUserData ((Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "520647825.869716"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/UdacityClient.swift"
+            timestampString = "520647825.789637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "getUserData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,43 +154,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638034.400887"
+            timestampString = "520647825.789637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "getUserData()"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "getUserData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/UdacityClient.swift"
+            timestampString = "520647825.789637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "getUserData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/UdacityClient.swift"
+            timestampString = "520647825.789637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "postSessionID(_:completionHandlerForSession:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/UdacityClient.swift"
+            timestampString = "520646212.960883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "postSessionID(_:completionHandlerForSession:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(getUserData () -&gt; ()).(closure #1)"
+                  symbolName = "On_The_Map.UdacityClient.postSessionID (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandlerForSession : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "520638035.487965"
+                  timestampString = "520647825.888252"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "178">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "2021">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(getUserData () -&gt; ()).(closure #1)"
+                  symbolName = "On_The_Map.UdacityClient.(postSessionID (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandlerForSession : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "520638035.489571"
+                  timestampString = "520647825.890041"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "470">
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -154,29 +250,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638034.400887"
+            timestampString = "520646212.960883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "getUserData()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "logInWithVC(_:completionHandlerForLogin:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638034.400887"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "sendError(_:)"
-            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.UdacityClient.logInWithVC (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandlerForLogin : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "520647825.894681"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.UdacityClient.(logInWithVC (Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completionHandlerForLogin : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "520647825.89627"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "77">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,12 +298,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638034.400887"
+            timestampString = "520646212.960883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "getUserData()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "logInWithVC(_:completionHandlerForLogin:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On The Map/UdacityClient.swift"
+            timestampString = "520647825.789637"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "getUserData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +330,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638034.400887"
+            timestampString = "520647825.789637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "getUserData()"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "getUserData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,12 +346,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638034.400887"
+            timestampString = "520645853.591779"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "getUserData()"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "logInWithVC(_:completionHandlerForLogin:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -234,12 +362,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/UdacityClient.swift"
-            timestampString = "520638001.799413"
+            timestampString = "520647825.789637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "postSessionID(username:password:)"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "getUserData(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
