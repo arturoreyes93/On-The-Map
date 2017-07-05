@@ -16,30 +16,34 @@ class ParseClient: NSObject {
         super.init()
     }
     
-    func urlFromParameters(client: String, paremeters: [String:AnyObject], withPathExtension: String? = nil) -> URL {
+    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, withPathExtension: String? = nil) -> URL {
         
         var components = URLComponents()
         
         if client == "udacity" {
             components.scheme = Constants.Udacity.APIScheme
             components.host = Constants.Udacity.APIHost
-            components.path = Constants.Udacity.APIPath
+            components.path = Constants.Udacity.APIPath + (withPathExtension ?? "")
         } else {
             components.scheme = Constants.Parse.APIScheme
             components.host = Constants.Parse.APIHost
-            components.path = Constants.Parse.APIPath
+            components.path = Constants.Parse.APIPath + (withPathExtension ?? "")
         }
         
         components.queryItems = [URLQueryItem]()
         
-        for (key, value) in paremeters {
-            let queryItem = URLQueryItem(name: key, value: "\(value)")
-            components.queryItems?.append(queryItem)
+        if let _ = paremeters {
+            for (key, value) in paremeters! {
+                let queryItem = URLQueryItem(name: key, value: "\(value)")
+                components.queryItems?.append(queryItem)
+            }
+            
+            return components.url!
         }
         
-        return components.url!
-        
+        }
     }
+    
     
     func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
         

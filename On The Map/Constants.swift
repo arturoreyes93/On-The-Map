@@ -20,7 +20,7 @@ struct Constants {
         static let APIPath = "/api"
         static let userPathExtension = "/user"
         static let sessionPathExtension = "/session"
-        static let userID = ""
+        static let userID = "" // WILL BE ADDED WITH A + TO THE FUNCTION PARAMETER "WITHPATHEXTENSION"
         
     }
     
@@ -31,7 +31,7 @@ struct Constants {
         static let APIScheme = "https"
         static let APIHost = "parse.udacity.com"
         static let APIPath = "/parse/classes/StudentLocation"
-        static let objectID = ""
+        static let objectID = ""  // WILL BE ADDED WITH A + TO THE FUNCTION PARAMETER "WITHPATHEXTENSION"
         
         struct ParameterKeys {
             static let limit = "limit"
