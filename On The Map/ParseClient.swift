@@ -41,7 +41,7 @@ class ParseClient: NSObject {
             return components.url!
         }
         
-        }
+        return components.url!
     }
     
     
