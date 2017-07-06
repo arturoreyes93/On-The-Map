@@ -24,6 +24,7 @@ class UdacityClient : NSObject {
         
         self.postSessionID(userLogin) { (success, errorString) in
             if success {
+                print(self.userKey)
                 self.getUserData() { (success, errorString) in
                     if success {
                         print("success")
@@ -48,7 +49,8 @@ class UdacityClient : NSObject {
                 if let account = result?["account"] as? NSDictionary {
                     completionHandlerForSession(true, nil)
                     UdacityClient.sharedInstance().userKey = account["key"] as? String
-                    print(result)
+                    print(self.userKey!)
+                    print(result!)
                 } else {
                     print("Could not find account in \(result)")
                     completionHandlerForSession(false, "Login Failed. Unable to Post Session")
@@ -69,6 +71,7 @@ class UdacityClient : NSObject {
             } else {
                 if let user = result?["user"] as? NSDictionary {
                     completionHandlerUserData(true, nil)
+                    print(user)
                 } else {
                     print("Could not find user in \(result)")
                     completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
@@ -84,7 +87,7 @@ class UdacityClient : NSObject {
         
         if (method != nil) {
             request.httpMethod = method!
-            print(method)
+            print(method!)
         }
         
         if client == Constants.Parse.Client {
@@ -111,6 +114,7 @@ class UdacityClient : NSObject {
 
             
         }
+        
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
             func sendError(_ error: String) {
@@ -131,12 +135,13 @@ class UdacityClient : NSObject {
                 return
             }
             
+            
             /* GUARD: Was there any data returned? */
             guard data != nil else {
                 sendError("No data was returned by the request!")
                 return
             }
-            
+            print(data)
             var newData = data
             
             guard (client == "parse") else {
@@ -147,6 +152,8 @@ class UdacityClient : NSObject {
                 }
                 return
             }
+            
+            print(newData!)
             
             self.convertDataWithCompletionHandler(newData!, completionHandlerForConvertData: completionHandlerForGET)
         }
@@ -196,6 +203,7 @@ class UdacityClient : NSObject {
             completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo))
         }
         
+        print(parsedResult)
         completionHandlerForConvertData(parsedResult, nil)
     }
     
