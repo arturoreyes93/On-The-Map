@@ -20,48 +20,6 @@ class UdacityClient : NSObject {
         super.init()
     }
     
-    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, withPathExtension: String? = nil) -> URL {
-        
-        var components = URLComponents()
-        
-        if client == "udacity" {
-            components.scheme = Constants.Udacity.APIScheme
-            components.host = Constants.Udacity.APIHost
-            components.path = Constants.Udacity.APIPath + (withPathExtension ?? "")
-        } else {
-            components.scheme = Constants.Parse.APIScheme
-            components.host = Constants.Parse.APIHost
-            components.path = Constants.Parse.APIPath + (withPathExtension ?? "")
-        }
-        
-        components.queryItems = [URLQueryItem]()
-        
-        if let _ = paremeters {
-            for (key, value) in paremeters! {
-                let queryItem = URLQueryItem(name: key, value: "\(value)")
-                components.queryItems?.append(queryItem)
-            }
-            
-            return components.url!
-        }
-        
-        return components.url!
-    }
-    
-    
-    func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
-        
-        var parsedResult: AnyObject! = nil
-        do {
-            parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-        } catch {
-            let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
-            completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo))
-        }
-        
-        completionHandlerForConvertData(parsedResult, nil)
-    }
-    
     func logInWithVC(_ userLogin : [String: String], completionHandlerForLogin: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
         self.postSessionID(userLogin) { (success, errorString) in
@@ -85,7 +43,8 @@ class UdacityClient : NSObject {
         let username = userLogin["username"]!
         let password = userLogin["password"]!
         
-        let request = NSMutableURLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
+        let request = NSMutableURLRequest(url: urlFromParameters(client: Constants.udacity, withPathExtension: Constants.Udacity.sessionPathExtension))
+        print(request)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -161,7 +120,8 @@ class UdacityClient : NSObject {
     
     
     func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
-        let request = URLRequest(url: URL(string: "https://www.udacity.com/api/users/\(userKey!)")!)
+        let request = URLRequest(url: urlFromParameters(client: Constants.udacity, withPathExtension: Constants.Udacity.userPathExtension + "/\(userKey!)"))
+        print(request)
         let task = session.dataTask(with: request) { (data, response, error) in
         
             func displayError(_ error: String) {
@@ -228,6 +188,48 @@ class UdacityClient : NSObject {
         }
         
         task.resume()
+    }
+    
+    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, withPathExtension: String? = nil) -> URL {
+        
+        var components = URLComponents()
+        
+        if client == "udacity" {
+            components.scheme = Constants.Udacity.APIScheme
+            components.host = Constants.Udacity.APIHost
+            components.path = Constants.Udacity.APIPath + (withPathExtension ?? "")
+        } else {
+            components.scheme = Constants.Parse.APIScheme
+            components.host = Constants.Parse.APIHost
+            components.path = Constants.Parse.APIPath + (withPathExtension ?? "")
+        }
+        
+        components.queryItems = [URLQueryItem]()
+        
+        if let _ = paremeters {
+            for (key, value) in paremeters! {
+                let queryItem = URLQueryItem(name: key, value: "\(value)")
+                components.queryItems?.append(queryItem)
+            }
+            
+            return components.url!
+        }
+        
+        return components.url!
+    }
+    
+    
+    func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
+        
+        var parsedResult: AnyObject! = nil
+        do {
+            parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+        } catch {
+            let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
+            completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo))
+        }
+        
+        completionHandlerForConvertData(parsedResult, nil)
     }
     
     class func sharedInstance() -> UdacityClient {

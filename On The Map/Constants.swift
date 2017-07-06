@@ -18,7 +18,7 @@ struct Constants {
         static let APIScheme = "https"
         static let APIHost = "www.udacity.com"
         static let APIPath = "/api"
-        static let userPathExtension = "/user"
+        static let userPathExtension = "/users"
         static let sessionPathExtension = "/session"
         static let userID = "" // WILL BE ADDED WITH A + TO THE FUNCTION PARAMETER "WITHPATHEXTENSION"
         
