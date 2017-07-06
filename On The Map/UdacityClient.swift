@@ -80,9 +80,11 @@ class UdacityClient : NSObject {
     func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, pathExtension: pathExtension))
+        print(request)
         
         if (method != nil) {
             request.httpMethod = method!
+            print(method)
         }
         
         if client == Constants.Parse.Client {
@@ -93,9 +95,12 @@ class UdacityClient : NSObject {
         if method == Constants.Methods.Post {
             
             if client == Constants.Udacity.Client {
+                print(client)
                 
-                let username = parameters?["username"]!
-                let password = parameters?["password"]!
+                let username = parameters?["username"]! as! String
+                let password = parameters?["password"]! as! String
+                print(username)
+                print(password)
                 
                 request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Accept)
                 request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
