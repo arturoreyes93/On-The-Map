@@ -11,10 +11,8 @@ import UIKit
 
 struct Constants {
     
-    static let udacity = "udacity"
-    static let parse = "parse"
-    
     struct Udacity {
+        static let Client = "udacity"
         static let APIScheme = "https"
         static let APIHost = "www.udacity.com"
         static let APIPath = "/api"
@@ -25,8 +23,11 @@ struct Constants {
     }
     
     struct Parse {
+        static let Client = "parse"
         static let AppID = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
         static let APIKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
+        static let AppHTTP = "X-Parse-Application-Id"
+        static let APIHTPP = "X-Parse-REST-API-Key"
         
         static let APIScheme = "https"
         static let APIHost = "parse.udacity.com"
@@ -42,18 +43,17 @@ struct Constants {
     }
     
     struct Student {
-        
-        var objectID = ""
-        var uniqueKey = ""
-        var firstName = ""
-        var lastName = ""
-        var mapString = ""
-        var mediaURL = ""
-        var latitude = ""
-        var longitude = ""
-        var createdAt = ""
-        var updatedAt = ""
-        var ACL = ""
+        static let objectID = "objectID"
+        static let uniqueKey = "uniqueKey"
+        static let firstName = "firstName"
+        static let lastName = "lastName"
+        static let mapString = "mapString"
+        static let mediaURL = "mediaURL"
+        static let latitude = "latitude"
+        static let longitude = "longitude"
+        static let createdAt = "createdAt"
+        static let updatedAt = "updatedAt"
+        static let ACL = "ACL"
         
     }
     

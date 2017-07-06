@@ -43,7 +43,7 @@ class UdacityClient : NSObject {
         let username = userLogin["username"]!
         let password = userLogin["password"]!
         
-        let request = NSMutableURLRequest(url: urlFromParameters(client: Constants.udacity, method: Constants.Udacity.sessionPathExtension))
+        let request = NSMutableURLRequest(url: urlFromParameters(client: Constants.Udacity.Client, method: Constants.Udacity.sessionPathExtension))
         print(request)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -121,7 +121,7 @@ class UdacityClient : NSObject {
     
     func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
-        let _ = taskForGetMethod(client: Constants.udacity, method: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
+        let _ = taskForGetMethod(client: Constants.Udacity.Client, method: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
             
             if let error = error {
                 print(error)
@@ -131,9 +131,65 @@ class UdacityClient : NSObject {
                     completionHandlerUserData(true, nil)
                 } else {
                     print("Could not find user in \(result)")
+                    completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
                 }
             }
         }
+    }
+    
+    func taskForGetMethod(client: String, method: String? = nil, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+        
+        let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, method: method))
+        
+        if client == "parse" {
+            request.addValue(Constants.Parse.AppID, forHTTPHeaderField: Constants.Parse.AppHTTP)
+            request.addValue(Constants.Parse.APIKey, forHTTPHeaderField: Constants.Parse.APIHTPP)
+        }
+        
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            
+            func sendError(_ error: String) {
+                print(error)
+                let userInfo = [NSLocalizedDescriptionKey : error]
+                completionHandlerForGET(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+            }
+            
+            /* GUARD: Was there an error? */
+            guard (error == nil) else {
+                sendError("There was an error with your request: \(error)")
+                return
+            }
+            
+            /* GUARD: Did we get a successful 2XX response? */
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                sendError("Your request returned a status code other than 2xx!")
+                return
+            }
+            
+            /* GUARD: Was there any data returned? */
+            guard data != nil else {
+                sendError("No data was returned by the request!")
+                return
+            }
+            
+            var newData = data
+            
+            guard (client == "parse") else {
+                if let data = data {
+                    let range = Range(5..<data.count)
+                    newData = data.subdata(in: range) /* subset response data! */
+                    print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
+                }
+                return
+            }
+            
+            self.convertDataWithCompletionHandler(newData!, completionHandlerForConvertData: completionHandlerForGET)
+        }
+        
+        task.resume()
+        
+        return task
+        
     }
     
     func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, method: String? = nil) -> URL {
