@@ -57,5 +57,18 @@ struct Constants {
         
     }
     
+    struct Methods {
+        static let Get = "GET"
+        static let Post = "POST"
+        static let Put = "PUT"
+        static let Delete = "DELETE"
+    }
+    
+    struct JSON {
+        static let App = "application/json"
+        static let Accept = "Accept"
+        static let Content = "Content-Type"
+    }
+    
 }
 

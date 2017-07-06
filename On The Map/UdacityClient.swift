@@ -20,7 +20,7 @@ class UdacityClient : NSObject {
         super.init()
     }
     
-    func logInWithVC(_ userLogin : [String: String], completionHandlerForLogin: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+    func logInWithVC(_ userLogin : [String: AnyObject], completionHandlerForLogin: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
         self.postSessionID(userLogin) { (success, errorString) in
             if success {
@@ -38,90 +38,28 @@ class UdacityClient : NSObject {
     }
     
     
-    func postSessionID(_ userLogin : [String:String], completionHandlerForSession: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+    func postSessionID(_ parameters : [String:AnyObject], completionHandlerForSession: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
-        let username = userLogin["username"]!
-        let password = userLogin["password"]!
-        
-        let request = NSMutableURLRequest(url: urlFromParameters(client: Constants.Udacity.Client, method: Constants.Udacity.sessionPathExtension))
-        print(request)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
-        print(request)
-        let task = UdacityClient.sharedInstance().session.dataTask(with: request as URLRequest) { (data, response, error) in
-            
-            func displayError(_ error: String, debugLabelText: String? = nil) {
-                print(error)
-
-            }
-            
-            guard (error == nil) else {
-                displayError("There was an error with your request: \(error)")
-                return
-            }
-            
-            /* GUARD: Did we get a successful 2XX response? */
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                displayError("Your request returned a status code other than 2xx!")
-                return
-            }
-            
-            /* GUARD: Was there any data returned? */
-            guard let data = data else {
-                displayError("No data was returned by the request!")
-                return
-            }
-            
-            let range = Range(5..<data.count)
-            let newData = data.subdata(in: range) /* subset response data! */
-            print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)
-            
-            /* 5. Parse the data */
-            let parsedResult: [String:AnyObject]!
-            do {
-                parsedResult = try JSONSerialization.jsonObject(with: newData, options: .allowFragments) as! NSDictionary as! [String : AnyObject]
-            } catch {
-                displayError("Could not parse the data as JSON: '\(newData)'")
-                return
-            }
-            
-            guard (parsedResult["error"] == nil) else {
-                print(parsedResult["error"]!)
-                return
-            }
-            
-            guard let account = parsedResult["account"] as? NSDictionary else {
-                print("The account dictionary was not found in the parsed data")
-                return
-            }
-            
-            print(parsedResult)
-            UdacityClient.sharedInstance().userKey = account["key"] as? String
-            print(self.userKey!)
-            
+        let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension, parameters: parameters) { (result, error) in
             
             if error != nil {
                 completionHandlerForSession(false, "Login Failed. Unable to Post Session")
             } else {
-                if (parsedResult) != nil {
+                if let account = result?["account"] as? NSDictionary {
                     completionHandlerForSession(true, nil)
                 } else {
+                    print("Could not find account in \(result)")
                     completionHandlerForSession(false, "Login Failed. Unable to Post Session")
                 }
             }
         }
-        
-        task.resume()
-        
-        
     }
+ 
     
     
     func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
-        let _ = taskForGetMethod(client: Constants.Udacity.Client, method: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
+        let _ = taskForMethod(client: Constants.Udacity.Client, pathExtension: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
             
             if let error = error {
                 print(error)
@@ -137,21 +75,41 @@ class UdacityClient : NSObject {
         }
     }
     
-    func taskForGetMethod(client: String, method: String? = nil, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         
-        let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, method: method))
+        let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, pathExtension: pathExtension))
         
-        if client == "parse" {
+        if (method != nil) {
+            request.httpMethod = method!
+        }
+        
+        if client == Constants.Parse.Client {
             request.addValue(Constants.Parse.AppID, forHTTPHeaderField: Constants.Parse.AppHTTP)
             request.addValue(Constants.Parse.APIKey, forHTTPHeaderField: Constants.Parse.APIHTPP)
         }
         
+        if method == Constants.Methods.Post {
+            
+            if client == Constants.Udacity.Client {
+                
+                let username = parameters?["username"]!
+                let password = parameters?["password"]!
+                
+                request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Accept)
+                request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
+                
+            }
+           
+            request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
+
+            
+        }
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
             func sendError(_ error: String) {
                 print(error)
                 let userInfo = [NSLocalizedDescriptionKey : error]
-                completionHandlerForGET(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
+                completionHandlerForGET(nil, NSError(domain: "taskForMethod", code: 1, userInfo: userInfo))
             }
             
             /* GUARD: Was there an error? */
@@ -192,18 +150,18 @@ class UdacityClient : NSObject {
         
     }
     
-    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, method: String? = nil) -> URL {
+    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, pathExtension: String? = nil) -> URL {
         
         var components = URLComponents()
         
         if client == "udacity" {
             components.scheme = Constants.Udacity.APIScheme
             components.host = Constants.Udacity.APIHost
-            components.path = Constants.Udacity.APIPath + (method ?? "")
+            components.path = Constants.Udacity.APIPath + (pathExtension ?? "")
         } else {
             components.scheme = Constants.Parse.APIScheme
             components.host = Constants.Parse.APIHost
-            components.path = Constants.Parse.APIPath + (method ?? "")
+            components.path = Constants.Parse.APIPath + (pathExtension ?? "")
         }
         
         components.queryItems = [URLQueryItem]()

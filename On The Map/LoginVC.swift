@@ -42,7 +42,7 @@ class LoginVC: UIViewController {
         } else {
             setUIEnabled(false)
             let studentLogin = ["username" : username.text!, "password" : password.text!]
-            UdacityClient.sharedInstance().logInWithVC(studentLogin) { (success, errorString) in
+            UdacityClient.sharedInstance().logInWithVC(studentLogin as [String : AnyObject]) { (success, errorString) in
                 if success {
                     print("success")
                 } else {

@@ -16,7 +16,7 @@ extension UdacityClient {
         studentParameters[Constants.Parse.ParameterKeys.skip] = "200"
         studentParameters[Constants.Parse.ParameterKeys.order] = "-\(Constants.Student.updatedAt)"
         
-        let _ = taskForGetMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
+        let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
             
             if let error = error {
                 print(error)
@@ -37,7 +37,7 @@ extension UdacityClient {
         
         let studentParameters = [Constants.Parse.ParameterKeys.at: "{\"\(Constants.Student.uniqueKey)\":\"\(userKey)\"}"]
         
-        let _ = taskForGetMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
+        let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
             
             if let error = error {
                 print(error)
