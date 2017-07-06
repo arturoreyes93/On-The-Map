@@ -43,7 +43,7 @@ class UdacityClient : NSObject {
         let username = userLogin["username"]!
         let password = userLogin["password"]!
         
-        let request = NSMutableURLRequest(url: urlFromParameters(client: Constants.udacity, withPathExtension: Constants.Udacity.sessionPathExtension))
+        let request = NSMutableURLRequest(url: urlFromParameters(client: Constants.udacity, method: Constants.Udacity.sessionPathExtension))
         print(request)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -120,88 +120,34 @@ class UdacityClient : NSObject {
     
     
     func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
-        let request = URLRequest(url: urlFromParameters(client: Constants.udacity, withPathExtension: Constants.Udacity.userPathExtension + "/\(userKey!)"))
-        print(request)
-        let task = session.dataTask(with: request) { (data, response, error) in
         
-            func displayError(_ error: String) {
+        let _ = taskForGetMethod(client: Constants.udacity, method: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
+            
+            if let error = error {
                 print(error)
-                
-                
-            }
-            
-            guard (error == nil) else {
-                displayError("There was an error with your request: \(error)")
-                return
-            }
-            
-            /* GUARD: Did we get a successful 2XX response? */
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                displayError("Your request returned a status code other than 2xx!")
-                return
-            }
-            
-            /* GUARD: Was there any data returned? */
-            guard let data = data else {
-                displayError("No data was returned by the request!")
-                return
-            }
-            
-            let range = Range(5..<data.count)
-            let newData = data.subdata(in: range) /* subset response data! */
-            print(NSString(data: newData, encoding: String.Encoding.utf8.rawValue)!)
-            
-            let parsedResult: [String:AnyObject]!
-            do {
-                parsedResult = try JSONSerialization.jsonObject(with: newData, options: .allowFragments) as! NSDictionary as! [String : AnyObject]
-            } catch {
-                print("Could not parse the data as JSON: '\(newData)'")
-                return
-            }
-            
-            guard (parsedResult["error"] == nil) else {
-                print(parsedResult["error"]!)
-                return
-            }
-            
-            guard let user = parsedResult["user"] as? NSDictionary else {
-                print("User info not found in User Data")
-                return
-            }
-            
-            if error != nil {
                 completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
             } else {
-                if (parsedResult) != nil {
+                if let user = result?["user"] as? NSDictionary {
                     completionHandlerUserData(true, nil)
                 } else {
-                    completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
+                    print("Could not find user in \(result)")
                 }
             }
-            
-            self.firstName = user["first_name"] as? String
-            self.lastName = user["last_name"] as? String
-            print(self.firstName!)
-            print(self.lastName!)
-
-            
         }
-        
-        task.resume()
     }
     
-    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, withPathExtension: String? = nil) -> URL {
+    func urlFromParameters(client: String, paremeters: [String:AnyObject]? = nil, method: String? = nil) -> URL {
         
         var components = URLComponents()
         
         if client == "udacity" {
             components.scheme = Constants.Udacity.APIScheme
             components.host = Constants.Udacity.APIHost
-            components.path = Constants.Udacity.APIPath + (withPathExtension ?? "")
+            components.path = Constants.Udacity.APIPath + (method ?? "")
         } else {
             components.scheme = Constants.Parse.APIScheme
             components.host = Constants.Parse.APIHost
-            components.path = Constants.Parse.APIPath + (withPathExtension ?? "")
+            components.path = Constants.Parse.APIPath + (method ?? "")
         }
         
         components.queryItems = [URLQueryItem]()

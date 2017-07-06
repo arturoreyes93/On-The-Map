@@ -10,9 +10,9 @@ import Foundation
 
 extension UdacityClient {
     
-    func taskForGetMethod(client: String, method: String, parameters: [String:AnyObject], completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+    func taskForGetMethod(client: String, method: String, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         
-        let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, withPathExtension: method))
+        let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, method: method))
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
             func sendError(_ error: String) {
@@ -39,12 +39,28 @@ extension UdacityClient {
                 return
             }
             
-            self.convertDataWithCompletionHandler(data!, completionHandlerForConvertData: completionHandlerForGET)
+            var newData = data
+            
+            guard (client == "parse") else {
+                if let data = data {
+                    let range = Range(5..<data.count)
+                    newData = data.subdata(in: range) /* subset response data! */
+                    print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
+                }
+                return
+            }
+            
+            self.convertDataWithCompletionHandler(newData!, completionHandlerForConvertData: completionHandlerForGET)
         }
         
         task.resume()
         
         return task
+        
+    }
+    
+    func getStudentLocs() {
+        
         
     }
     
