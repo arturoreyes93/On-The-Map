@@ -46,6 +46,7 @@ class UdacityClient : NSObject {
             if error != nil {
                 completionHandlerForSession(false, "Login Failed. Unable to Post Session")
             } else {
+                print("no error")
                 if let account = result?["account"] as? NSDictionary {
                     completionHandlerForSession(true, nil)
                     UdacityClient.sharedInstance().userKey = account["key"] as? String
@@ -71,6 +72,8 @@ class UdacityClient : NSObject {
             } else {
                 if let user = result?["user"] as? NSDictionary {
                     completionHandlerUserData(true, nil)
+                    UdacityClient.sharedInstance().firstName = user["first_name"] as? String
+                    print(self.firstName)
                     print(user)
                 } else {
                     print("Could not find user in \(result)")
