@@ -29,6 +29,7 @@ class UdacityClient : NSObject {
                 self.getUserData() { (success, user, errorString) in
                     if success {
                         UdacityClient.sharedInstance().firstName = user?["first_name"] as! String
+                        UdacityClient.sharedInstance().lastName = user?["last_name"] as! String
                         print(self.firstName)
                         print("success")
                     }
@@ -101,6 +102,8 @@ class UdacityClient : NSObject {
         
         if method == Constants.Methods.Post {
             
+            request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
+            
             if client == Constants.Udacity.Client {
                 print(client)
                 
@@ -112,11 +115,9 @@ class UdacityClient : NSObject {
                 request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Accept)
                 request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
                 
+            } else if client == Constants.Parse.Client {
+                request.httpBody = "{\"uniqueKey\": \"\(userKey)\", \"firstName\": \"\(firstName)\", \"lastName\": \"\(lastName)\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: String.Encoding.utf8)
             }
-           
-            request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
-
-            
         }
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in

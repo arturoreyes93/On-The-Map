@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD44C7181F1035DF002D9349 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44C7171F1035DF002D9349 /* Student.swift */; };
 		DD69D16B1F07118D001B673D /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69D16A1F07118D001B673D /* ParseClient.swift */; };
 		DD87D0BC1EFB42D600A57F5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */; };
 		DD87D0BE1EFB42D600A57F5C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD44C7171F1035DF002D9349 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DD69D16A1F07118D001B673D /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		DD87D0B81EFB42D600A57F5C /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				DDCB478D1EFC88B000BB7355 /* BorderedButton.swift */,
 				DDCB478F1EFC99B200BB7355 /* SignUpButton.swift */,
 				DD87D0E91EFB546700A57F5C /* MapVC.swift */,
+				DD44C7171F1035DF002D9349 /* Student.swift */,
 				DD9883E21F05C15F00A666C7 /* ListVC.swift */,
 				DD87D0C21EFB42D600A57F5C /* Assets.xcassets */,
 				DD87D0C41EFB42D600A57F5C /* LaunchScreen.storyboard */,
@@ -289,6 +292,7 @@
 				DDE057721EFDBDEF00298A74 /* UdacityClient.swift in Sources */,
 				DD87D0BE1EFB42D600A57F5C /* LoginVC.swift in Sources */,
 				DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */,
+				DD44C7181F1035DF002D9349 /* Student.swift in Sources */,
 				DD9883E31F05C15F00A666C7 /* ListVC.swift in Sources */,
 				DDCB478E1EFC88B000BB7355 /* BorderedButton.swift in Sources */,
 				DD87D0BC1EFB42D600A57F5C /* AppDelegate.swift in Sources */,

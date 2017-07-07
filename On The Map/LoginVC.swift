@@ -44,6 +44,7 @@ class LoginVC: UIViewController {
             let studentLogin = ["username" : username.text!, "password" : password.text!]
             UdacityClient.sharedInstance().logInWithVC(studentLogin as [String : AnyObject]) { (success, errorString) in
                 if success {
+                    self.completeLogin()
                     print("success")
                 } else {
                     self.displayError(errorString)
@@ -56,7 +57,7 @@ class LoginVC: UIViewController {
     
     private func completeLogin() {
         debugTextLabel.text = ""
-        let controller = storyboard!.instantiateViewController(withIdentifier: "ManagerNavigationController") as! UINavigationController
+        let controller = storyboard!.instantiateViewController(withIdentifier: "MapNavigatorController") as! UINavigationController
         present(controller, animated: true, completion: nil)
     }
     
