@@ -22,11 +22,14 @@ class UdacityClient : NSObject {
     
     func logInWithVC(_ userLogin : [String: AnyObject], completionHandlerForLogin: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
-        self.postSessionID(userLogin) { (success, errorString) in
+        self.postSessionID(userLogin) { (success, userKey, errorString) in
             if success {
+                UdacityClient.sharedInstance().userKey = userKey
                 print(self.userKey)
-                self.getUserData() { (success, errorString) in
+                self.getUserData() { (success, user, errorString) in
                     if success {
+                        UdacityClient.sharedInstance().firstName = user?["first_name"] as! String
+                        print(self.firstName)
                         print("success")
                     }
                     completionHandlerForLogin(success, errorString)
@@ -39,23 +42,22 @@ class UdacityClient : NSObject {
     }
     
     
-    func postSessionID(_ parameters : [String:AnyObject], completionHandlerForSession: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+    func postSessionID(_ parameters : [String:AnyObject], completionHandlerForSession: @escaping (_ success: Bool, _ userKey: String?, _ errorString: String?) -> Void) {
         
         let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension, parameters: parameters) { (result, error) in
             
             if error != nil {
-                completionHandlerForSession(false, "Login Failed. Unable to Post Session")
+                completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session")
             } else {
                 print("no error")
-                if (result) != nil {
-                    let account = result?["account"] as? NSDictionary
-                    completionHandlerForSession(true, nil)
-                    UdacityClient.sharedInstance().userKey = account?["key"] as? String
-                    print(self.userKey!)
+                if let account = result?["account"] as? NSDictionary {
+                    print(account)
+                    let key = account["key"] as? String
+                    completionHandlerForSession(true, key, nil)
                     print(result!)
                 } else {
                     print("Could not find account in \(result)")
-                    completionHandlerForSession(false, "Login Failed. Unable to Post Session")
+                    completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session")
                 }
             }
         }
@@ -63,24 +65,20 @@ class UdacityClient : NSObject {
  
     
     
-    func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+    func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ firstName: [String:AnyObject]?, _ errorString: String?) -> Void) {
         
         let _ = taskForMethod(client: Constants.Udacity.Client, pathExtension: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
             
             if let error = error {
                 print(error)
-                completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
+                completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data")
             } else {
-                if (result) != nil {
-                    let user = result?["user"] as? NSDictionary
-                    completionHandlerUserData(true, nil)
-                    UdacityClient.sharedInstance().firstName = user?["first_name"] as? String
-                    print(self.firstName)
-                    print(user)
+                if let user = result?["user"] as? NSDictionary {
+                    completionHandlerUserData(true, user as! [String : AnyObject], nil)
 
                 } else {
                     print("Could not find user in \(result)")
-                    completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
+                    completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data")
                 }
             }
         }
@@ -155,7 +153,7 @@ class UdacityClient : NSObject {
             print(data)
             var newData = data
             
-            guard (client == "parse") else {
+            if client == Constants.Udacity.Client {
                 print("converting to new data")
                 if let data = data {
                     let range = Range(5..<data.count)
@@ -164,7 +162,6 @@ class UdacityClient : NSObject {
                     print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
                     print("indeed")
                 }
-                return
             }
             
             print(newData!)
