@@ -47,9 +47,10 @@ class UdacityClient : NSObject {
                 completionHandlerForSession(false, "Login Failed. Unable to Post Session")
             } else {
                 print("no error")
-                if let account = result?["account"] as? NSDictionary {
+                if (result) != nil {
+                    let account = result?["account"] as? NSDictionary
                     completionHandlerForSession(true, nil)
-                    UdacityClient.sharedInstance().userKey = account["key"] as? String
+                    UdacityClient.sharedInstance().userKey = account?["key"] as? String
                     print(self.userKey!)
                     print(result!)
                 } else {
@@ -70,11 +71,13 @@ class UdacityClient : NSObject {
                 print(error)
                 completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
             } else {
-                if let user = result?["user"] as? NSDictionary {
+                if (result) != nil {
+                    let user = result?["user"] as? NSDictionary
                     completionHandlerUserData(true, nil)
-                    UdacityClient.sharedInstance().firstName = user["first_name"] as? String
+                    UdacityClient.sharedInstance().firstName = user?["first_name"] as? String
                     print(self.firstName)
                     print(user)
+
                 } else {
                     print("Could not find user in \(result)")
                     completionHandlerUserData(false, "Login Failed. Unable to retrieve User Data")
@@ -131,6 +134,7 @@ class UdacityClient : NSObject {
                 sendError("There was an error with your request: \(error)")
                 return
             }
+            print("no request error")
             
             /* GUARD: Did we get a successful 2XX response? */
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
@@ -138,20 +142,27 @@ class UdacityClient : NSObject {
                 return
             }
             
+            print("status code ok")
             
             /* GUARD: Was there any data returned? */
             guard data != nil else {
                 sendError("No data was returned by the request!")
                 return
             }
+            
+            print("There is data")
+        
             print(data)
             var newData = data
             
             guard (client == "parse") else {
+                print("converting to new data")
                 if let data = data {
                     let range = Range(5..<data.count)
                     newData = data.subdata(in: range) /* subset response data! */
+                    print("finished converting????")
                     print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
+                    print("indeed")
                 }
                 return
             }
@@ -198,6 +209,7 @@ class UdacityClient : NSObject {
     
     func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
         
+        print("parsing data")
         var parsedResult: AnyObject! = nil
         do {
             parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
