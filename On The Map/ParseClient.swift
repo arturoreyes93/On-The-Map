@@ -33,7 +33,7 @@ extension UdacityClient {
         }
     }
     
-    func getSingleStudentLocation(studentKey: String, _ completionHandlerForSingleLocation: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+    func getSingleStudentLocation(studentKey: String, _ completionHandlerForSingleLocation: @escaping (_ success: Bool, _ localStudentArray: NSArray?, _ errorString: String?) -> Void) {
         
         let studentParameters = [Constants.Parse.ParameterKeys.at: "{\"\(Constants.Student.uniqueKey)\":\"\(studentKey)\"}"]
         
@@ -41,13 +41,13 @@ extension UdacityClient {
             
             if let error = error {
                 print(error)
-                completionHandlerForSingleLocation(false, "Could not retrieve single student location")
+                completionHandlerForSingleLocation(false, nil, "Could not retrieve single student location")
             } else {
                 if let results = result?["results"] as? NSArray {
-                    completionHandlerForSingleLocation(true, nil)
+                    completionHandlerForSingleLocation(true, results, nil)
                     print("Single student location retrieved succesfully")
                 } else {
-                    completionHandlerForSingleLocation(false, "Could not retrieve single student location")
+                    completionHandlerForSingleLocation(false, nil, "Could not retrieve single student location")
                     print("Could not retrieve single student location")
                 }
             }

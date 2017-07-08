@@ -14,9 +14,7 @@ class UdacityClient : NSObject {
     
     var students: [Student]!
     
-    var userKey: String?
-    var firstName: String?
-    var lastName: String?
+    var localStudent: [Student]!
     
     override init() {
         super.init()
@@ -26,19 +24,24 @@ class UdacityClient : NSObject {
         
         self.postSessionID(userLogin) { (success, userKey, errorString) in
             if success {
-                UdacityClient.sharedInstance().userKey = userKey
-                print(self.userKey!)
-                self.getUserData() { (success, user, errorString) in
+                print(userKey)
+                self.getUserData(userKey!) { (success, user, errorString) in
                     if success {
-                        UdacityClient.sharedInstance().firstName = user?["first_name"] as? String
-                        UdacityClient.sharedInstance().lastName = user?["last_name"] as? String
-                        print(self.firstName!)
-                        self.getStudentLocations() { (success, studentArray, errorString) in
+                        print(user?["first_name"])
+                        self.getSingleStudentLocation(studentKey: userKey!) { (success, localStudentArray, errorString) in
                             if success {
-                                print("converting dict to student array")
-                                UdacityClient.sharedInstance().students = self.fromDictToStudentObject(studentArray: studentArray!)
+                                UdacityClient.sharedInstance().localStudent = self.fromDictToStudentObject(studentArray: localStudentArray!)
+                                print(UdacityClient.sharedInstance().localStudent[0])
+                                self.getStudentLocations() { (success, studentArray, errorString) in
+                                    if success {
+                                        print("converting dict to student array")
+                                        UdacityClient.sharedInstance().students = self.fromDictToStudentObject(studentArray: studentArray!)
+                                    }
+                                    completionHandlerForLogin(success, errorString)
+                                }
+                            } else {
+                                completionHandlerForLogin(success, errorString)
                             }
-                            completionHandlerForLogin(success, errorString)
                         }
                     } else {
                         completionHandlerForLogin(success, errorString)
@@ -48,6 +51,8 @@ class UdacityClient : NSObject {
                 completionHandlerForLogin(success, errorString)
             }
         }
+        
+        
     }
     
     
@@ -74,9 +79,9 @@ class UdacityClient : NSObject {
  
     
     
-    func getUserData(_ completionHandlerUserData: @escaping (_ success: Bool, _ firstName: [String:AnyObject]?, _ errorString: String?) -> Void) {
+    func getUserData(_ userKey: String, _ completionHandlerUserData: @escaping (_ success: Bool, _ firstName: [String:AnyObject]?, _ errorString: String?) -> Void) {
         
-        let _ = taskForMethod(client: Constants.Udacity.Client, pathExtension: Constants.Udacity.userPathExtension + "/\(userKey!)") { (result, error) in
+        let _ = taskForMethod(client: Constants.Udacity.Client, pathExtension: Constants.Udacity.userPathExtension + "/\(userKey)") { (result, error) in
             
             if let error = error {
                 print(error)
@@ -124,7 +129,8 @@ class UdacityClient : NSObject {
                 request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
                 
             } else if client == Constants.Parse.Client {
-                request.httpBody = "{\"uniqueKey\": \"\(userKey)\", \"firstName\": \"\(firstName)\", \"lastName\": \"\(lastName)\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: String.Encoding.utf8)
+                let local = UdacityClient.sharedInstance().localStudent[0]
+                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(local.mapString)\", \"mediaURL\": \"\(local.mediaURL)\",\"latitude\": \(local.latitude), \"longitude\": \(local.longitude)}".data(using: String.Encoding.utf8)
             }
         }
         
@@ -211,8 +217,7 @@ class UdacityClient : NSObject {
         
         return components.url!
     }
-    
-    
+
     func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
         
         print("parsing data")

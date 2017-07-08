@@ -34,16 +34,16 @@ class MapVC: UIViewController, MKMapViewDelegate {
     private func populateMap() -> [MKPointAnnotation] {
         
         var annotations = [MKPointAnnotation]()
-        let studentArray = UdacityClient.sharedInstance().students
+        let studentArray = UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent
         
-        for student in studentArray! {
+        for student in studentArray {
             
             let lat = CLLocationDegrees(student.latitude )
             let long = CLLocationDegrees(student.longitude )
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
             let first = student.firstName
-            let last = student.firstName
+            let last = student.lastName
             let mediaURL = student.mediaURL
             
             let annotation = MKPointAnnotation()
