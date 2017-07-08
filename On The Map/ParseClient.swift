@@ -59,6 +59,7 @@ extension UdacityClient {
         var studentsArray = [Student]()
         
         for student in studentArray {
+            print(student)
             studentsArray.append(Student(studentDict: student as! [String : AnyObject]))
         }
         return studentsArray

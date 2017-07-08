@@ -43,7 +43,7 @@ struct Constants {
     }
     
     struct Student {
-        static let objectID = "objectID"
+        static let objectID = "objectId"
         static let uniqueKey = "uniqueKey"
         static let firstName = "firstName"
         static let lastName = "lastName"
@@ -53,8 +53,6 @@ struct Constants {
         static let longitude = "longitude"
         static let createdAt = "createdAt"
         static let updatedAt = "updatedAt"
-        static let ACL = "ACL"
-        
     }
     
     struct Methods {

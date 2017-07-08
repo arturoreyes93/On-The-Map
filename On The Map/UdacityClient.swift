@@ -12,6 +12,8 @@ class UdacityClient : NSObject {
     
     var session = URLSession.shared
     
+    var students: [Student]!
+    
     var userKey: String?
     var firstName: String?
     var lastName: String?
@@ -25,17 +27,23 @@ class UdacityClient : NSObject {
         self.postSessionID(userLogin) { (success, userKey, errorString) in
             if success {
                 UdacityClient.sharedInstance().userKey = userKey
-                print(self.userKey)
+                print(self.userKey!)
                 self.getUserData() { (success, user, errorString) in
                     if success {
-                        UdacityClient.sharedInstance().firstName = user?["first_name"] as! String
-                        UdacityClient.sharedInstance().lastName = user?["last_name"] as! String
-                        print(self.firstName)
-                        print("success")
+                        UdacityClient.sharedInstance().firstName = user?["first_name"] as? String
+                        UdacityClient.sharedInstance().lastName = user?["last_name"] as? String
+                        print(self.firstName!)
+                        self.getStudentLocations() { (success, studentArray, errorString) in
+                            if success {
+                                print("converting dict to student array")
+                                UdacityClient.sharedInstance().students = self.fromDictToStudentObject(studentArray: studentArray!)
+                            }
+                            completionHandlerForLogin(success, errorString)
+                        }
+                    } else {
+                        completionHandlerForLogin(success, errorString)
                     }
-                    completionHandlerForLogin(success, errorString)
                 }
-    
             } else {
                 completionHandlerForLogin(success, errorString)
             }

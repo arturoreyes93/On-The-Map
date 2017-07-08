@@ -57,6 +57,7 @@ class LoginVC: UIViewController {
     
     private func completeLogin() {
         debugTextLabel.text = ""
+        print("moving to navigation controller now")
         let controller = storyboard!.instantiateViewController(withIdentifier: "MapNavigatorController") as! UINavigationController
         present(controller, animated: true, completion: nil)
     }

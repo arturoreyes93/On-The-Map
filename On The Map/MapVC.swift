@@ -20,7 +20,8 @@ class MapVC: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.mapView.addAnnotation(populateMap() as! MKAnnotation)
+        print("populating map")
+        self.mapView.addAnnotations(populateMap())
         
         
     }
@@ -34,37 +35,35 @@ class MapVC: UIViewController, MKMapViewDelegate {
     private func populateMap() -> [MKPointAnnotation] {
         
         var annotations = [MKPointAnnotation]()
+        let studentArray = UdacityClient.sharedInstance().students
         
-        UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
+        for student in studentArray! {
             
-            if success {
-                let studentArray = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
-                
-                for student in studentArray {
-                    
-                    let lat = CLLocationDegrees(student.latitude )
-                    let long = CLLocationDegrees(student.longitude )
-                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    
-                    let first = student.firstName
-                    let last = student.firstName
-                    let mediaURL = student.mediaURL
-                    
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = coordinate
-                    annotation.title = "\(first) \(last)"
-                    annotation.subtitle = mediaURL
-                    
-                    annotations.append(annotation)
-                }
-            } else {
-                print(errorString!)
-            }
+            let lat = CLLocationDegrees(student.latitude )
+            let long = CLLocationDegrees(student.longitude )
+            let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+            
+            let first = student.firstName
+            let last = student.firstName
+            let mediaURL = student.mediaURL
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = "\(first) \(last)"
+            annotation.subtitle = mediaURL
+            
+            annotations.append(annotation)
         }
-        
+
         return annotations
     }
     
+    // MARK: - MKMapViewDelegate
+    
+    // Here we create a view with a "right callout accessory view". You might choose to look into other
+    // decoration alternatives. Notice the similarity between this method and the cellForRowAtIndexPath
+    // method in TableViewDataSource.
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
         
@@ -82,7 +81,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
         return pinView
     }
-    
+   
+    // This delegate method is implemented to respond to taps. It opens the system browser
+    // to the URL specified in the annotationViews subtitle property.
+
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
@@ -91,4 +93,18 @@ class MapVC: UIViewController, MKMapViewDelegate {
             }
         }
     }
+    
+    //    func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    //
+    //        if control == annotationView.rightCalloutAccessoryView {
+    //            let app = UIApplication.sharedApplication()
+    //            app.openURL(NSURL(string: annotationView.annotation.subtitle))
+    //        }
+    //    }
+    
+    // MARK: - Sample Data
+    
+    // Some sample data. This is a dictionary that is more or less similar to the
+    // JSON data that you will download from Parse.
+
 }
