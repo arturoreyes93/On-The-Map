@@ -22,15 +22,16 @@ struct Student {
     let updatedAt: String
     
     init(studentDict: [String:AnyObject]) {
-        firstName = studentDict[Constants.Student.firstName] as? String ?? "no info"
-        lastName = studentDict[Constants.Student.lastName] as? String ?? "no info"
-        objectID = studentDict[Constants.Student.objectID] as? String ?? "no info"
-        uniqueKey = studentDict[Constants.Student.uniqueKey] as? String ?? "no info"
-        mapString = studentDict[Constants.Student.mapString] as? String ?? "no info"
-        mediaURL = studentDict[Constants.Student.mediaURL] as? String ?? "no info"
-        latitude = studentDict[Constants.Student.latitude] as? Double ?? 0.0
-        longitude = studentDict[Constants.Student.longitude] as? Double ?? 0.0
-        createdAt = studentDict[Constants.Student.createdAt] as? String ?? "no info"
-        updatedAt = studentDict[Constants.Student.updatedAt] as? String ?? "no info"
+        firstName = (studentDict[Constants.Student.firstName] as? String)!
+        lastName = (studentDict[Constants.Student.lastName] as? String)!
+        objectID = (studentDict[Constants.Student.objectID] as? String)!
+        uniqueKey = (studentDict[Constants.Student.uniqueKey] as? String)!
+        mapString = (studentDict[Constants.Student.mapString] as? String)!
+        mediaURL = (studentDict[Constants.Student.mediaURL] as? String)!
+        latitude = (studentDict[Constants.Student.latitude] as? Double)!
+        longitude = (studentDict[Constants.Student.longitude] as? Double)!
+        createdAt = (studentDict[Constants.Student.createdAt] as? String)!
+        updatedAt = (studentDict[Constants.Student.updatedAt] as? String)!
     }
 }
+
