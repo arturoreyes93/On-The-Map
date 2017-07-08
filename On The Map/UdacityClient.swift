@@ -98,6 +98,25 @@ class UdacityClient : NSObject {
         }
     }
     
+    func deleteSession(_ completionHandlerForDelete: @escaping (_ success: Bool, _ results: NSDictionary?, _ errorString: String?) -> Void) {
+        
+        let _ = taskForMethod(client: Constants.Udacity.Client, method:  Constants.Methods.Delete, pathExtension: Constants.Udacity.sessionPathExtension) { (result, error) in
+            
+            if let error = error {
+                print(error)
+                completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session")
+            } else {
+                if let result = result as? NSDictionary {
+                    completionHandlerForDelete(true, result, nil)
+                    
+                } else {
+                    print("Could not delete session: \(error)")
+                    completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session")
+                }
+            }
+        }
+    }
+    
     func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, pathExtension: pathExtension))
@@ -139,6 +158,17 @@ class UdacityClient : NSObject {
             let local = UdacityClient.sharedInstance().localStudent[0]
             request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(local.mapString)\", \"mediaURL\": \"\(local.mediaURL)\",\"latitude\": \(local.latitude), \"longitude\": \(local.longitude)}".data(using: String.Encoding.utf8)
 
+        }
+        
+        if method == Constants.Methods.Delete {
+            var xsrfCookie: HTTPCookie? = nil
+            let sharedCookieStorage = HTTPCookieStorage.shared
+            for cookie in sharedCookieStorage.cookies! {
+                if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+            }
+            if let xsrfCookie = xsrfCookie {
+                request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+            }
         }
         
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
