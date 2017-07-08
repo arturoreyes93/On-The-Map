@@ -54,6 +54,44 @@ extension UdacityClient {
         }
     }
     
+    func postStudentLocation(_ completionHandlerForPost: @escaping (_ success: Bool, _ updatedData: NSDictionary?, _ errorString: String?) -> Void) {
+        
+        let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Post) { (result, error) in
+        
+            if let error = error {
+                print(error)
+                completionHandlerForPost(false, nil, "Unable to post location: \(error)")
+            } else {
+                if let results = result as? NSDictionary {
+                    completionHandlerForPost(true, results, nil)
+                } else {
+                    completionHandlerForPost(false, nil, "Unable to post location")
+                }
+            }
+        }
+        
+    }
+    
+    func putStudentLocation(_ completionHandlerForPut: @escaping (_ success: Bool, _ updatedData: NSDictionary?, _ errorString: String?) -> Void) {
+        
+        let local = UdacityClient.sharedInstance().localStudent[0]
+        
+        let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Put, pathExtension: local.objectId) { (result, error) in
+            
+            if let error = error {
+                print(error)
+                completionHandlerForPut(false, nil, "Unable to put location: \(error)")
+            } else {
+                if let results = result as? NSDictionary {
+                    completionHandlerForPut(true, results, nil)
+                } else {
+                    completionHandlerForPut(false, nil, "Unable to put location")
+                }
+            }
+        }
+        
+    }
+
     func fromDictToStudentObject(studentArray: NSArray) -> [Student] {
         
         var studentsArray = [Student]()

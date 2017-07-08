@@ -134,6 +134,13 @@ class UdacityClient : NSObject {
             }
         }
         
+        if method == Constants.Methods.Put {
+            request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
+            let local = UdacityClient.sharedInstance().localStudent[0]
+            request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(local.mapString)\", \"mediaURL\": \"\(local.mediaURL)\",\"latitude\": \(local.latitude), \"longitude\": \(local.longitude)}".data(using: String.Encoding.utf8)
+
+        }
+        
         let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
             
             func sendError(_ error: String) {
