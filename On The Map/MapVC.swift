@@ -24,10 +24,26 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
         
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addLocation() {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "AddLocationNavigationController") as! UINavigationController
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func logout() {
+        UdacityClient.sharedInstance().deleteSession() { (success, results, errorString) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print(errorString)
+            }
+        }
+        
     }
     
     

@@ -16,6 +16,11 @@ class ListVC: UIViewController {
     
     @IBOutlet weak var userTableView: UITableView!
 
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,6 +28,22 @@ class ListVC: UIViewController {
         performUIUpdatesOnMain {
             self.userTableView.reloadData()
             print("success at loading students")
+        }
+        
+    }
+    
+    func addLocation() {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "AddLocationNavigationController") as! UINavigationController
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func logout() {
+        UdacityClient.sharedInstance().deleteSession() { (success, results, errorString) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print(errorString)
+            }
         }
         
     }
