@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class PostLocationVC: UIViewController {
     
@@ -21,6 +22,30 @@ class PostLocationVC: UIViewController {
         configure(locationTextField)
         configure(websiteTextField)
     }
+    
+    func getLocationFromAddress(_ location: String, _ completionHandlerForGetLocation: @escaping (_ success: Bool, _ studentLocation: MKPlacemark, _ studentCoordinate: CLLocationCoordinate2D, _ errorString: String?)) {
+        
+        let geoCoder = CLGeocoder()
+        
+        geoCoder.geocodeAddressString(location) { (placemark: [CLPlacemark]?, error: NSError?) in
+            if let placemark = placemark?[0] {
+                let studentLocation = MKPlacemark(placemark: placemark)
+                let studentCoordinate = placemark.location!.coordinate as CLLocationCoordinate2D
+                
+            }
+        }
+    }
+    
+    func setLocationRegion(_ location: CLLocationCoordinate2D) {
+        let span = MKCoordinateSpan(-.15, 0.15)
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+    }
+    
+    
+    
+    
+    
 
 }
 

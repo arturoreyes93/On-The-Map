@@ -12,7 +12,14 @@ import MapKit
 
 class AddLocationMapVC: UIViewController, MKMapViewDelegate {
     
+    @IBOutlet weak var addLocationMap: MKMapView!
+    @IBOutlet weak var finishButton: UIButton!
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     
     
 }

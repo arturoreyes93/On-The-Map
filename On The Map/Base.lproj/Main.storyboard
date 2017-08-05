@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -182,7 +182,7 @@
         <!--AddLocationMap-->
         <scene sceneID="zQ2-5f-l77">
             <objects>
-                <viewController title="AddLocationMap" id="qej-2S-DCv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddLocationMapVC" title="AddLocationMap" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qej-2S-DCv" customClass="AddLocationMapVC" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kb8-Rh-R9f"/>
                         <viewControllerLayoutGuide type="bottom" id="NZ2-Bd-uJV"/>
@@ -216,6 +216,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="JjZ-Vu-7LI"/>
+                    <connections>
+                        <outlet property="addLocationMap" destination="3Cb-Ge-MS4" id="FcZ-lF-s37"/>
+                        <outlet property="addlocationmap" destination="3Cb-Ge-MS4" id="IjC-bR-muC"/>
+                        <outlet property="finishButton" destination="0b1-7p-7eo" id="LKA-hX-WFZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY0-Gi-SV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +280,11 @@
             <objects>
                 <tabBarController id="Iqe-oW-k17" userLabel="On the Map Tab" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="On the Map" id="AGQ-OS-gok">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="RuO-Mw-1iv"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="RuO-Mw-1iv">
+                            <connections>
+                                <segue destination="Ra2-Rt-eXa" kind="modal" id="DMT-7J-QKB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="reply" id="VGl-ZW-hgd"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="g7c-5m-wdb">
@@ -295,7 +304,7 @@
         <!--ListVC-->
         <scene sceneID="hyD-Qq-IaL">
             <objects>
-                <viewController id="Hui-GH-pge" userLabel="ListVC" customClass="ListVC" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hui-GH-pge" userLabel="ListVC" customClass="ListVC" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o9V-J6-XSh"/>
                         <viewControllerLayoutGuide type="bottom" id="cxJ-Yh-7j6"/>
@@ -308,7 +317,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentTableViewCell" id="HMA-Ga-lw5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StudentTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentTableViewCell" id="HMA-Ga-lw5">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HMA-Ga-lw5" id="cMS-n5-zoD">

@@ -25,6 +25,7 @@ class ListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        students = UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent
         performUIUpdatesOnMain {
             self.userTableView.reloadData()
             print("success at loading students")
@@ -58,12 +59,12 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as UITableViewCell!
         let student = self.students[(indexPath as NSIndexPath).row]
-        cell.textLabel?.text = "\(student.firstName) \(student.lastName)"
-        cell.detailTextLabel?.text = student.mediaURL
+        cell?.textLabel?.text = "\(student.firstName) \(student.lastName)"
+        cell?.detailTextLabel?.text = student.mediaURL
         print("Success at returning Table View Cell")
-        return cell
+        return cell!
         
     }
     
