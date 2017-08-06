@@ -185,6 +185,11 @@
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" red="0.20377187150000001" green="0.29511257909999999" blue="0.71143608199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20377187150000001" green="0.29511257909999999" blue="0.71143608199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
