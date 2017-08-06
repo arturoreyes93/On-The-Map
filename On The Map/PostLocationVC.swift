@@ -79,7 +79,7 @@ extension PostLocationVC: UITextFieldDelegate {
         textField.delegate = self
         textField.defaultTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Arial", size: 32)!]
         textField.textAlignment = NSTextAlignment.center
-        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.gray])
+        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.white])
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
