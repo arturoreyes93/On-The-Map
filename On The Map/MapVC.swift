@@ -19,9 +19,15 @@ class MapVC: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print("populating map")
-        self.mapView.addAnnotations(populateMap())
+        guard let tabBar = self.parent else {
+            return
+        }
         
+        tabBar.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addLocation))
+        tabBar.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(self.logout))
+        
+        print("downloading data")
+        self.downloadData(UdacityClient.sharedInstance().userKey!)
         
     }
 
@@ -30,9 +36,52 @@ class MapVC: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func downloadData(_ userKey: String) {
+        UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
+            if success {
+                UdacityClient.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
+                print(UdacityClient.sharedInstance().localStudent[0])
+                UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
+                    if success {
+                        print("converting dict to student array")
+                        UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
+                        print("populating map")
+                        self.mapView.addAnnotations(self.populateMap())
+                    }
+                    self.postSimpleAlert(errorString!)
+                }
+            } else {
+                self.postSimpleAlert(errorString!)
+            }
+        }
+    }
+    
+    func goToPostController() {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "PostLocationVC") as! PostLocationVC
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    func postSimpleAlert(_ title: String) {
+        
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(dismiss)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     func addLocation() {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "AddLocationNavigationController") as! UINavigationController
-        navigationController?.pushViewController(controller, animated: true)
+        if !(UdacityClient.sharedInstance().localStudent[0].mapString.isEmpty) {
+            let alertString = "You Have Already Posted a Student Location. Would You Like To Overwrite Your Location?"
+            let alert = UIAlertController(title: nil, message: alertString, preferredStyle: UIAlertControllerStyle.alert)
+            let overwrite = UIAlertAction(title: "Overwrite", style: UIAlertActionStyle.default) { action in self.goToPostController() }
+            let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil)
+            alert.addAction(overwrite)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        } else {
+            self.goToPostController()
+        }
     }
     
     func logout() {
@@ -41,6 +90,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
                 self.dismiss(animated: true, completion: nil)
             } else {
                 print(errorString)
+                let alert = UIAlertController(title: nil, message: errorString, preferredStyle: UIAlertControllerStyle.alert)
+                let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+                alert.addAction(dismiss)
+                self.present(alert, animated: true, completion: nil)
             }
         }
         

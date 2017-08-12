@@ -16,6 +16,8 @@ class UdacityClient : NSObject {
     
     var localStudent: [Student]!
     
+    var userKey: String?
+    
     override init() {
         super.init()
     }
@@ -27,22 +29,8 @@ class UdacityClient : NSObject {
                 print(userKey)
                 self.getUserData(userKey!) { (success, user, errorString) in
                     if success {
+                        UdacityClient.sharedInstance().userKey = userKey
                         print(user?["first_name"])
-                        self.getSingleStudentLocation(studentKey: userKey!) { (success, localStudentArray, errorString) in
-                            if success {
-                                UdacityClient.sharedInstance().localStudent = self.fromDictToStudentObject(studentArray: localStudentArray!)
-                                print(UdacityClient.sharedInstance().localStudent[0])
-                                self.getStudentLocations() { (success, studentArray, errorString) in
-                                    if success {
-                                        print("converting dict to student array")
-                                        UdacityClient.sharedInstance().students = self.fromDictToStudentObject(studentArray: studentArray!)
-                                    }
-                                    completionHandlerForLogin(success, errorString)
-                                }
-                            } else {
-                                completionHandlerForLogin(success, errorString)
-                            }
-                        }
                     } else {
                         completionHandlerForLogin(success, errorString)
                     }
@@ -51,8 +39,6 @@ class UdacityClient : NSObject {
                 completionHandlerForLogin(success, errorString)
             }
         }
-        
-        
     }
     
     
@@ -61,7 +47,7 @@ class UdacityClient : NSObject {
         let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension, parameters: parameters) { (result, error) in
             
             if error != nil {
-                completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session")
+                completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session.")
             } else {
                 print("no error")
                 if let account = result?["account"] as? NSDictionary {
@@ -71,7 +57,7 @@ class UdacityClient : NSObject {
                     print(result!)
                 } else {
                     print("Could not find account in \(result)")
-                    completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session")
+                    completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session.")
                 }
             }
         }
@@ -85,14 +71,14 @@ class UdacityClient : NSObject {
             
             if let error = error {
                 print(error)
-                completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data")
+                completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data.")
             } else {
                 if let user = result?["user"] as? NSDictionary {
                     completionHandlerUserData(true, user as! [String : AnyObject], nil)
 
                 } else {
                     print("Could not find user in \(result)")
-                    completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data")
+                    completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data.")
                 }
             }
         }
@@ -104,20 +90,20 @@ class UdacityClient : NSObject {
             
             if let error = error {
                 print(error)
-                completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session")
+                completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session.")
             } else {
                 if let result = result as? NSDictionary {
                     completionHandlerForDelete(true, result, nil)
                     
                 } else {
                     print("Could not delete session: \(error)")
-                    completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session")
+                    completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session.")
                 }
             }
         }
     }
     
-    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, newData: [String:Any]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, pathExtension: pathExtension))
         print(request)
@@ -149,14 +135,14 @@ class UdacityClient : NSObject {
                 
             } else if client == Constants.Parse.Client {
                 let local = UdacityClient.sharedInstance().localStudent[0]
-                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(local.mapString)\", \"mediaURL\": \"\(local.mediaURL)\",\"latitude\": \(local.latitude), \"longitude\": \(local.longitude)}".data(using: String.Encoding.utf8)
+                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(newData?["latitude"]), \"longitude\": \(newData?["longitude"])}".data(using: String.Encoding.utf8)
             }
         }
         
         if method == Constants.Methods.Put {
             request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
             let local = UdacityClient.sharedInstance().localStudent[0]
-            request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(local.mapString)\", \"mediaURL\": \"\(local.mediaURL)\",\"latitude\": \(local.latitude), \"longitude\": \(local.longitude)}".data(using: String.Encoding.utf8)
+            request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(newData?["latitude"]), \"longitude\": \(newData?["longitude"])}".data(using: String.Encoding.utf8)
 
         }
         

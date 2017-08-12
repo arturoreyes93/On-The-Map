@@ -11,12 +11,15 @@ import UIKit
 import MapKit
 
 class PostLocationVC: UIViewController, MKMapViewDelegate  {
+    
+    var newData: [String:Any]?
 
     @IBOutlet weak var locationSubview: UIView!
     @IBOutlet weak var mapSubview: UIView!
     @IBOutlet weak var locationText: UITextField!
     @IBOutlet weak var websiteText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
  
 
     override func viewDidLoad() {
@@ -29,7 +32,8 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        activityIndicator.stopAnimating()
+        activityIndicator.hidesWhenStopped = true
         setFindView()
     }
     
@@ -43,13 +47,86 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
         mapSubview.isHidden = false
     }
     
-    @IBAction func findLocation(_ sender: Any) {
+    func postSimpleAlert(_ title: String) {
         
-        getLocationFromAddress(locationText.text!)
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(dismiss)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
+    @IBAction func cancelMain(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelMap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func findLocation(_ sender: Any) {
+        
+        if locationText.text!.isEmpty {
+            self.postSimpleAlert("Please enter a location")
+            return
+        } else {
+             getLocationFromAddress(locationText.text!)
+            
+        }
+        
+    }
+    
+    @IBAction func submit(_ sender: Any) {
+        
+        if (websiteText.text?.isEmpty)! {
+            self.postSimpleAlert("Please enter your website link")
+            return
+        } else {
+            performUIUpdatesOnMain {
+                self.activityIndicator.startAnimating()
+            }
+            self.newData?["URL"] = self.websiteText.text
+    
+            if UdacityClient.sharedInstance().localStudent[0].mapString.isEmpty {
+                UdacityClient.sharedInstance().postStudentLocation(newData) { (success, newData, errorString) in
+                    performUIUpdatesOnMain {
+                        if success {
+                            self.activityIndicator.stopAnimating()
+                            self.dismiss(animated: true, completion: nil)
+                        } else {
+                            self.activityIndicator.stopAnimating()
+                            self.postSimpleAlert(errorString!)
+                            return
+                        }
+                    }
+                }
+                
+            } else {
+                performUIUpdatesOnMain {
+                    self.activityIndicator.startAnimating()
+                }
+                UdacityClient.sharedInstance().putStudentLocation(newData) { (success, newData, errorString) in
+                    performUIUpdatesOnMain {
+                        if success {
+                            self.activityIndicator.stopAnimating()
+                            self.dismiss(animated: true, completion: nil)
+                        } else {
+                            self.activityIndicator.stopAnimating()
+                            self.postSimpleAlert(errorString!)
+                            return
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
     func getLocationFromAddress(_ location: String) {
+        
+        performUIUpdatesOnMain {
+            self.activityIndicator.startAnimating()
+        }
         
         let geoCoder = CLGeocoder()
         
@@ -60,12 +137,26 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
                 let span = MKCoordinateSpanMake(0.15, 0.15)
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self.mapView.setRegion(region, animated: true)
-                self.setMapView()
-            
+                
+                performUIUpdatesOnMain {
+                    self.activityIndicator.stopAnimating()
+                    self.setMapView()
+                }
+                
+                self.newData?["latitude"] = Double(coordinate.latitude)
+                self.newData?["longitude"] = Double(coordinate.longitude)
+                self.newData?["mapString"] = self.locationText.text!
+                
             } else {
-                print("error with finding address")
+                
+                performUIUpdatesOnMain {
+                    self.activityIndicator.stopAnimating()
+                }
+                
+                self.postSimpleAlert("Error in finding adress")
                 
             }
+            
         }
         
     }

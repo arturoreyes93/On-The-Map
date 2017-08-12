@@ -26,10 +26,13 @@ class LoginVC: UIViewController {
         configure(password)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("Console printing works")
+        username.text = ""
+        password.text = ""
         debugTextLabel.text = ""
+        setUIEnabled(true)
     }
     
     @IBAction func logInPressed(_ sender: AnyObject) {
@@ -43,14 +46,15 @@ class LoginVC: UIViewController {
             setUIEnabled(false)
             let studentLogin = ["username" : username.text!, "password" : password.text!]
             UdacityClient.sharedInstance().logInWithVC(studentLogin as [String : AnyObject]) { (success, errorString) in
-                if success {
-                    self.completeLogin()
-                    print("success")
-                } else {
-                    self.displayError(errorString)
+                performUIUpdatesOnMain {
+                    if success {
+                        self.completeLogin()
+                        print("success at loging in")
+                    } else {
+                        self.displayError(errorString)
+                    }
                 }
             }
-            
         }
     }
     
