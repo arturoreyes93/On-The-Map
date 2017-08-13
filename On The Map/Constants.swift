@@ -31,7 +31,7 @@ struct Constants {
         
         static let APIScheme = "https"
         static let APIHost = "parse.udacity.com"
-        static let APIPath = "/parse/classes/StudentLocation"
+        static let APIPath = "/parse/classes/StudentLocation/"
         static let objectID = ""  // WILL BE ADDED WITH A + TO THE FUNCTION PARAMETER "WITHPATHEXTENSION"
         
         struct ParameterKeys {

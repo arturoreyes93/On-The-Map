@@ -97,7 +97,6 @@
                         <outlet property="debugTextLabel" destination="HvE-Dc-eoc" id="wcg-BR-OuN"/>
                         <outlet property="loginButton" destination="FOe-U1-kr3" id="uLK-qv-VlN"/>
                         <outlet property="password" destination="iwr-2F-nIl" id="48Z-Qs-o8j"/>
-                        <outlet property="signUpButton" destination="bvf-BB-hrc" id="hPG-sm-wuy"/>
                         <outlet property="username" destination="y2I-Zx-lCC" id="yGn-pP-p7y"/>
                     </connections>
                 </viewController>
@@ -117,9 +116,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-Dw-Rc6">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S7-K4-uZJ" userLabel="Cancel">
                                 <rect key="frame" x="319" y="16" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
@@ -179,6 +175,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDq-Fr-Np2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-Dw-Rc6">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-Dp-r1F">
                                         <rect key="frame" x="0.0" y="168" width="375" height="499"/>
                                     </mapView>
@@ -244,9 +244,7 @@
                             <constraint firstItem="RDq-Fr-Np2" firstAttribute="bottom" secondItem="2d5-qY-hpT" secondAttribute="top" id="Bx2-k9-Jai"/>
                             <constraint firstItem="5jR-iL-8I0" firstAttribute="leading" secondItem="vO2-vE-pgh" secondAttribute="leadingMargin" constant="6" id="C6U-Yq-m1D"/>
                             <constraint firstItem="d7R-LU-hN6" firstAttribute="top" secondItem="5jR-iL-8I0" secondAttribute="bottom" constant="20" id="GYj-br-2kq"/>
-                            <constraint firstItem="FIm-Dw-Rc6" firstAttribute="centerY" secondItem="vO2-vE-pgh" secondAttribute="centerY" id="Pz8-TI-Kcp"/>
                             <constraint firstItem="RDq-Fr-Np2" firstAttribute="leading" secondItem="d7R-LU-hN6" secondAttribute="leading" id="VyW-Sc-sSL"/>
-                            <constraint firstItem="FIm-Dw-Rc6" firstAttribute="centerX" secondItem="vO2-vE-pgh" secondAttribute="centerX" id="WQl-bq-C86"/>
                             <constraint firstItem="d7R-LU-hN6" firstAttribute="leading" secondItem="vO2-vE-pgh" secondAttribute="leading" id="WaV-Hd-3Fi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5jR-iL-8I0" secondAttribute="trailing" constant="6" id="bCe-x9-Shy"/>
                             <constraint firstAttribute="trailing" secondItem="d7R-LU-hN6" secondAttribute="trailing" id="bpI-CZ-FAj"/>

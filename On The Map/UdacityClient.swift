@@ -31,13 +31,15 @@ class UdacityClient : NSObject {
                     if success {
                         UdacityClient.sharedInstance().userKey = userKey
                         print(user?["first_name"])
-                    } else {
-                        completionHandlerForLogin(success, errorString)
                     }
+                    completionHandlerForLogin(success, errorString)
                 }
             } else {
                 completionHandlerForLogin(success, errorString)
             }
+            
+        completionHandlerForLogin(success, errorString)
+            
         }
     }
     
@@ -103,7 +105,7 @@ class UdacityClient : NSObject {
         }
     }
     
-    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, newData: [String:Any]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, newData: [String:String]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, pathExtension: pathExtension))
         print(request)
@@ -135,15 +137,14 @@ class UdacityClient : NSObject {
                 
             } else if client == Constants.Parse.Client {
                 let local = UdacityClient.sharedInstance().localStudent[0]
-                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(newData?["latitude"]), \"longitude\": \(newData?["longitude"])}".data(using: String.Encoding.utf8)
+                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(Double((newData?["latitude"])!)), \"longitude\": \(Double((newData?["longitude"])!))}".data(using: String.Encoding.utf8)
             }
         }
         
         if method == Constants.Methods.Put {
             request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
             let local = UdacityClient.sharedInstance().localStudent[0]
-            request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(newData?["latitude"]), \"longitude\": \(newData?["longitude"])}".data(using: String.Encoding.utf8)
-
+            request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(Double((newData?["latitude"])!)), \"longitude\": \(Double((newData?["longitude"])!))}".data(using: String.Encoding.utf8)
         }
         
         if method == Constants.Methods.Delete {
@@ -185,20 +186,15 @@ class UdacityClient : NSObject {
                 sendError("No data was returned by the request!")
                 return
             }
-            
-            print("There is data")
         
             print(data)
             var newData = data
             
             if client == Constants.Udacity.Client {
-                print("converting to new data")
                 if let data = data {
                     let range = Range(5..<data.count)
                     newData = data.subdata(in: range) /* subset response data! */
-                    print("finished converting????")
                     print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
-                    print("indeed")
                 }
             }
             

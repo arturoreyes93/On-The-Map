@@ -54,7 +54,7 @@ extension UdacityClient {
         }
     }
     
-    func postStudentLocation(_ newData: [String:Any]?, _ completionHandlerForPost: @escaping (_ success: Bool, _ newData: [String:Any]?, _ errorString: String?) -> Void) {
+    func postStudentLocation(_ newData: [String:String]?, _ completionHandlerForPost: @escaping (_ success: Bool, _ newData: [String:String]?, _ errorString: String?) -> Void) {
         
         let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Post, newData: newData) { (result, error) in
         
@@ -72,7 +72,7 @@ extension UdacityClient {
         
     }
     
-    func putStudentLocation(_ newData: [String:Any]?, _ completionHandlerForPut: @escaping (_ success: Bool, _ newData: [String:Any]?, _ errorString: String?) -> Void) {
+    func putStudentLocation(_ newData: [String:String]?, _ completionHandlerForPut: @escaping (_ success: Bool, _ newData: [String:String]?, _ errorString: String?) -> Void) {
         
         let local = UdacityClient.sharedInstance().localStudent[0]
         

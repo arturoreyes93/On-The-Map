@@ -12,7 +12,8 @@ import MapKit
 
 class PostLocationVC: UIViewController, MKMapViewDelegate  {
     
-    var newData: [String:Any]?
+    var newData = [String:String]()
+    
 
     @IBOutlet weak var locationSubview: UIView!
     @IBOutlet weak var mapSubview: UIView!
@@ -85,10 +86,12 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
             performUIUpdatesOnMain {
                 self.activityIndicator.startAnimating()
             }
-            self.newData?["URL"] = self.websiteText.text
+            self.newData["URL"] = self.websiteText.text
+            
+            print(self.newData)
     
             if UdacityClient.sharedInstance().localStudent[0].mapString.isEmpty {
-                UdacityClient.sharedInstance().postStudentLocation(newData) { (success, newData, errorString) in
+                UdacityClient.sharedInstance().postStudentLocation(self.newData) { (success, newData, errorString) in
                     performUIUpdatesOnMain {
                         if success {
                             self.activityIndicator.stopAnimating()
@@ -105,7 +108,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
                 performUIUpdatesOnMain {
                     self.activityIndicator.startAnimating()
                 }
-                UdacityClient.sharedInstance().putStudentLocation(newData) { (success, newData, errorString) in
+                UdacityClient.sharedInstance().putStudentLocation(self.newData) { (success, newData, errorString) in
                     performUIUpdatesOnMain {
                         if success {
                             self.activityIndicator.stopAnimating()
@@ -143,9 +146,9 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
                     self.setMapView()
                 }
                 
-                self.newData?["latitude"] = Double(coordinate.latitude)
-                self.newData?["longitude"] = Double(coordinate.longitude)
-                self.newData?["mapString"] = self.locationText.text!
+                self.newData["latitude"] = String(coordinate.latitude)
+                self.newData["longitude"] = String(coordinate.longitude)
+                self.newData["mapString"] = self.locationText.text!
                 
             } else {
                 
@@ -154,14 +157,10 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
                 }
                 
                 self.postSimpleAlert("Error in finding adress")
-                
-            }
-            
-        }
         
+            }
+        }
     }
-    
-
 }
 
 extension PostLocationVC: UITextFieldDelegate {

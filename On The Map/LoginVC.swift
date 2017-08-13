@@ -11,12 +11,9 @@ import Foundation
 
 class LoginVC: UIViewController {
 
-    var udacity : [String:String]?
-
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signUpButton: SignUpButton!
     @IBOutlet weak var debugTextLabel: UILabel!
     
     override func viewDidLoad() {
@@ -28,7 +25,6 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Console printing works")
         username.text = ""
         password.text = ""
         debugTextLabel.text = ""
@@ -46,13 +42,11 @@ class LoginVC: UIViewController {
             setUIEnabled(false)
             let studentLogin = ["username" : username.text!, "password" : password.text!]
             UdacityClient.sharedInstance().logInWithVC(studentLogin as [String : AnyObject]) { (success, errorString) in
-                performUIUpdatesOnMain {
-                    if success {
-                        self.completeLogin()
-                        print("success at loging in")
-                    } else {
-                        self.displayError(errorString)
-                    }
+                if success {
+                    self.completeLogin()
+                    print("success at loging in")
+                } else {
+                    self.displayError(errorString)
                 }
             }
         }

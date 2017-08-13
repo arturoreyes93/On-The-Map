@@ -47,8 +47,9 @@ class MapVC: UIViewController, MKMapViewDelegate {
                         UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
                         print("populating map")
                         self.mapView.addAnnotations(self.populateMap())
+                    } else {
+                        self.postSimpleAlert(errorString!)
                     }
-                    self.postSimpleAlert(errorString!)
                 }
             } else {
                 self.postSimpleAlert(errorString!)
