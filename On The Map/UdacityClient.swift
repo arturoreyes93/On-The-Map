@@ -137,7 +137,7 @@ class UdacityClient : NSObject {
                 
             } else if client == Constants.Parse.Client {
                 let local = UdacityClient.sharedInstance().localStudent[0]
-                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(Double((newData?["latitude"])!)), \"longitude\": \(Double((newData?["longitude"])!))}".data(using: String.Encoding.utf8)
+                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(newData?["latitude"]), \"longitude\": \(newData?["longitude"])}".data(using: String.Encoding.utf8)
             }
         }
         
@@ -145,6 +145,7 @@ class UdacityClient : NSObject {
             request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
             let local = UdacityClient.sharedInstance().localStudent[0]
             request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(Double((newData?["latitude"])!)), \"longitude\": \(Double((newData?["longitude"])!))}".data(using: String.Encoding.utf8)
+            print(String(describing: request.httpBody))
         }
         
         if method == Constants.Methods.Delete {
@@ -171,10 +172,10 @@ class UdacityClient : NSObject {
                 sendError("There was an error with your request: \(error)")
                 return
             }
-            print("no request error")
             
             /* GUARD: Did we get a successful 2XX response? */
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                print(String(describing: (response as? HTTPURLResponse)?.statusCode))
                 sendError("Your request returned a status code other than 2xx!")
                 return
             }
@@ -233,7 +234,7 @@ class UdacityClient : NSObject {
             
             return components.url!
         }
-        
+        print(components.url!)
         return components.url!
     }
 

@@ -54,38 +54,39 @@ extension UdacityClient {
         }
     }
     
-    func postStudentLocation(_ newData: [String:String]?, _ completionHandlerForPost: @escaping (_ success: Bool, _ newData: [String:String]?, _ errorString: String?) -> Void) {
+    func postStudentLocation(_ newData: [String:String]?, _ completionHandlerForPost: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
         let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Post, newData: newData) { (result, error) in
         
             if let error = error {
                 print(error)
-                completionHandlerForPost(false, nil, "Unable to post location: \(error)")
+                completionHandlerForPost(false, "Unable to post location: \(error)")
             } else {
-                if let results = newData {
-                    completionHandlerForPost(true, results, nil)
+                if result != nil {
+                    completionHandlerForPost(true, nil)
                 } else {
-                    completionHandlerForPost(false, nil, "Unable to post location")
+                    completionHandlerForPost(false, "Unable to post location")
                 }
             }
         }
         
     }
     
-    func putStudentLocation(_ newData: [String:String]?, _ completionHandlerForPut: @escaping (_ success: Bool, _ newData: [String:String]?, _ errorString: String?) -> Void) {
+    func putStudentLocation(_ newData: [String:String]?, _ completionHandlerForPut: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
         let local = UdacityClient.sharedInstance().localStudent[0]
+        print("objetdID: \(local.objectId)")
         
         let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Put, pathExtension: local.objectId, newData: newData) { (result, error) in
             
             if let error = error {
                 print(error)
-                completionHandlerForPut(false, nil, "Unable to overwrite location: \(error)")
+                completionHandlerForPut(false, "Unable to overwrite location: \(error)")
             } else {
-                if let results = newData {
-                    completionHandlerForPut(true, results, nil)
+                if result != nil {
+                    completionHandlerForPut(true, nil)
                 } else {
-                    completionHandlerForPut(false, nil, "Unable to overwrite location")
+                    completionHandlerForPut(false, "Unable to overwrite location")
                 }
             }
         }

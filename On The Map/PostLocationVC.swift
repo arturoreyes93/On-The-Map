@@ -91,7 +91,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
             print(self.newData)
     
             if UdacityClient.sharedInstance().localStudent[0].mapString.isEmpty {
-                UdacityClient.sharedInstance().postStudentLocation(self.newData) { (success, newData, errorString) in
+                UdacityClient.sharedInstance().postStudentLocation(self.newData) { (success, errorString) in
                     performUIUpdatesOnMain {
                         if success {
                             self.activityIndicator.stopAnimating()
@@ -108,7 +108,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
                 performUIUpdatesOnMain {
                     self.activityIndicator.startAnimating()
                 }
-                UdacityClient.sharedInstance().putStudentLocation(self.newData) { (success, newData, errorString) in
+                UdacityClient.sharedInstance().putStudentLocation(self.newData) { (success, errorString) in
                     performUIUpdatesOnMain {
                         if success {
                             self.activityIndicator.stopAnimating()
