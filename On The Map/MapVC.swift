@@ -13,7 +13,7 @@ import MapKit
 class MapVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -27,9 +27,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
         navigationBar.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: UIImage(named: "icon_refresh"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(downloadData))
         navigationBar.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logout))
         
-        print("downloading data")
-        self.downloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        self.downloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -158,10 +161,11 @@ class MapVC: UIViewController, MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("tap function  running")
+
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
             if let toOpen = view.annotation?.subtitle! {
-                app.openURL(URL(string: toOpen)!)
+                app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
             }
         }
     }

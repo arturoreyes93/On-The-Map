@@ -316,6 +316,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-Hk-V3L">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Eah-4Y-nje" id="f1Y-R2-fjt"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -326,7 +329,7 @@
                             <constraint firstItem="f6b-Hk-V3L" firstAttribute="leading" secondItem="sxU-Ks-ta8" secondAttribute="leading" id="zUD-MT-ZiO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="mapview" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Bk2-yu-fYt" userLabel="mapview"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Bk2-yu-fYt" userLabel="mapview"/>
                     <connections>
                         <outlet property="mapView" destination="f6b-Hk-V3L" id="5id-Ey-53f"/>
                     </connections>
@@ -385,6 +388,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="Hui-GH-pge" id="NMF-Nf-Rde"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -395,7 +401,7 @@
                             <constraint firstAttribute="trailing" secondItem="itm-wh-ceU" secondAttribute="trailing" id="SyZ-U3-mvJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="listview" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="MF4-Se-HBN"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="MF4-Se-HBN"/>
                     <connections>
                         <outlet property="userTableView" destination="itm-wh-ceU" id="bJh-ry-r0e"/>
                     </connections>
