@@ -23,12 +23,6 @@ class MapVC: UIViewController, MKMapViewDelegate {
             return
         }
         
-        guard let tabBar = self.tabBarController?.tabBar else {
-            return
-        }
-        
-        tabBar.items?[0] = UITabBarItem(title: nil, image: UIImage(named: "icon_mapview-deselected"), selectedImage: UIImage(named: "icon_mapview-selected"))
-        tabBar.items?[1] = UITabBarItem(title: nil, image: UIImage(named: "icon_listview-deselected"), selectedImage: UIImage(named: "icon_listview-selected"))
         navigationBar.navigationItem.rightBarButtonItems?[1] = UIBarButtonItem(image: UIImage(named: "icon_addpin"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(addLocation))
         navigationBar.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: UIImage(named: "icon_refresh"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(downloadData))
         navigationBar.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logout))
