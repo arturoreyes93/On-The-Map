@@ -22,43 +22,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g2D-Gx-xe5">
-                                <rect key="frame" x="16" y="148" width="343" height="419"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g2D-Gx-xe5">
+                                <rect key="frame" x="16" y="174" width="343" height="419"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Udacity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na4-1P-4Rj">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                        <color key="textColor" red="0.95132090336675534" green="1" blue="0.96098110955144833" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.24684701988126512" green="0.66985551054227188" blue="0.88003648477157359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2I-Zx-lCC">
                                         <rect key="frame" x="0.0" y="56" width="343" height="46"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.79227203749999997" green="0.82130393400000001" blue="0.80500249140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="QZ8-mv-kSv"/>
                                         </constraints>
-                                        <color key="textColor" red="0.97425781109999998" green="1" blue="0.97637859810000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.79227203747276109" green="0.82130393401015223" blue="0.80500249143095282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iwr-2F-nIl">
                                         <rect key="frame" x="0.0" y="112" width="343" height="46"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.79227203749999997" green="0.82130393400000001" blue="0.80500249140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="Ine-Sf-ULq"/>
                                         </constraints>
-                                        <color key="textColor" red="0.95132090339999997" green="1" blue="0.96098110960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.79227203749999997" green="0.82130393400000001" blue="0.80500249140000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOe-U1-kr3">
                                         <rect key="frame" x="0.0" y="168" width="343" height="46"/>
-                                        <color key="backgroundColor" red="0.25521280099999999" green="0.26775413850000002" blue="0.66329204639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.24684701989999999" green="0.66985551050000003" blue="0.88003648479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.97425781114402643" green="1" blue="0.97637859809880645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LBf-UH-UUR"/>
                                         </connections>
@@ -67,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="224" width="343" height="46"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Don't have an account? Sign Up">
-                                            <color key="titleColor" red="0.95132090339999997" green="1" blue="0.96098110960000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.24684701989999999" green="0.66985551050000003" blue="0.88003648479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvE-Dc-eoc">
@@ -84,13 +89,21 @@
                                     <constraint firstItem="na4-1P-4Rj" firstAttribute="height" secondItem="y2I-Zx-lCC" secondAttribute="height" id="xEC-i0-4Mp"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="fMW-4k-Dgh">
+                                <rect key="frame" x="137" y="35" width="101" height="113"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20377187150000001" green="0.29511257909999999" blue="0.71143608199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g2D-Gx-xe5" secondAttribute="bottom" constant="100" id="9sn-hq-rEa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g2D-Gx-xe5" secondAttribute="bottom" constant="74" id="9sn-hq-rEa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g2D-Gx-xe5" secondAttribute="trailing" id="CQu-iG-rqW"/>
                             <constraint firstItem="g2D-Gx-xe5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DQJ-k1-xs9"/>
-                            <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="128" id="tf0-rG-C6b"/>
+                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uj8-6B-TXz"/>
+                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="VmU-dq-oHi"/>
+                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="121" id="gxq-69-t9o"/>
+                            <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="fMW-4k-Dgh" secondAttribute="bottom" constant="26" id="m5C-QW-qgK"/>
+                            <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="154" id="tf0-rG-C6b"/>
                         </constraints>
                     </view>
                     <connections>
@@ -312,7 +325,7 @@
                             <constraint firstItem="f6b-Hk-V3L" firstAttribute="leading" secondItem="sxU-Ks-ta8" secondAttribute="leading" id="zUD-MT-ZiO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Bk2-yu-fYt" userLabel="mapview"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" selectedImage="icon_mapview-selected" id="Bk2-yu-fYt" userLabel="mapview"/>
                     <connections>
                         <outlet property="mapView" destination="f6b-Hk-V3L" id="5id-Ey-53f"/>
                     </connections>
@@ -378,7 +391,7 @@
                             <constraint firstAttribute="trailing" secondItem="itm-wh-ceU" secondAttribute="trailing" id="SyZ-U3-mvJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="MF4-Se-HBN"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="icon_listview-selected" id="MF4-Se-HBN"/>
                     <connections>
                         <outlet property="userTableView" destination="itm-wh-ceU" id="bJh-ry-r0e"/>
                     </connections>
@@ -388,4 +401,9 @@
             <point key="canvasLocation" x="2528.8000000000002" y="534.78260869565224"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="logo-u" width="62" height="62"/>
+    </resources>
 </document>

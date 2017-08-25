@@ -137,15 +137,33 @@ class UdacityClient : NSObject {
                 
             } else if client == Constants.Parse.Client {
                 let local = UdacityClient.sharedInstance().localStudent[0]
-                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(newData?["latitude"]), \"longitude\": \(newData?["longitude"])}".data(using: String.Encoding.utf8)
+                if let data = newData as [String:String]! {
+                    let newMap = data["mapString"]
+                    let newURL = data["URL"]
+                    let newLat = data["latitude"]
+                    let newLong = data["longitude"]
+                    request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newMap!)\", \"mediaURL\": \"\(newURL!)\",\"latitude\": \(newLat!), \"longitude\": \(newLong!)}".data(using: String.Encoding.utf8)
+                    print("{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newMap!)\", \"mediaURL\": \"\(newURL!)\",\"latitude\": \(newLat!), \"longitude\": \(newLong!)}")
+                } else {
+                    print("error unwrapping newData")
+                }
             }
         }
         
         if method == Constants.Methods.Put {
             request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
             let local = UdacityClient.sharedInstance().localStudent[0]
-            request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newData?["mapString"])\", \"mediaURL\": \"\(newData?["URL"])\",\"latitude\": \(Double((newData?["latitude"])!)), \"longitude\": \(Double((newData?["longitude"])!))}".data(using: String.Encoding.utf8)
-            print(String(describing: request.httpBody))
+            if let data = newData as [String:String]! {
+                let newMap = data["mapString"]
+                let newURL = data["URL"]
+                let newLat = data["latitude"]
+                let newLong = data["longitude"]
+                request.httpBody = "{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newMap!)\", \"mediaURL\": \"\(newURL!)\",\"latitude\": \(newLat!), \"longitude\": \(newLong!)}".data(using: String.Encoding.utf8)
+                print("{\"uniqueKey\": \"\(local.uniqueKey)\", \"firstName\": \"\(local.firstName)\", \"lastName\": \"\(local.lastName)\",\"mapString\": \"\(newMap!)\", \"mediaURL\": \"\(newURL!)\",\"latitude\": \(newLat!), \"longitude\": \(newLong!)}")
+            } else {
+                print("error unwrapping newData")
+            }
+           
         }
         
         if method == Constants.Methods.Delete {
