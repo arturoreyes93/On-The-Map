@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -145,7 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-Xq-Hbd">
-                                <rect key="frame" x="63" y="558" width="249" height="38"/>
+                                <rect key="frame" x="75" y="559" width="225" height="37.5"/>
                                 <color key="backgroundColor" red="0.98285570792168564" green="0.99716999650332727" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -168,10 +169,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7R-LU-hN6">
-                                <rect key="frame" x="0.0" y="222" width="375" height="252"/>
+                                <rect key="frame" x="0.0" y="222" width="375" height="253"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Location Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZN7-Y8-kf2">
-                                        <rect key="frame" x="0.0" y="111" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="111.5" width="375" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -261,14 +262,14 @@
                             <constraint firstItem="d7R-LU-hN6" firstAttribute="leading" secondItem="vO2-vE-pgh" secondAttribute="leading" id="WaV-Hd-3Fi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5jR-iL-8I0" secondAttribute="trailing" constant="6" id="bCe-x9-Shy"/>
                             <constraint firstAttribute="trailing" secondItem="d7R-LU-hN6" secondAttribute="trailing" id="bpI-CZ-FAj"/>
-                            <constraint firstItem="Wej-Xq-Hbd" firstAttribute="leading" secondItem="vO2-vE-pgh" secondAttribute="leadingMargin" constant="47" id="dRo-1z-Dsg"/>
                             <constraint firstItem="Wej-Xq-Hbd" firstAttribute="centerY" secondItem="vO2-vE-pgh" secondAttribute="centerY" constant="243.5" id="emV-VI-kiD"/>
                             <constraint firstItem="Wej-Xq-Hbd" firstAttribute="top" secondItem="d7R-LU-hN6" secondAttribute="bottom" constant="84" id="h1y-4y-UJg"/>
                             <constraint firstItem="5jR-iL-8I0" firstAttribute="top" secondItem="uvc-bv-Rra" secondAttribute="bottom" constant="34" id="isf-1I-qZI"/>
                             <constraint firstItem="2d5-qY-hpT" firstAttribute="top" secondItem="5jR-iL-8I0" secondAttribute="bottom" constant="465" id="pvF-Zx-V59"/>
                             <constraint firstItem="RDq-Fr-Np2" firstAttribute="top" secondItem="vO2-vE-pgh" secondAttribute="top" id="r1O-EN-7we"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wej-Xq-Hbd" secondAttribute="trailing" constant="47" id="sEN-o7-fzF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wej-Xq-Hbd" secondAttribute="trailing" constant="59" id="sSH-Rk-g0J"/>
                             <constraint firstItem="0S7-K4-uZJ" firstAttribute="top" secondItem="RDq-Fr-Np2" secondAttribute="top" constant="16" id="tmK-OQ-cK5"/>
+                            <constraint firstItem="Wej-Xq-Hbd" firstAttribute="leading" secondItem="vO2-vE-pgh" secondAttribute="leadingMargin" constant="59" id="vVm-fH-3kQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="ljI-Tg-6Kh"/>
@@ -325,7 +326,7 @@
                             <constraint firstItem="f6b-Hk-V3L" firstAttribute="leading" secondItem="sxU-Ks-ta8" secondAttribute="leading" id="zUD-MT-ZiO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" selectedImage="icon_mapview-selected" id="Bk2-yu-fYt" userLabel="mapview"/>
+                    <tabBarItem key="tabBarItem" title="mapview" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Bk2-yu-fYt" userLabel="mapview"/>
                     <connections>
                         <outlet property="mapView" destination="f6b-Hk-V3L" id="5id-Ey-53f"/>
                     </connections>
@@ -339,8 +340,11 @@
             <objects>
                 <tabBarController id="Iqe-oW-k17" userLabel="On the Map Tab" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="On the Map" id="AGQ-OS-gok">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="RuO-Mw-1iv"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="reply" id="VGl-ZW-hgd"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="RuO-Mw-1iv"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="icon_refresh" style="plain" id="VGl-ZW-hgd"/>
+                            <barButtonItem image="icon_pin" id="8Nd-vG-GUV"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="g7c-5m-wdb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -391,7 +395,7 @@
                             <constraint firstAttribute="trailing" secondItem="itm-wh-ceU" secondAttribute="trailing" id="SyZ-U3-mvJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="icon_listview-selected" id="MF4-Se-HBN"/>
+                    <tabBarItem key="tabBarItem" title="listview" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="MF4-Se-HBN"/>
                     <connections>
                         <outlet property="userTableView" destination="itm-wh-ceU" id="bJh-ry-r0e"/>
                     </connections>
@@ -402,8 +406,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
 </document>

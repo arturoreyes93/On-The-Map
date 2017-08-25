@@ -19,15 +19,22 @@ class MapVC: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        guard let tabBar = self.parent else {
+        guard let navigationBar = self.parent else {
             return
         }
         
-        tabBar.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addLocation))
-        tabBar.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(self.logout))
+        guard let tabBar = self.tabBarController?.tabBar else {
+            return
+        }
+        
+        tabBar.items?[0] = UITabBarItem(title: nil, image: UIImage(named: "icon_mapview-deselected"), selectedImage: UIImage(named: "icon_mapview-selected"))
+        tabBar.items?[1] = UITabBarItem(title: nil, image: UIImage(named: "icon_listview-deselected"), selectedImage: UIImage(named: "icon_listview-selected"))
+        navigationBar.navigationItem.rightBarButtonItems?[1] = UIBarButtonItem(image: UIImage(named: "icon_addpin"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(addLocation))
+        navigationBar.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: UIImage(named: "icon_refresh"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(downloadData))
+        navigationBar.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logout))
         
         print("downloading data")
-        self.downloadData(UdacityClient.sharedInstance().userKey!)
+        self.downloadData()
         
     }
 
@@ -36,7 +43,8 @@ class MapVC: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func downloadData(_ userKey: String) {
+    func downloadData() {
+        let userKey = UdacityClient.sharedInstance().userKey!
         UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
             if success {
                 UdacityClient.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
