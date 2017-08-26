@@ -27,9 +27,9 @@ class UdacityClient : NSObject {
         self.postSessionID(userLogin) { (success, userKey, errorString) in
             if success {
                 print(userKey)
+                UdacityClient.sharedInstance().userKey = userKey
                 self.getUserData(userKey!) { (success, user, errorString) in
                     if success {
-                        UdacityClient.sharedInstance().userKey = userKey
                         print(user?["first_name"])
                     }
                     completionHandlerForLogin(success, errorString)
