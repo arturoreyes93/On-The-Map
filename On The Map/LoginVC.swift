@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import FBSDKLoginKit
 
 class LoginVC: UIViewController {
 
@@ -21,6 +22,7 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         configure(username)
         configure(password)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
