@@ -13,7 +13,7 @@ extension UdacityClient {
     func getStudentLocations(_ completionHandlerForLocations: @escaping (_ success: Bool, _ studentArray: NSArray?, _ errorString: String?) -> Void) {
         
         var studentParameters = [Constants.Parse.ParameterKeys.limit: "100"]
-        studentParameters[Constants.Parse.ParameterKeys.skip] = "50"
+        studentParameters[Constants.Parse.ParameterKeys.skip] = "100"
         studentParameters[Constants.Parse.ParameterKeys.order] = "-\(Constants.Student.updatedAt)"
         
         let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
@@ -101,7 +101,6 @@ extension UdacityClient {
                 print(UdacityClient.sharedInstance().localStudent[0])
                 UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
                     if success {
-                        print("converting dict to student array")
                         UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
                         let studentData = (UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent)
                         completionHandlerForDownload(studentData, nil)
@@ -122,7 +121,6 @@ extension UdacityClient {
         var studentsArray = [Student]()
         
         for student in studentArray {
-            print(student)
             studentsArray.append(Student(studentDict: student as! [String : AnyObject]))
         }
         

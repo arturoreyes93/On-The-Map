@@ -113,6 +113,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     @objc private func loadMap() {
+        if mapView.annotations.count > 0 {
+            mapView.removeAnnotations(mapView.annotations)
+        }
+        
         UdacityClient.sharedInstance().downloadData() { (results, errorString) in
             if let studentData = results {
                 self.students = studentData

@@ -75,6 +75,9 @@
                                         <state key="normal" title="Don't have an account? Sign Up">
                                             <color key="titleColor" red="0.24684701989999999" green="0.66985551050000003" blue="0.88003648479999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pZN-cI-PZV"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvE-Dc-eoc">
                                         <rect key="frame" x="0.0" y="280" width="343" height="139"/>
@@ -91,7 +94,7 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="fMW-4k-Dgh">
-                                <rect key="frame" x="137" y="35" width="101" height="113"/>
+                                <rect key="frame" x="146" y="35" width="82" height="113"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
@@ -102,7 +105,7 @@
                             <constraint firstItem="g2D-Gx-xe5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DQJ-k1-xs9"/>
                             <constraint firstItem="fMW-4k-Dgh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uj8-6B-TXz"/>
                             <constraint firstItem="fMW-4k-Dgh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="VmU-dq-oHi"/>
-                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="121" id="gxq-69-t9o"/>
+                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="130" id="gxq-69-t9o"/>
                             <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="fMW-4k-Dgh" secondAttribute="bottom" constant="26" id="m5C-QW-qgK"/>
                             <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="154" id="tf0-rG-C6b"/>
                         </constraints>

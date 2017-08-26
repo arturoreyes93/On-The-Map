@@ -205,8 +205,7 @@ class UdacityClient : NSObject {
                 sendError("No data was returned by the request!")
                 return
             }
-        
-            print(data)
+
             var newData = data
             
             if client == Constants.Udacity.Client {
@@ -216,9 +215,7 @@ class UdacityClient : NSObject {
                     print(NSString(data: newData!, encoding: String.Encoding.utf8.rawValue)!)
                 }
             }
-            
-            print(newData!)
-            
+
             self.convertDataWithCompletionHandler(newData!, completionHandlerForConvertData: completionHandlerForGET)
         }
         

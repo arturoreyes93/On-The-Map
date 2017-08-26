@@ -31,6 +31,17 @@ class LoginVC: UIViewController {
         setUIEnabled(true)
     }
     
+    @IBAction func signUp(_ sender: Any) {
+        let app = UIApplication.shared
+        let toOpen = "https://www.udacity.com/account/auth#!/signup"
+        if app.canOpenURL(URL(string: toOpen)!) {
+            app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
+        } else {
+            debugTextLabel.text = "Sign up website currently unavailable. Please try again later"
+            debugTextLabel.isEnabled = true
+        }
+    }
+    
     @IBAction func logInPressed(_ sender: AnyObject) {
         
         print("Login Button works")
@@ -42,11 +53,13 @@ class LoginVC: UIViewController {
             setUIEnabled(false)
             let studentLogin = ["username" : username.text!, "password" : password.text!]
             UdacityClient.sharedInstance().logInWithVC(studentLogin as [String : AnyObject]) { (success, errorString) in
-                if success {
-                    self.completeLogin()
-                    print("success at loging in")
-                } else {
-                    self.displayError(errorString)
+                performUIUpdatesOnMain {
+                    if success {
+                        self.completeLogin()
+                        print("success at loging in")
+                    } else {
+                        self.displayError(errorString)
+                    }
                 }
             }
         }
