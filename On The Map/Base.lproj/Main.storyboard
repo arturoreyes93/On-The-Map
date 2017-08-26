@@ -389,6 +389,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="Hui-GH-pge" id="iQb-Pp-7rs"/>
                                     <outlet property="delegate" destination="Hui-GH-pge" id="NMF-Nf-Rde"/>
                                 </connections>
                             </tableView>

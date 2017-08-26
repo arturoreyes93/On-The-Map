@@ -12,7 +12,7 @@ import UIKit
 
 class ListVC: UIViewController {
     
-    var students : [Student]?
+    var students : [Student] = [Student]()
 
     @IBOutlet weak var userTableView: UITableView!
 
@@ -25,12 +25,17 @@ class ListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.downloadData(UdacityClient.sharedInstance().userKey!)
-        performUIUpdatesOnMain {
-            self.userTableView.reloadData()
-            print("success at loading students")
+        UdacityClient.sharedInstance().downloadData() { (results, errorString) in
+            if let studentData = results {
+                self.students = studentData
+                performUIUpdatesOnMain {
+                    self.userTableView.reloadData()
+                    print("success at loading students")
+                }
+            } else {
+                self.postSimpleAlert(errorString!)
+            }
         }
-        
     }
     
     func postSimpleAlert(_ title: String) {
@@ -42,47 +47,43 @@ class ListVC: UIViewController {
         
     }
     
-    func downloadData(_ userKey: String) {
-        UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
-            if success {
-                UdacityClient.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
-                print(UdacityClient.sharedInstance().localStudent[0])
-                UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
-                    if success {
-                        print("converting dict to student array")
-                        UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
-                        self.students = UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent
-                    } else {
-                        self.postSimpleAlert(errorString!)
-                    }
-                }
-            } else {
-                self.postSimpleAlert(errorString!)
-            }
-        }
-    }
 }
 
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(students?.count)
-        return (students!.count)
+        print(students.count)
+        return (students.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as UITableViewCell!
-        let student = self.students?[(indexPath as NSIndexPath).row]
-        cell?.textLabel?.text = "\(student?.firstName) \(student?.lastName)"
-        cell?.detailTextLabel?.text = student?.mediaURL
+        let student = self.students[(indexPath as NSIndexPath).row]
+        cell?.textLabel?.text = "\(student.firstName) \(student.lastName)"
+        cell?.detailTextLabel?.text = student.mediaURL
+        cell?.imageView?.image = UIImage(named: "icon_pin")
         print("Success at returning Table View Cell")
         return cell!
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let student = self.students[(indexPath as NSIndexPath).row]
+        let app = UIApplication.shared
+        if let toOpen = URL(string: student.mediaURL) {
+            if app.canOpenURL(toOpen) {
+                app.open(toOpen, options: [:], completionHandler: nil)
+                
+            } else {
+                postSimpleAlert("Cannot open this URL: \(student.mediaURL)")
+            }
+        }
+    }
+
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (self.view.frame.height)/6
+        return (self.view.frame.height)/10
     }
     
 

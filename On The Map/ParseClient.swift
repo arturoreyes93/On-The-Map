@@ -92,6 +92,30 @@ extension UdacityClient {
         }
         
     }
+    
+    func downloadData(_ completionHandlerForDownload: @escaping (_ results: [Student]?, _ errorString: String?) -> Void) {
+        let userKey = UdacityClient.sharedInstance().userKey!
+        UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
+            if success {
+                UdacityClient.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
+                print(UdacityClient.sharedInstance().localStudent[0])
+                UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
+                    if success {
+                        print("converting dict to student array")
+                        UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
+                        let studentData = (UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent)
+                        completionHandlerForDownload(studentData, nil)
+                    } else {
+                        completionHandlerForDownload(nil, errorString)
+                    }
+                }
+            } else {
+                completionHandlerForDownload(nil, errorString)
+            }
+        }
+    }
+    
+    
 
     func fromDictToStudentObject(studentArray: NSArray) -> [Student] {
         

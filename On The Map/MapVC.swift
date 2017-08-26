@@ -13,6 +13,8 @@ import MapKit
 class MapVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    var students : [Student] = [Student]()
 
     override func viewDidLoad() {
         
@@ -24,15 +26,14 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
         
         navigationBar.navigationItem.rightBarButtonItems?[1] = UIBarButtonItem(image: UIImage(named: "icon_addpin"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(addLocation))
-        navigationBar.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: UIImage(named: "icon_refresh"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(downloadData))
+        navigationBar.navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: UIImage(named: "icon_refresh"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(loadMap))
         navigationBar.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logout))
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.downloadData()
+        loadMap()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,27 +41,6 @@ class MapVC: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func downloadData() {
-        let userKey = UdacityClient.sharedInstance().userKey!
-        UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
-            if success {
-                UdacityClient.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
-                print(UdacityClient.sharedInstance().localStudent[0])
-                UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
-                    if success {
-                        print("converting dict to student array")
-                        UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
-                        print("populating map")
-                        self.mapView.addAnnotations(self.populateMap())
-                    } else {
-                        self.postSimpleAlert(errorString!)
-                    }
-                }
-            } else {
-                self.postSimpleAlert(errorString!)
-            }
-        }
-    }
     
     func goToPostController() {
         let controller = storyboard!.instantiateViewController(withIdentifier: "PostLocationVC") as! PostLocationVC
@@ -109,7 +89,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
     private func populateMap() -> [MKPointAnnotation] {
         
         var annotations = [MKPointAnnotation]()
-        let studentArray = UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent
+        let studentArray = self.students
         
         for student in studentArray {
             
@@ -130,6 +110,17 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
 
         return annotations
+    }
+    
+    @objc private func loadMap() {
+        UdacityClient.sharedInstance().downloadData() { (results, errorString) in
+            if let studentData = results {
+                self.students = studentData
+                self.mapView.addAnnotations(self.populateMap())
+            } else {
+                self.postSimpleAlert(errorString!)
+            }
+        }
     }
     
     // MARK: - MKMapViewDelegate
@@ -165,7 +156,12 @@ class MapVC: UIViewController, MKMapViewDelegate {
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
             if let toOpen = view.annotation?.subtitle! {
-                app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
+                if app.canOpenURL(URL(string: toOpen)!) {
+                    app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
+                    
+                } else {
+                    postSimpleAlert("Cannot open this URL")
+                }
             }
         }
     }
