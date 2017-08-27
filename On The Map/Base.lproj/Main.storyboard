@@ -23,6 +23,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TOK-PC-Gk7">
+                                <rect key="frame" x="149" y="60" width="77" height="93"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="fMW-4k-Dgh">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="93"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g2D-Gx-xe5">
                                 <rect key="frame" x="16" y="174" width="343" height="419"/>
                                 <subviews>
@@ -93,25 +102,39 @@
                                     <constraint firstItem="na4-1P-4Rj" firstAttribute="height" secondItem="y2I-Zx-lCC" secondAttribute="height" id="xEC-i0-4Mp"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="fMW-4k-Dgh">
-                                <rect key="frame" x="146" y="35" width="82" height="113"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6vG-WV-1II">
+                                <rect key="frame" x="16" y="622" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-HS-q0b">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Facebook Login"/>
+                                        <connections>
+                                            <action selector="facebookLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MgL-gE-PiM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="TOK-PC-Gk7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="133" id="77R-LV-PUW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g2D-Gx-xe5" secondAttribute="bottom" constant="74" id="9sn-hq-rEa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g2D-Gx-xe5" secondAttribute="trailing" id="CQu-iG-rqW"/>
                             <constraint firstItem="g2D-Gx-xe5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DQJ-k1-xs9"/>
-                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uj8-6B-TXz"/>
-                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="VmU-dq-oHi"/>
-                            <constraint firstItem="fMW-4k-Dgh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="130" id="gxq-69-t9o"/>
-                            <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="fMW-4k-Dgh" secondAttribute="bottom" constant="26" id="m5C-QW-qgK"/>
+                            <constraint firstItem="TOK-PC-Gk7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IY6-FF-T37"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6vG-WV-1II" secondAttribute="trailing" id="Ll1-Dw-0BK"/>
+                            <constraint firstItem="6vG-WV-1II" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Rtl-Zb-vnP"/>
+                            <constraint firstItem="6vG-WV-1II" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SZN-9c-yOa"/>
+                            <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="TOK-PC-Gk7" secondAttribute="bottom" constant="21" id="Ten-kF-Hen"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KH0-HS-q0b" secondAttribute="bottom" constant="15" id="Ztf-9G-xEV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TOK-PC-Gk7" secondAttribute="trailing" constant="133" id="bCc-QF-wWy"/>
                             <constraint firstItem="g2D-Gx-xe5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="154" id="tf0-rG-C6b"/>
+                            <constraint firstItem="TOK-PC-Gk7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="ufw-Xo-DLw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="debugTextLabel" destination="HvE-Dc-eoc" id="wcg-BR-OuN"/>
+                        <outlet property="facebookLogin" destination="KH0-HS-q0b" id="rri-rY-KR7"/>
                         <outlet property="loginButton" destination="FOe-U1-kr3" id="uLK-qv-VlN"/>
                         <outlet property="password" destination="iwr-2F-nIl" id="48Z-Qs-o8j"/>
                         <outlet property="username" destination="y2I-Zx-lCC" id="yGn-pP-p7y"/>

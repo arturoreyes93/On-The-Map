@@ -16,12 +16,15 @@ class LoginVC: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var debugTextLabel: UILabel!
+    @IBOutlet weak var facebookLogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configure(username)
         configure(password)
+        
+        let loginButton = self.facebookLogin(readPermissions: [ .PublicProfile ])
         
     }
     
@@ -67,6 +70,9 @@ class LoginVC: UIViewController {
         }
     }
     
+    @IBAction func facebookLoginPressed(_ sender: Any) {
+        
+    }
     
     private func completeLogin() {
         debugTextLabel.text = ""
