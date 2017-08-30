@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var debugTextLabel: UILabel!
-    @IBOutlet weak var facebookLogin: UIButton!
+    @IBOutlet weak var facebookLogin: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class LoginVC: UIViewController {
         configure(username)
         configure(password)
         
-        let loginButton = self.facebookLogin(readPermissions: [ .PublicProfile ])
+        facebookLogin(
         
     }
     
