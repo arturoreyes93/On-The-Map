@@ -66,6 +66,7 @@
 		DD9AA2FD1F5240CD00D92F2C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Facebook/FacebookSDKs-iOS-4.26.0/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		DD9AA2FF1F5240D700D92F2C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Facebook/FacebookSDKs-iOS-4.26.0/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		DDCFD1621F57723800514E13 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../Facebook/FacebookSDKs-iOS-4.26.0/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		DDCFD1641F5778FA00514E13 /* On The Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "On The Map.entitlements"; sourceTree = "<group>"; };
 		DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		DDE0576F1EFDB62300298A74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DDE057711EFDBDEF00298A74 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		DD87D0BA1EFB42D600A57F5C /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
+				DDCFD1641F5778FA00514E13 /* On The Map.entitlements */,
 				DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */,
 				DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */,
 				DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */,
@@ -239,6 +241,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = L49JS5X5VY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					DD87D0CB1EFB42D600A57F5C = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -469,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "On The Map/On The Map.entitlements";
 				DEVELOPMENT_TEAM = L49JS5X5VY;
 				FRAMEWORK_SEARCH_PATHS = "/Users/arturoreyes/Documents/Udacity/iOS/Facebook/FacebookSDKs-iOS-4.26.0";
 				INFOPLIST_FILE = "On The Map/Info.plist";
@@ -483,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "On The Map/On The Map.entitlements";
 				DEVELOPMENT_TEAM = L49JS5X5VY;
 				FRAMEWORK_SEARCH_PATHS = "/Users/arturoreyes/Documents/Udacity/iOS/Facebook/FacebookSDKs-iOS-4.26.0";
 				INFOPLIST_FILE = "On The Map/Info.plist";
