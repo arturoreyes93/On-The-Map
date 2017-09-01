@@ -12,11 +12,7 @@ import FBSDKLoginKit
 class UdacityClient : NSObject {
     
     var session = URLSession.shared
-    
-    var students: [Student]!
-    
-    var localStudent: [Student]!
-    
+
     var userKey: String?
     
     var accessToken: FBSDKAccessToken?
@@ -183,7 +179,7 @@ class UdacityClient : NSObject {
                 }
                 
             } else if client == Constants.Parse.Client {
-                let local = UdacityClient.sharedInstance().localStudent[0]
+                let local = StudentData.sharedInstance().localStudent[0]
                 if let data = newData as [String:String]! {
                     let newMap = data["mapString"]
                     let newURL = data["URL"]
@@ -199,7 +195,7 @@ class UdacityClient : NSObject {
         
         if method == Constants.Methods.Put {
             request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
-            let local = UdacityClient.sharedInstance().localStudent[0]
+            let local = StudentData.sharedInstance().localStudent[0]
             if let data = newData as [String:String]! {
                 let newMap = data["mapString"]
                 let newURL = data["URL"]

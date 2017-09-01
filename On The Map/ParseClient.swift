@@ -74,7 +74,7 @@ extension UdacityClient {
     
     func putStudentLocation(_ newData: [String:String]?, _ completionHandlerForPut: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
-        let local = UdacityClient.sharedInstance().localStudent[0]
+        let local = StudentData.sharedInstance().localStudent[0]
         print("objetdID: \(local.objectId)")
         
         let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Put, pathExtension: local.objectId, newData: newData) { (result, error) in
@@ -97,12 +97,12 @@ extension UdacityClient {
         let userKey = UdacityClient.sharedInstance().userKey!
         UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
             if success {
-                UdacityClient.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
-                print(UdacityClient.sharedInstance().localStudent[0])
+                StudentData.sharedInstance().localStudent = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: localStudentArray!)
                 UdacityClient.sharedInstance().getStudentLocations() { (success, studentArray, errorString) in
                     if success {
-                        UdacityClient.sharedInstance().students = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
-                        let studentData = (UdacityClient.sharedInstance().students + UdacityClient.sharedInstance().localStudent)
+                        StudentData.sharedInstance().otherStudents = UdacityClient.sharedInstance().fromDictToStudentObject(studentArray: studentArray!)
+                        let studentData = (StudentData.sharedInstance().otherStudents + StudentData.sharedInstance().localStudent)
+                        StudentData.sharedInstance().students = studentData
                         completionHandlerForDownload(studentData, nil)
                     } else {
                         completionHandlerForDownload(nil, errorString)

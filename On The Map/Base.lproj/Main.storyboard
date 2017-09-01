@@ -23,6 +23,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-80-Mxk">
+                                <rect key="frame" x="150" y="230" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-3W-vmI">
                                 <rect key="frame" x="15" y="20" width="290" height="450"/>
                                 <subviews>
@@ -140,6 +143,8 @@
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7BN-3W-vmI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="4bo-lp-0PQ"/>
+                            <constraint firstItem="VZb-80-Mxk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOl-W8-SDT"/>
+                            <constraint firstItem="VZb-80-Mxk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ICe-cB-BqP"/>
                             <constraint firstAttribute="trailing" secondItem="7BN-3W-vmI" secondAttribute="trailing" constant="15" id="OB6-QK-0nv"/>
                             <constraint firstItem="7BN-3W-vmI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bk1-AO-Zhe"/>
                             <constraint firstItem="7BN-3W-vmI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pZJ-Q2-X0R"/>
@@ -147,8 +152,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="VZb-80-Mxk" id="NMt-Iz-FSN"/>
                         <outlet property="loginButton" destination="FOe-U1-kr3" id="uLK-qv-VlN"/>
                         <outlet property="password" destination="iwr-2F-nIl" id="48Z-Qs-o8j"/>
+                        <outlet property="signUpButton" destination="bvf-BB-hrc" id="2ZA-XV-xF7"/>
                         <outlet property="username" destination="y2I-Zx-lCC" id="yGn-pP-p7y"/>
                     </connections>
                 </viewController>
@@ -227,10 +234,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDq-Fr-Np2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-Dw-Rc6">
-                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZZn-Dp-r1F">
                                         <rect key="frame" x="0.0" y="168" width="320" height="312"/>
                                     </mapView>
@@ -287,11 +290,16 @@
                                     <constraint firstAttribute="bottom" secondItem="EOj-P4-tid" secondAttribute="bottom" constant="50" id="wjT-td-YOj"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-Dw-Rc6">
+                                <rect key="frame" x="150" y="230" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FIm-Dw-Rc6" firstAttribute="centerY" secondItem="vO2-vE-pgh" secondAttribute="centerY" id="25R-ek-Vwl"/>
                             <constraint firstItem="0S7-K4-uZJ" firstAttribute="trailing" secondItem="RDq-Fr-Np2" secondAttribute="trailing" constant="-8" id="2Q3-tU-284"/>
                             <constraint firstItem="Wej-Xq-Hbd" firstAttribute="centerX" secondItem="5jR-iL-8I0" secondAttribute="centerX" id="2d2-8M-MgP"/>
+                            <constraint firstItem="FIm-Dw-Rc6" firstAttribute="centerX" secondItem="vO2-vE-pgh" secondAttribute="centerX" id="70r-Om-Vmx"/>
                             <constraint firstItem="RDq-Fr-Np2" firstAttribute="trailing" secondItem="d7R-LU-hN6" secondAttribute="trailing" id="BKj-kT-Dww"/>
                             <constraint firstItem="RDq-Fr-Np2" firstAttribute="bottom" secondItem="2d5-qY-hpT" secondAttribute="top" id="Bx2-k9-Jai"/>
                             <constraint firstItem="5jR-iL-8I0" firstAttribute="leading" secondItem="vO2-vE-pgh" secondAttribute="leadingMargin" constant="6" id="C6U-Yq-m1D"/>
@@ -421,7 +429,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HMA-Ga-lw5" id="cMS-n5-zoD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

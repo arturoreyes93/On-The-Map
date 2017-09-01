@@ -13,8 +13,6 @@ import MapKit
 class MapVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    
-    var students : [Student] = [Student]()
 
     override func viewDidLoad() {
         
@@ -57,7 +55,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     func addLocation() {
-        if !(UdacityClient.sharedInstance().localStudent[0].mapString.isEmpty) {
+        if !(StudentData.sharedInstance().localStudent[0].mapString.isEmpty) {
             let alertString = "You Have Already Posted a Student Location. Would You Like To Overwrite Your Location?"
             let alert = UIAlertController(title: nil, message: alertString, preferredStyle: UIAlertControllerStyle.alert)
             let overwrite = UIAlertAction(title: "Overwrite", style: UIAlertActionStyle.default) { action in self.goToPostController() }
@@ -89,28 +87,28 @@ class MapVC: UIViewController, MKMapViewDelegate {
     private func populateMap() -> [MKPointAnnotation] {
         
         var annotations = [MKPointAnnotation]()
-        let studentArray = self.students
-        
-        for student in studentArray {
-            
-            let lat = CLLocationDegrees(student.latitude )
-            let long = CLLocationDegrees(student.longitude )
-            let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            
-            let first = student.firstName
-            let last = student.lastName
-            let mediaURL = student.mediaURL
-            
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = "\(first) \(last)"
-            annotation.subtitle = mediaURL
-            
-            annotations.append(annotation)
+        if let studentArray = StudentData.sharedInstance().students {
+            for student in studentArray {
+                
+                let lat = CLLocationDegrees(student.latitude )
+                let long = CLLocationDegrees(student.longitude )
+                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                
+                let first = student.firstName
+                let last = student.lastName
+                let mediaURL = student.mediaURL
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                annotation.title = "\(first) \(last)"
+                annotation.subtitle = mediaURL
+                
+                annotations.append(annotation)
+            }
         }
-
         return annotations
     }
+    
     
     @objc private func loadMap() {
         if mapView.annotations.count > 0 {
@@ -119,7 +117,6 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
         UdacityClient.sharedInstance().downloadData() { (results, errorString) in
             if let studentData = results {
-                self.students = studentData
                 self.mapView.addAnnotations(self.populateMap())
             } else {
                 self.postSimpleAlert(errorString!)

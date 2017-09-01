@@ -15,6 +15,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class LoginVC: UIViewController {
         configure(username)
         configure(password)
         
+        self.activityIndicator.hidesWhenStopped = true
         let facebookLogin = FBSDKLoginButton()
         
     }
@@ -69,13 +72,18 @@ class LoginVC: UIViewController {
             self.postSimpleAlert("Username or Password Empty.")
         } else {
             setUIEnabled(false)
+            performUIUpdatesOnMain {
+                self.activityIndicator.startAnimating()
+            }
             let studentLogin = ["username" : username.text!, "password" : password.text!]
             UdacityClient.sharedInstance().logInWithVC(studentLogin as [String : AnyObject]) { (success, errorString) in
                 performUIUpdatesOnMain {
                     if success {
                         self.completeLogin()
+                        self.activityIndicator.stopAnimating()
                         print("success at loging in")
                     } else {
+                        self.activityIndicator.stopAnimating()
                         self.postSimpleAlert(errorString!)
                         self.setUIEnabled(true)
                     }
@@ -129,7 +137,7 @@ private extension LoginVC {
         username.isEnabled = enabled
         password.isEnabled = enabled
         loginButton.isEnabled = enabled
-
+        signUpButton.isEnabled = enabled
         
         // adjust login button alpha
         if enabled {

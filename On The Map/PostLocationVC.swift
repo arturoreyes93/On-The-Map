@@ -29,6 +29,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
 
         configure(locationText)
         configure(websiteText)
+        self.activityIndicator.hidesWhenStopped = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,7 +91,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
             
             print(self.newData)
     
-            if UdacityClient.sharedInstance().localStudent[0].mapString.isEmpty {
+            if StudentData.sharedInstance().localStudent[0].mapString.isEmpty {
                 UdacityClient.sharedInstance().postStudentLocation(self.newData) { (success, errorString) in
                     performUIUpdatesOnMain {
                         if success {

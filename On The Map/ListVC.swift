@@ -11,8 +11,6 @@ import UIKit
 
 
 class ListVC: UIViewController {
-    
-    var students : [Student] = [Student]()
 
     @IBOutlet weak var userTableView: UITableView!
 
@@ -27,7 +25,6 @@ class ListVC: UIViewController {
         
         UdacityClient.sharedInstance().downloadData() { (results, errorString) in
             if let studentData = results {
-                self.students = studentData
                 performUIUpdatesOnMain {
                     self.userTableView.reloadData()
                     print("success at loading students")
@@ -52,14 +49,15 @@ class ListVC: UIViewController {
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(students.count)
+        let students = StudentData.sharedInstance().students!
         return (students.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell") as UITableViewCell!
-        let student = self.students[(indexPath as NSIndexPath).row]
+        let students = StudentData.sharedInstance().students!
+        let student = students[(indexPath as NSIndexPath).row]
         cell?.textLabel?.text = "\(student.firstName) \(student.lastName)"
         cell?.detailTextLabel?.text = student.mediaURL
         cell?.imageView?.image = UIImage(named: "icon_pin")
@@ -69,9 +67,10 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let student = self.students[(indexPath as NSIndexPath).row]
+        let students = StudentData.sharedInstance().students!
+        let student = students[(indexPath as NSIndexPath).row]
         let app = UIApplication.shared
-        if let toOpen = URL(string: student.mediaURL) {
+        if let toOpen = URL(string: (student.mediaURL)) {
             if app.canOpenURL(toOpen) {
                 app.open(toOpen, options: [:], completionHandler: nil)
                 
