@@ -66,10 +66,14 @@ class UdacityClient : NSObject {
     
     func postSessionID(_ parameters : [String:AnyObject], completionHandlerForSession: @escaping (_ success: Bool, _ userKey: String?, _ errorString: String?) -> Void) {
         
-        let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension, parameters: parameters) { (result, error) in
+        let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension, parameters: parameters) { (result, error, errorString) in
             
             if error != nil {
-                completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session.")
+                if errorString != nil {
+                    completionHandlerForSession(false, nil, errorString)
+                } else {
+                    completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session.")
+                }
                 print(error)
             } else {
                 if let account = result?["account"] as? NSDictionary {
@@ -89,7 +93,7 @@ class UdacityClient : NSObject {
     
     func getUserData(_ userKey: String, _ completionHandlerUserData: @escaping (_ success: Bool, _ firstName: [String:AnyObject]?, _ errorString: String?) -> Void) {
         
-        let _ = taskForMethod(client: Constants.Udacity.Client, pathExtension: Constants.Udacity.userPathExtension + "/\(userKey)") { (result, error) in
+        let _ = taskForMethod(client: Constants.Udacity.Client, pathExtension: Constants.Udacity.userPathExtension + "/\(userKey)") { (result, error, errorString) in
             
             if let error = error {
                 print(error)
@@ -108,7 +112,7 @@ class UdacityClient : NSObject {
     
     func deleteSession(_ completionHandlerForDelete: @escaping (_ success: Bool, _ results: NSDictionary?, _ errorString: String?) -> Void) {
         
-        let _ = taskForMethod(client: Constants.Udacity.Client, method:  Constants.Methods.Delete, pathExtension: Constants.Udacity.sessionPathExtension) { (result, error) in
+        let _ = taskForMethod(client: Constants.Udacity.Client, method:  Constants.Methods.Delete, pathExtension: Constants.Udacity.sessionPathExtension) { (result, error, errorString) in
             
             if let error = error {
                 print(error)
@@ -127,7 +131,7 @@ class UdacityClient : NSObject {
     
     func postSessionWithFacebook(_ completionHandlerForFacebook: @escaping (_ success: Bool, _ userKey: String?, _ errorString: String?) -> Void) {
         
-        let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension) { (result, error) in
+        let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension) { (result, error, errorString) in
             
             if error != nil {
                 completionHandlerForFacebook(false, nil, "Login Failed. Unable to Post Session with Facebook.")
@@ -147,7 +151,7 @@ class UdacityClient : NSObject {
         
     }
     
-    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, newData: [String:String]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
+    func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, newData: [String:String]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?, _ errorString: String?) -> Void) -> URLSessionTask {
         
         let request = NSMutableURLRequest(url: urlFromParameters(client: client, paremeters: parameters, pathExtension: pathExtension))
         print(request)
@@ -225,13 +229,21 @@ class UdacityClient : NSObject {
             func sendError(_ error: String) {
                 print(error)
                 let userInfo = [NSLocalizedDescriptionKey : error]
-                completionHandlerForGET(nil, NSError(domain: "taskForMethod", code: 1, userInfo: userInfo))
+                completionHandlerForGET(nil, NSError(domain: "taskForMethod", code: 1, userInfo: userInfo), error)
             }
             
             /* GUARD: Was there an error? */
             guard (error == nil) else {
-                sendError("There was an error with your request: \(error)")
+                sendError("There was an error with your request")
+                print("There was an error with request: \(error)")
                 return
+            }
+            
+            if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+                if statusCode == 401 || statusCode == 403 {
+                    sendError("Bad credentials. Invalid username or password")
+                }
+                print("Status code: \(statusCode)")
             }
             
             /* GUARD: Did we get a successful 2XX response? */
@@ -239,12 +251,7 @@ class UdacityClient : NSObject {
                 sendError("Your request returned a status code other than 2xx!")
                 return
             }
-            
-            if let statusCode = (response as? HTTPURLResponse)?.statusCode {
-                print(statusCode)
-            }
 
-            
             print("status code ok")
             
             /* GUARD: Was there any data returned? */
@@ -296,23 +303,20 @@ class UdacityClient : NSObject {
             
             return components.url!
         }
-        print(components.url!)
         return components.url!
     }
 
-    func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?) -> Void) {
-        
-        print("parsing data")
+    func convertDataWithCompletionHandler(_ data: Data, completionHandlerForConvertData: (_ result: AnyObject?, _ error: NSError?, _ errorString: String?) -> Void) {
+
         var parsedResult: AnyObject! = nil
         do {
             parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
         } catch {
             let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
-            completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo))
+            completionHandlerForConvertData(nil, NSError(domain: "convertDataWithCompletionHandler", code: 1, userInfo: userInfo), "Could not parse the data as JSON")
         }
-        
-        print(parsedResult)
-        completionHandlerForConvertData(parsedResult, nil)
+
+        completionHandlerForConvertData(parsedResult, nil, nil)
     }
     
     class func sharedInstance() -> UdacityClient {

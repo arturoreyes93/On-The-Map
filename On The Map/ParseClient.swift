@@ -16,7 +16,7 @@ extension UdacityClient {
         studentParameters[Constants.Parse.ParameterKeys.skip] = "100"
         studentParameters[Constants.Parse.ParameterKeys.order] = "-\(Constants.Student.updatedAt)"
         
-        let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
+        let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error, errorString) in
             
             if let error = error {
                 print(error)
@@ -37,7 +37,7 @@ extension UdacityClient {
         
         let studentParameters = [Constants.Parse.ParameterKeys.at: "{\"\(Constants.Student.uniqueKey)\":\"\(studentKey)\"}"]
         
-        let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error) in
+        let _ = taskForMethod(client: Constants.Parse.Client, parameters: studentParameters as [String : AnyObject]) { (result, error, errorString) in
             
             if let error = error {
                 print(error)
@@ -56,11 +56,11 @@ extension UdacityClient {
     
     func postStudentLocation(_ newData: [String:String]?, _ completionHandlerForPost: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
-        let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Post, newData: newData) { (result, error) in
+        let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Post, newData: newData) { (result, error, errorString) in
         
             if let error = error {
                 print(error)
-                completionHandlerForPost(false, "Unable to post location: \(error)")
+                completionHandlerForPost(false, "Unable to post location")
             } else {
                 if result != nil {
                     completionHandlerForPost(true, nil)
@@ -77,11 +77,11 @@ extension UdacityClient {
         let local = StudentData.sharedInstance().localStudent[0]
         print("objetdID: \(local.objectId)")
         
-        let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Put, pathExtension: local.objectId, newData: newData) { (result, error) in
+        let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Put, pathExtension: local.objectId, newData: newData) { (result, error, errorString) in
             
             if let error = error {
                 print(error)
-                completionHandlerForPut(false, "Unable to overwrite location: \(error)")
+                completionHandlerForPut(false, "Unable to overwrite location:")
             } else {
                 if result != nil {
                     completionHandlerForPut(true, nil)

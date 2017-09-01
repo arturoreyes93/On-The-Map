@@ -17,15 +17,15 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configure(username)
         configure(password)
-        
+
         self.activityIndicator.hidesWhenStopped = true
-        let facebookLogin = FBSDKLoginButton()
+        _ = FBSDKLoginButton()
         
     }
     
@@ -38,19 +38,24 @@ class LoginVC: UIViewController {
         if let accessToken = FBSDKAccessToken.current() {
             // User is logged in, use 'accessToken' here.
             self.setUIEnabled(false)
+            performUIUpdatesOnMain {
+                self.activityIndicator.startAnimating()
+            }
             UdacityClient.sharedInstance().accessToken = accessToken
             UdacityClient.sharedInstance().logInWithFacebook() { (success, errorString) in
                 performUIUpdatesOnMain {
                     if success {
                         self.completeLogin()
+                        self.activityIndicator.stopAnimating()
                     } else {
+                        self.activityIndicator.stopAnimating()
                         self.postSimpleAlert(errorString!)
                         self.setUIEnabled(true)
                     }
                 }
             }
         } else {
-            print("no access token retrieved")
+            self.postSimpleAlert("No access token retrieved from Facebook API")
         }
     }
     
