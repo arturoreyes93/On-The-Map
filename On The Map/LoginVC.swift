@@ -34,6 +34,7 @@ class LoginVC: UIViewController {
         
         if let accessToken = FBSDKAccessToken.current() {
             // User is logged in, use 'accessToken' here.
+            self.setUIEnabled(false)
             UdacityClient.sharedInstance().accessToken = accessToken
             UdacityClient.sharedInstance().logInWithFacebook() { (success, errorString) in
                 performUIUpdatesOnMain {
@@ -41,6 +42,7 @@ class LoginVC: UIViewController {
                         self.completeLogin()
                     } else {
                         self.postSimpleAlert(errorString!)
+                        self.setUIEnabled(true)
                     }
                 }
             }
@@ -61,7 +63,6 @@ class LoginVC: UIViewController {
     
     @IBAction func logInPressed(_ sender: AnyObject) {
         
-        print("Login Button works")
         userDidTaView(self)
         
         if username.text!.isEmpty || password.text!.isEmpty {
@@ -76,6 +77,7 @@ class LoginVC: UIViewController {
                         print("success at loging in")
                     } else {
                         self.postSimpleAlert(errorString!)
+                        self.setUIEnabled(true)
                     }
                 }
             }
