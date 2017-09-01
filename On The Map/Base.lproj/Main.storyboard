@@ -97,17 +97,6 @@
                                             <constraint firstAttribute="trailing" secondItem="na4-1P-4Rj" secondAttribute="trailing" id="yyC-OZ-t2K"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="center" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="08r-9r-jnT">
-                                        <rect key="frame" x="0.0" y="265" width="345" height="185"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvE-Dc-eoc">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="185"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NYp-6U-UzA">
                                         <rect key="frame" x="0.0" y="450" width="345" height="45"/>
                                         <subviews>
@@ -123,8 +112,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="FOe-U1-kr3" firstAttribute="height" secondItem="2iN-OW-oJ8" secondAttribute="height" id="BZt-tO-Uvj"/>
-                                    <constraint firstAttribute="trailing" secondItem="08r-9r-jnT" secondAttribute="trailing" id="Trx-Xj-oQu"/>
-                                    <constraint firstItem="08r-9r-jnT" firstAttribute="leading" secondItem="7BN-3W-vmI" secondAttribute="leading" id="c0C-RM-rzS"/>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="fMW-4k-Dgh">
@@ -148,7 +135,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="debugTextLabel" destination="HvE-Dc-eoc" id="wcg-BR-OuN"/>
                         <outlet property="loginButton" destination="FOe-U1-kr3" id="uLK-qv-VlN"/>
                         <outlet property="password" destination="iwr-2F-nIl" id="48Z-Qs-o8j"/>
                         <outlet property="username" destination="y2I-Zx-lCC" id="yGn-pP-p7y"/>

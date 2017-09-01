@@ -15,7 +15,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var debugTextLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,6 @@ class LoginVC: UIViewController {
         super.viewWillAppear(animated)
         username.text = ""
         password.text = ""
-        debugTextLabel.text = ""
         setUIEnabled(true)
         
         if let accessToken = FBSDKAccessToken.current() {
@@ -42,7 +40,7 @@ class LoginVC: UIViewController {
                     if success {
                         self.completeLogin()
                     } else {
-                        self.displayError(errorString)
+                        self.postSimpleAlert(errorString!)
                     }
                 }
             }
@@ -57,8 +55,7 @@ class LoginVC: UIViewController {
         if app.canOpenURL(URL(string: toOpen)!) {
             app.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
         } else {
-            debugTextLabel.text = "Sign up website currently unavailable. Please try again later"
-            debugTextLabel.isEnabled = true
+            self.postSimpleAlert("Sign up website currently unavailable. Please try again later")
         }
     }
     
@@ -68,7 +65,7 @@ class LoginVC: UIViewController {
         userDidTaView(self)
         
         if username.text!.isEmpty || password.text!.isEmpty {
-            debugTextLabel.text = "Username or Password Empty."
+            self.postSimpleAlert("Username or Password Empty.")
         } else {
             setUIEnabled(false)
             let studentLogin = ["username" : username.text!, "password" : password.text!]
@@ -78,7 +75,7 @@ class LoginVC: UIViewController {
                         self.completeLogin()
                         print("success at loging in")
                     } else {
-                        self.displayError(errorString)
+                        self.postSimpleAlert(errorString!)
                     }
                 }
             }
@@ -90,8 +87,6 @@ class LoginVC: UIViewController {
     }
     
     private func completeLogin() {
-        debugTextLabel.text = ""
-        print("moving to navigation controller now")
         let controller = storyboard!.instantiateViewController(withIdentifier: "MapNavigatorController") as! UINavigationController
         present(controller, animated: true, completion: nil)
     }
@@ -132,8 +127,7 @@ private extension LoginVC {
         username.isEnabled = enabled
         password.isEnabled = enabled
         loginButton.isEnabled = enabled
-        debugTextLabel.text = ""
-        debugTextLabel.isEnabled = enabled
+
         
         // adjust login button alpha
         if enabled {
@@ -143,12 +137,13 @@ private extension LoginVC {
         }
     }
     
-    func displayError(_ errorString: String?) {
-        if let errorString = errorString {
-            debugTextLabel.text = errorString
-        }
+    func postSimpleAlert(_ title: String) {
+        
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(dismiss)
+        self.present(alert, animated: true, completion: nil)
+        
     }
-
-    
     
 }
