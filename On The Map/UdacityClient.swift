@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FBSDKLoginKit
 
 class UdacityClient : NSObject {
     
@@ -17,6 +18,9 @@ class UdacityClient : NSObject {
     var localStudent: [Student]!
     
     var userKey: String?
+    
+    var accessToken: FBSDKAccessToken?
+
     
     override init() {
         super.init()
@@ -43,6 +47,26 @@ class UdacityClient : NSObject {
         }
     }
     
+    func logInWithFacebook(_ completionHandlerForLogin: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
+        
+        self.postSessionWithFacebook() { (success, userKey, errorString) in
+            if success {
+                print(userKey)
+                UdacityClient.sharedInstance().userKey = userKey
+                self.getUserData(userKey!) { (success, user, errorString) in
+                    if success {
+                        print(user?["first_name"])
+                    }
+                    completionHandlerForLogin(success, errorString)
+                }
+            } else {
+                completionHandlerForLogin(success, errorString)
+            }
+            
+            completionHandlerForLogin(success, errorString)
+            
+        }
+    }
     
     func postSessionID(_ parameters : [String:AnyObject], completionHandlerForSession: @escaping (_ success: Bool, _ userKey: String?, _ errorString: String?) -> Void) {
         
@@ -50,15 +74,15 @@ class UdacityClient : NSObject {
             
             if error != nil {
                 completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session.")
+                print(error)
             } else {
-                print("no error")
                 if let account = result?["account"] as? NSDictionary {
                     print(account)
                     let key = account["key"] as? String
                     completionHandlerForSession(true, key, nil)
                     print(result!)
                 } else {
-                    print("Could not find account in \(result)")
+                    print("Could not find account in retrieved data.")
                     completionHandlerForSession(false, nil, "Login Failed. Unable to Post Session.")
                 }
             }
@@ -79,7 +103,7 @@ class UdacityClient : NSObject {
                     completionHandlerUserData(true, user as! [String : AnyObject], nil)
 
                 } else {
-                    print("Could not find user in \(result)")
+                    print("Could not find user in retrieved data.")
                     completionHandlerUserData(false, nil, "Login Failed. Unable to retrieve User Data.")
                 }
             }
@@ -98,11 +122,33 @@ class UdacityClient : NSObject {
                     completionHandlerForDelete(true, result, nil)
                     
                 } else {
-                    print("Could not delete session: \(error)")
-                    completionHandlerForDelete(false, nil, "Logout Failed. Unable to delete session.")
+                    print("Could not delete session. No data retrieved.")
+                    completionHandlerForDelete(false, nil, "Could not delete session. No data retrieved.")
                 }
             }
         }
+    }
+    
+    func postSessionWithFacebook(_ completionHandlerForFacebook: @escaping (_ success: Bool, _ userKey: String?, _ errorString: String?) -> Void) {
+        
+        let _ = taskForMethod(client: Constants.Udacity.Client, method: Constants.Methods.Post, pathExtension: Constants.Udacity.sessionPathExtension) { (result, error) in
+            
+            if error != nil {
+                completionHandlerForFacebook(false, nil, "Login Failed. Unable to Post Session with Facebook.")
+                print(error)
+            } else {
+                if let account = result?["account"] as? NSDictionary {
+                    print(account)
+                    let key = account["key"] as? String
+                    completionHandlerForFacebook(true, key, nil)
+                    print(result!)
+                } else {
+                    print("Could not find account in retrieved data.")
+                    completionHandlerForFacebook(false, nil, "Login Failed. Unable to Post Session with Facebook.")
+                }
+            }
+        }
+        
     }
     
     func taskForMethod(client: String, method: String? = nil, pathExtension: String? = nil, parameters: [String:AnyObject]? = nil, newData: [String:String]? = nil, completionHandlerForGET: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void) -> URLSessionTask {
@@ -112,7 +158,6 @@ class UdacityClient : NSObject {
         
         if (method != nil) {
             request.httpMethod = method!
-            print(method!)
         }
         
         if client == Constants.Parse.Client {
@@ -125,15 +170,17 @@ class UdacityClient : NSObject {
             request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Content)
             
             if client == Constants.Udacity.Client {
-                print(client)
-                
-                let username = parameters?["username"]! as! String
-                let password = parameters?["password"]! as! String
-                print(username)
-                print(password)
-                
                 request.addValue(Constants.JSON.App, forHTTPHeaderField: Constants.JSON.Accept)
-                request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
+                
+                if let username = parameters?["username"] {
+                    if let password = parameters?["password"] {
+                       request.httpBody = "{\"udacity\": {\"username\": \"\(username)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
+                    }
+                }
+                
+                if let accessToken = UdacityClient.sharedInstance().accessToken {
+                    request.httpBody = "{\"facebook_mobile\": {\"access_token\": \"\(accessToken)\"}}".data(using: String.Encoding.utf8)
+                }
                 
             } else if client == Constants.Parse.Client {
                 let local = UdacityClient.sharedInstance().localStudent[0]
@@ -193,10 +240,14 @@ class UdacityClient : NSObject {
             
             /* GUARD: Did we get a successful 2XX response? */
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print(String(describing: (response as? HTTPURLResponse)?.statusCode))
                 sendError("Your request returned a status code other than 2xx!")
                 return
             }
+            
+            if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+                print(statusCode)
+            }
+
             
             print("status code ok")
             

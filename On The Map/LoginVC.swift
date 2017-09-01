@@ -25,7 +25,6 @@ class LoginVC: UIViewController {
         
         let facebookLogin = FBSDKLoginButton()
         
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +33,22 @@ class LoginVC: UIViewController {
         password.text = ""
         debugTextLabel.text = ""
         setUIEnabled(true)
+        
+        if let accessToken = FBSDKAccessToken.current() {
+            // User is logged in, use 'accessToken' here.
+            UdacityClient.sharedInstance().accessToken = accessToken
+            UdacityClient.sharedInstance().logInWithFacebook() { (success, errorString) in
+                performUIUpdatesOnMain {
+                    if success {
+                        self.completeLogin()
+                    } else {
+                        self.displayError(errorString)
+                    }
+                }
+            }
+        } else {
+            print("no access token retrieved")
+        }
     }
     
     @IBAction func signUp(_ sender: Any) {
