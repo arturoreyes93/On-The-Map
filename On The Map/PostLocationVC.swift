@@ -21,6 +21,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
     @IBOutlet weak var websiteText: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var submitButton: UIButton!
  
 
     override func viewDidLoad() {
@@ -42,11 +43,13 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
     func setFindView() {
         locationSubview.isHidden = false
         mapSubview.isHidden = true
+        self.submitButton.isHidden = true
     }
     
     func setMapView() {
         locationSubview.isHidden = true
         mapSubview.isHidden = false
+        self.submitButton.isHidden = false
     }
     
     func postSimpleAlert(_ title: String) {
