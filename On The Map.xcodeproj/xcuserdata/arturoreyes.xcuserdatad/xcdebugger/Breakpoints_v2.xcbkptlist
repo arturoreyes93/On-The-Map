@@ -90,12 +90,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.318288"
+                  timestampString = "526066213.038793"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
                   endingLineNumber = "96"
-                  offsetFromSymbolStart = "2995">
+                  offsetFromSymbolStart = "3255">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -105,12 +105,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.320078"
+                  timestampString = "526066213.040606"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "96"
                   endingLineNumber = "96"
-                  offsetFromSymbolStart = "231">
+                  offsetFromSymbolStart = "243">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -138,12 +138,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.334482"
+                  timestampString = "526066213.067803"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "31">
+                  offsetFromSymbolStart = "39">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -153,12 +153,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.33668"
+                  timestampString = "526066213.069531"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "28"
                   endingLineNumber = "28"
-                  offsetFromSymbolStart = "118">
+                  offsetFromSymbolStart = "173">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -202,12 +202,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "525999448.349405"
+                  timestampString = "526066213.114832"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "888">
+                  offsetFromSymbolStart = "934">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -217,12 +217,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "525999448.351067"
+                  timestampString = "526066213.117202"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "115">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -314,12 +314,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.36804"
+                  timestampString = "526066213.151222"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "176"
                   endingLineNumber = "176"
-                  offsetFromSymbolStart = "3024">
+                  offsetFromSymbolStart = "3254">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -329,12 +329,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.36987"
+                  timestampString = "526066213.15272"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "176"
                   endingLineNumber = "176"
-                  offsetFromSymbolStart = "3275">
+                  offsetFromSymbolStart = "3553">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -442,12 +442,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/Student.swift"
-                  timestampString = "525999448.39013"
+                  timestampString = "526066213.173502"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "460">
+                  offsetFromSymbolStart = "508">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -457,12 +457,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/Student.swift"
-                  timestampString = "525999448.391994"
+                  timestampString = "526066213.175128"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "21">
+                  offsetFromSymbolStart = "27">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -522,12 +522,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.400258"
+                  timestampString = "526066213.182352"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "159">
+                  offsetFromSymbolStart = "174">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -537,12 +537,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.402111"
+                  timestampString = "526066213.184023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "1239">
+                  offsetFromSymbolStart = "1213">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -570,12 +570,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "525999448.406691"
+                  timestampString = "526066213.187738"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
                   endingLineNumber = "59"
-                  offsetFromSymbolStart = "57">
+                  offsetFromSymbolStart = "53">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -585,12 +585,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "525999448.408406"
+                  timestampString = "526066213.189344"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
                   endingLineNumber = "61"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "115">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -696,12 +696,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.422541"
+                  timestampString = "526066213.202955"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "35">
+                  offsetFromSymbolStart = "38">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -711,12 +711,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.424067"
+                  timestampString = "526066213.20444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "61">
+                  offsetFromSymbolStart = "72">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -726,12 +726,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.425665"
+                  timestampString = "526066213.205927"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "70">
+                  offsetFromSymbolStart = "94">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -741,12 +741,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.427274"
+                  timestampString = "526066213.20746"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "33">
+                  offsetFromSymbolStart = "42">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -774,12 +774,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.431959"
+                  timestampString = "526066213.212214"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "35">
+                  offsetFromSymbolStart = "38">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -789,12 +789,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.433488"
+                  timestampString = "526066213.213776"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "61">
+                  offsetFromSymbolStart = "72">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -804,12 +804,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.435228"
+                  timestampString = "526066213.215165"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "70">
+                  offsetFromSymbolStart = "94">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -819,12 +819,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.436643"
+                  timestampString = "526066213.216532"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "33">
+                  offsetFromSymbolStart = "42">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -868,12 +868,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.444843"
+                  timestampString = "526066213.225751"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "34">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -883,12 +883,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.446254"
+                  timestampString = "526066213.227284"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "47">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -898,12 +898,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.447649"
+                  timestampString = "526066213.229023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "267">
+                  offsetFromSymbolStart = "244">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -913,12 +913,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "525999448.449037"
+                  timestampString = "526066213.230593"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "175">
+                  offsetFromSymbolStart = "186">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1040,12 +1040,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.470478"
+                  timestampString = "526066213.262003"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1055,12 +1055,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.471874"
+                  timestampString = "526066213.264151"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "70">
+                  offsetFromSymbolStart = "80">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1070,12 +1070,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.47326"
+                  timestampString = "526066213.267203"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "23">
+                  offsetFromSymbolStart = "26">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1085,12 +1085,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.474798"
+                  timestampString = "526066213.270812"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "9">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1100,12 +1100,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.476483"
+                  timestampString = "526066213.273187"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "31">
+                  offsetFromSymbolStart = "37">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1149,12 +1149,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.484737"
+                  timestampString = "526066213.284845"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1164,12 +1164,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.486191"
+                  timestampString = "526066213.286462"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "70">
+                  offsetFromSymbolStart = "80">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1179,12 +1179,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.487596"
+                  timestampString = "526066213.288149"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "23">
+                  offsetFromSymbolStart = "26">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1194,12 +1194,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.489029"
+                  timestampString = "526066213.289901"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "9">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1209,12 +1209,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "525999448.490429"
+                  timestampString = "526066213.291601"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "31">
+                  offsetFromSymbolStart = "37">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1242,12 +1242,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.49537"
+                  timestampString = "526066213.298043"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "134"
                   endingLineNumber = "134"
-                  offsetFromSymbolStart = "35">
+                  offsetFromSymbolStart = "36">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1257,12 +1257,12 @@
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "525999448.496698"
+                  timestampString = "526066213.299639"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "136"
                   endingLineNumber = "136"
-                  offsetFromSymbolStart = "68">
+                  offsetFromSymbolStart = "115">
                </Location>
             </Locations>
          </BreakpointContent>
