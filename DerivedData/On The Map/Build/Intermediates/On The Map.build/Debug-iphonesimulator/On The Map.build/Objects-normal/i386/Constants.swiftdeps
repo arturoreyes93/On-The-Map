@@ -1,0 +1,194 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Constants"
+provides-nominal:
+- "V10On_The_Map9Constants"
+- "VV10On_The_Map9Constants7Udacity"
+- "VV10On_The_Map9Constants5Parse"
+- "VVV10On_The_Map9Constants5Parse13ParameterKeys"
+- "VV10On_The_Map9Constants7Student"
+- "VV10On_The_Map9Constants7Methods"
+- "VV10On_The_Map9Constants4JSON"
+provides-member:
+- ["V10On_The_Map9Constants", ""]
+- ["VV10On_The_Map9Constants7Udacity", ""]
+- ["VV10On_The_Map9Constants5Parse", ""]
+- ["VVV10On_The_Map9Constants5Parse13ParameterKeys", ""]
+- ["VV10On_The_Map9Constants7Student", ""]
+- ["VV10On_The_Map9Constants7Methods", ""]
+- ["VV10On_The_Map9Constants4JSON", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Constants"
+- "StringLiteralType"
+depends-member:
+- ["Ps9AnyObject", "init"]
+- ["Ps7CVarArg", "init"]
+- ["Ps10Comparable", "init"]
+- ["V10On_The_Map9Constants", "JSON"]
+- ["V10On_The_Map9Constants", "Methods"]
+- ["V10On_The_Map9Constants", "Parse"]
+- ["V10On_The_Map9Constants", "Student"]
+- ["V10On_The_Map9Constants", "Udacity"]
+- ["V10On_The_Map9Constants", "init"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps9Equatable", "init"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Ps8Hashable", "init"]
+- ["VV10On_The_Map9Constants4JSON", "Accept"]
+- ["VV10On_The_Map9Constants4JSON", "App"]
+- ["VV10On_The_Map9Constants4JSON", "Content"]
+- ["VV10On_The_Map9Constants4JSON", "init"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["VV10On_The_Map9Constants7Methods", "Delete"]
+- ["VV10On_The_Map9Constants7Methods", "Get"]
+- ["VV10On_The_Map9Constants7Methods", "Post"]
+- ["VV10On_The_Map9Constants7Methods", "Put"]
+- ["VV10On_The_Map9Constants7Methods", "init"]
+- ["Ps10MirrorPath", "init"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "init"]
+- ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "at"]
+- ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "init"]
+- ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "limit"]
+- ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "order"]
+- ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "skip"]
+- ["VV10On_The_Map9Constants5Parse", "APIHTPP"]
+- ["VV10On_The_Map9Constants5Parse", "APIHost"]
+- ["VV10On_The_Map9Constants5Parse", "APIKey"]
+- ["VV10On_The_Map9Constants5Parse", "APIPath"]
+- ["VV10On_The_Map9Constants5Parse", "APIScheme"]
+- ["VV10On_The_Map9Constants5Parse", "AppHTTP"]
+- ["VV10On_The_Map9Constants5Parse", "AppID"]
+- ["VV10On_The_Map9Constants5Parse", "Client"]
+- ["VV10On_The_Map9Constants5Parse", "ParameterKeys"]
+- ["VV10On_The_Map9Constants5Parse", "init"]
+- ["SS", "init"]
+- ["VV10On_The_Map9Constants7Student", "createdAt"]
+- ["VV10On_The_Map9Constants7Student", "firstName"]
+- ["VV10On_The_Map9Constants7Student", "init"]
+- ["VV10On_The_Map9Constants7Student", "lastName"]
+- ["VV10On_The_Map9Constants7Student", "latitude"]
+- ["VV10On_The_Map9Constants7Student", "longitude"]
+- ["VV10On_The_Map9Constants7Student", "mapString"]
+- ["VV10On_The_Map9Constants7Student", "mediaURL"]
+- ["VV10On_The_Map9Constants7Student", "objectID"]
+- ["VV10On_The_Map9Constants7Student", "uniqueKey"]
+- ["VV10On_The_Map9Constants7Student", "updatedAt"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- ["VV10On_The_Map9Constants7Udacity", "APIHost"]
+- ["VV10On_The_Map9Constants7Udacity", "APIPath"]
+- ["VV10On_The_Map9Constants7Udacity", "APIScheme"]
+- ["VV10On_The_Map9Constants7Udacity", "Client"]
+- ["VV10On_The_Map9Constants7Udacity", "init"]
+- ["VV10On_The_Map9Constants7Udacity", "sessionPathExtension"]
+- ["VV10On_The_Map9Constants7Udacity", "userPathExtension"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- ["Ps9_Hashable", "init"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps7CVarArg"
+- "Ps10Comparable"
+- "V10On_The_Map9Constants"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps8Hashable"
+- "VV10On_The_Map9Constants4JSON"
+- "Ps25LosslessStringConvertible"
+- "VV10On_The_Map9Constants7Methods"
+- "Ps10MirrorPath"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "VVV10On_The_Map9Constants5Parse13ParameterKeys"
+- "VV10On_The_Map9Constants5Parse"
+- "SS"
+- "VV10On_The_Map9Constants7Student"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "VV10On_The_Map9Constants7Udacity"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/MapKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/MapKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/SwiftOnoneSupport.swiftmodule"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Modules/module.modulemap"
+interface-hash: "dd1581db91045734e8d3b8f605b74807"

@@ -1,0 +1,117 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "StudentData"
+provides-nominal:
+- "C10On_The_Map11StudentData"
+provides-member:
+- ["C10On_The_Map11StudentData", ""]
+provides-dynamic-lookup:
+- "sharedInstance"
+depends-top-level:
+- "NSObject"
+- "Student"
+- "StudentData"
+depends-member:
+- !private ["Ps9AnyObject", "StudentData"]
+- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", ""]
+- !private ["Ps7CVarArg", "StudentData"]
+- !private ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", ""]
+- !private ["Ps28CustomDebugStringConvertible", "StudentData"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- !private ["Ps23CustomStringConvertible", "StudentData"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Ps9Equatable", "StudentData"]
+- !private ["Ps9Equatable", "init"]
+- ["Ps9Equatable", ""]
+- !private ["Ps8Hashable", "StudentData"]
+- !private ["Ps8Hashable", "init"]
+- ["Ps8Hashable", ""]
+- ["CSo8NSObject", "Student"]
+- ["CSo8NSObject", "StudentData"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "localStudent"]
+- ["CSo8NSObject", "otherStudents"]
+- ["CSo8NSObject", "sharedInstance"]
+- ["CSo8NSObject", "students"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "StudentData"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", ""]
+- ["C10On_The_Map11StudentData", "Student"]
+- ["C10On_The_Map11StudentData", "StudentData"]
+- ["C10On_The_Map11StudentData", "deinit"]
+- ["C10On_The_Map11StudentData", "init"]
+- ["C10On_The_Map11StudentData", "localStudent"]
+- ["C10On_The_Map11StudentData", "otherStudents"]
+- ["C10On_The_Map11StudentData", "sharedInstance"]
+- ["C10On_The_Map11StudentData", "students"]
+- !private ["Ps9_Hashable", "StudentData"]
+- !private ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", ""]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps7CVarArg"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "C10On_The_Map11StudentData"
+- "Ps9_Hashable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/MapKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/MapKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/SwiftOnoneSupport.swiftmodule"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/FBSDKLoginKit.framework/Modules/module.modulemap"
+interface-hash: "8755b641e7087cf9416009d9c8680249"

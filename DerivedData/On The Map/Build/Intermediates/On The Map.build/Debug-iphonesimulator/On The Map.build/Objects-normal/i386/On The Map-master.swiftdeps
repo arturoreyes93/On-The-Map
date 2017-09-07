@@ -1,0 +1,15 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "01359b82eb843efb9cd699a09c650e97"
+build_time: [558120749, 947574000]
+inputs:
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/UdacityClient.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/LoginVC.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/MapVC.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/Student.swift": [557025106, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/ListVC.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/AppDelegate.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/StudentData.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/PostLocationVC.swift": [558118722, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/Constants.swift": [556931430, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/GCDBlackBox.swift": [551566116, 0]
+  "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/On The Map/ParseClient.swift": [558118722, 0]

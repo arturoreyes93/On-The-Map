@@ -1,0 +1,425 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["C10On_The_Map13UdacityClient", ""]
+- ["C10On_The_Map13UdacityClient", "getStudentLocations"]
+- ["C10On_The_Map13UdacityClient", "getSingleStudentLocation"]
+- ["C10On_The_Map13UdacityClient", "postStudentLocation"]
+- ["C10On_The_Map13UdacityClient", "putStudentLocation"]
+- ["C10On_The_Map13UdacityClient", "downloadData"]
+- ["C10On_The_Map13UdacityClient", "fromDictToStudentObject"]
+provides-dynamic-lookup:
+- "getSingleStudentLocation"
+- "getStudentLocations"
+- "postStudentLocation"
+- "putStudentLocation"
+depends-top-level:
+- !private "!="
+- !private "+"
+- !private "AnyObject"
+- "AssignmentPrecedence"
+- "Bool"
+- "BooleanLiteralType"
+- "CastingPrecedence"
+- !private "Constants"
+- !private "Dictionary"
+- "NSArray"
+- "String"
+- "Student"
+- !private "StudentData"
+- "UdacityClient"
+- !private "UnicodeScalarType"
+- "Void"
+- !private "print"
+depends-member:
+- !private ["Ps9AnyObject", "Constants"]
+- !private ["Ps9AnyObject", "Student"]
+- !private ["Ps9AnyObject", "StudentData"]
+- !private ["Ps9AnyObject", "UdacityClient"]
+- !private ["Ps9AnyObject", "fromDictToStudentObject"]
+- !private ["Ps9AnyObject", "getSingleStudentLocation"]
+- !private ["Ps9AnyObject", "getStudentLocations"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "localStudent"]
+- !private ["Ps9AnyObject", "otherStudents"]
+- !private ["Ps9AnyObject", "print"]
+- !private ["Ps9AnyObject", "sharedInstance"]
+- !private ["Ps9AnyObject", "students"]
+- !private ["Ps9AnyObject", "subscript"]
+- !private ["Ps9AnyObject", "taskForMethod"]
+- !private ["Ps9AnyObject", "userKey"]
+- !private ["Sa", "append"]
+- !private ["Sa", "init"]
+- !private ["Sa", "subscript"]
+- !private ["Ps23BidirectionalCollection", "append"]
+- !private ["Ps23BidirectionalCollection", "init"]
+- !private ["Ps23BidirectionalCollection", "subscript"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Ps7CVarArg", "Constants"]
+- !private ["Ps7CVarArg", "Student"]
+- !private ["Ps7CVarArg", "StudentData"]
+- !private ["Ps7CVarArg", "UdacityClient"]
+- !private ["Ps7CVarArg", "append"]
+- !private ["Ps7CVarArg", "fromDictToStudentObject"]
+- !private ["Ps7CVarArg", "getSingleStudentLocation"]
+- !private ["Ps7CVarArg", "getStudentLocations"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "localStudent"]
+- !private ["Ps7CVarArg", "otherStudents"]
+- !private ["Ps7CVarArg", "print"]
+- !private ["Ps7CVarArg", "sharedInstance"]
+- !private ["Ps7CVarArg", "students"]
+- !private ["Ps7CVarArg", "subscript"]
+- !private ["Ps7CVarArg", "taskForMethod"]
+- !private ["Ps7CVarArg", "userKey"]
+- !private ["Ps10Collection", "append"]
+- !private ["Ps10Collection", "init"]
+- !private ["Ps10Collection", "subscript"]
+- !private ["Ps10Comparable", "init"]
+- !private ["V10On_The_Map9Constants", "Methods"]
+- !private ["V10On_The_Map9Constants", "Parse"]
+- !private ["V10On_The_Map9Constants", "Student"]
+- !private ["Ps28CustomDebugStringConvertible", "Constants"]
+- !private ["Ps28CustomDebugStringConvertible", "Student"]
+- !private ["Ps28CustomDebugStringConvertible", "StudentData"]
+- !private ["Ps28CustomDebugStringConvertible", "UdacityClient"]
+- !private ["Ps28CustomDebugStringConvertible", "append"]
+- !private ["Ps28CustomDebugStringConvertible", "fromDictToStudentObject"]
+- !private ["Ps28CustomDebugStringConvertible", "getSingleStudentLocation"]
+- !private ["Ps28CustomDebugStringConvertible", "getStudentLocations"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "localStudent"]
+- !private ["Ps28CustomDebugStringConvertible", "otherStudents"]
+- !private ["Ps28CustomDebugStringConvertible", "print"]
+- !private ["Ps28CustomDebugStringConvertible", "sharedInstance"]
+- !private ["Ps28CustomDebugStringConvertible", "students"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
+- !private ["Ps28CustomDebugStringConvertible", "taskForMethod"]
+- !private ["Ps28CustomDebugStringConvertible", "userKey"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "append"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps23CustomStringConvertible", "Constants"]
+- !private ["Ps23CustomStringConvertible", "Student"]
+- !private ["Ps23CustomStringConvertible", "StudentData"]
+- !private ["Ps23CustomStringConvertible", "UdacityClient"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "append"]
+- !private ["Ps23CustomStringConvertible", "fromDictToStudentObject"]
+- !private ["Ps23CustomStringConvertible", "getSingleStudentLocation"]
+- !private ["Ps23CustomStringConvertible", "getStudentLocations"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "localStudent"]
+- !private ["Ps23CustomStringConvertible", "otherStudents"]
+- !private ["Ps23CustomStringConvertible", "print"]
+- !private ["Ps23CustomStringConvertible", "sharedInstance"]
+- !private ["Ps23CustomStringConvertible", "students"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
+- !private ["Ps23CustomStringConvertible", "taskForMethod"]
+- !private ["Ps23CustomStringConvertible", "userKey"]
+- !private ["Vs10Dictionary", "subscript"]
+- !private ["Ps9Equatable", "Constants"]
+- !private ["Ps9Equatable", "Student"]
+- !private ["Ps9Equatable", "StudentData"]
+- !private ["Ps9Equatable", "UdacityClient"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "fromDictToStudentObject"]
+- !private ["Ps9Equatable", "getSingleStudentLocation"]
+- !private ["Ps9Equatable", "getStudentLocations"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "localStudent"]
+- !private ["Ps9Equatable", "otherStudents"]
+- !private ["Ps9Equatable", "print"]
+- !private ["Ps9Equatable", "sharedInstance"]
+- !private ["Ps9Equatable", "students"]
+- !private ["Ps9Equatable", "taskForMethod"]
+- !private ["Ps9Equatable", "userKey"]
+- !private ["Ps25ExpressibleByArrayLiteral", "append"]
+- !private ["Ps25ExpressibleByArrayLiteral", "init"]
+- !private ["Ps25ExpressibleByArrayLiteral", "subscript"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps8Hashable", "Constants"]
+- !private ["Ps8Hashable", "Student"]
+- !private ["Ps8Hashable", "StudentData"]
+- !private ["Ps8Hashable", "UdacityClient"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "fromDictToStudentObject"]
+- !private ["Ps8Hashable", "getSingleStudentLocation"]
+- !private ["Ps8Hashable", "getStudentLocations"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "localStudent"]
+- !private ["Ps8Hashable", "otherStudents"]
+- !private ["Ps8Hashable", "print"]
+- !private ["Ps8Hashable", "sharedInstance"]
+- !private ["Ps8Hashable", "students"]
+- !private ["Ps8Hashable", "taskForMethod"]
+- !private ["Ps8Hashable", "userKey"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["VV10On_The_Map9Constants7Methods", "Post"]
+- !private ["VV10On_The_Map9Constants7Methods", "Put"]
+- !private ["Ps10MirrorPath", "init"]
+- !private ["Ps17MutableCollection", "append"]
+- !private ["Ps17MutableCollection", "init"]
+- !private ["Ps17MutableCollection", "subscript"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
+- !private ["CSo8NSObject", "Constants"]
+- ["CSo8NSObject", "NSArray"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "Student"]
+- !private ["CSo8NSObject", "StudentData"]
+- !private ["CSo8NSObject", "UdacityClient"]
+- ["CSo8NSObject", "Void"]
+- ["CSo8NSObject", "downloadData"]
+- ["CSo8NSObject", "fromDictToStudentObject"]
+- ["CSo8NSObject", "getSingleStudentLocation"]
+- ["CSo8NSObject", "getStudentLocations"]
+- !private ["CSo8NSObject", "localStudent"]
+- !private ["CSo8NSObject", "otherStudents"]
+- ["CSo8NSObject", "postStudentLocation"]
+- !private ["CSo8NSObject", "print"]
+- ["CSo8NSObject", "putStudentLocation"]
+- !private ["CSo8NSObject", "sharedInstance"]
+- !private ["CSo8NSObject", "students"]
+- !private ["CSo8NSObject", "taskForMethod"]
+- !private ["CSo8NSObject", "userKey"]
+- !private ["PSo16NSObjectProtocol", "Constants"]
+- !private ["PSo16NSObjectProtocol", "Student"]
+- !private ["PSo16NSObjectProtocol", "StudentData"]
+- !private ["PSo16NSObjectProtocol", "UdacityClient"]
+- !private ["PSo16NSObjectProtocol", "fromDictToStudentObject"]
+- !private ["PSo16NSObjectProtocol", "getSingleStudentLocation"]
+- !private ["PSo16NSObjectProtocol", "getStudentLocations"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "localStudent"]
+- !private ["PSo16NSObjectProtocol", "otherStudents"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- !private ["PSo16NSObjectProtocol", "sharedInstance"]
+- !private ["PSo16NSObjectProtocol", "students"]
+- !private ["PSo16NSObjectProtocol", "taskForMethod"]
+- !private ["PSo16NSObjectProtocol", "userKey"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo8NSString", "init"]
+- !private ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "at"]
+- !private ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "limit"]
+- !private ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "order"]
+- !private ["VVV10On_The_Map9Constants5Parse13ParameterKeys", "skip"]
+- !private ["VV10On_The_Map9Constants5Parse", "Client"]
+- !private ["VV10On_The_Map9Constants5Parse", "ParameterKeys"]
+- !private ["Ps22RandomAccessCollection", "append"]
+- !private ["Ps22RandomAccessCollection", "init"]
+- !private ["Ps22RandomAccessCollection", "subscript"]
+- !private ["Ps26RangeReplaceableCollection", "append"]
+- !private ["Ps26RangeReplaceableCollection", "init"]
+- !private ["Ps26RangeReplaceableCollection", "subscript"]
+- !private ["Ps8Sequence", "append"]
+- !private ["Ps8Sequence", "init"]
+- !private ["Ps8Sequence", "subscript"]
+- !private ["SS", "init"]
+- !private ["V10On_The_Map7Student", "init"]
+- !private ["V10On_The_Map7Student", "objectId"]
+- !private ["VV10On_The_Map9Constants7Student", "uniqueKey"]
+- !private ["VV10On_The_Map9Constants7Student", "updatedAt"]
+- !private ["C10On_The_Map11StudentData", "localStudent"]
+- !private ["C10On_The_Map11StudentData", "otherStudents"]
+- !private ["C10On_The_Map11StudentData", "sharedInstance"]
+- !private ["C10On_The_Map11StudentData", "students"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["C10On_The_Map13UdacityClient", "AnyObject"]
+- ["C10On_The_Map13UdacityClient", "Bool"]
+- !private ["C10On_The_Map13UdacityClient", "Constants"]
+- ["C10On_The_Map13UdacityClient", "NSArray"]
+- ["C10On_The_Map13UdacityClient", "String"]
+- ["C10On_The_Map13UdacityClient", "Student"]
+- !private ["C10On_The_Map13UdacityClient", "StudentData"]
+- !private ["C10On_The_Map13UdacityClient", "UdacityClient"]
+- ["C10On_The_Map13UdacityClient", "Void"]
+- ["C10On_The_Map13UdacityClient", "downloadData"]
+- ["C10On_The_Map13UdacityClient", "fromDictToStudentObject"]
+- ["C10On_The_Map13UdacityClient", "getSingleStudentLocation"]
+- ["C10On_The_Map13UdacityClient", "getStudentLocations"]
+- ["C10On_The_Map13UdacityClient", "postStudentLocation"]
+- !private ["C10On_The_Map13UdacityClient", "print"]
+- ["C10On_The_Map13UdacityClient", "putStudentLocation"]
+- !private ["C10On_The_Map13UdacityClient", "sharedInstance"]
+- !private ["C10On_The_Map13UdacityClient", "taskForMethod"]
+- !private ["C10On_The_Map13UdacityClient", "userKey"]
+- !private ["Ps14_ArrayProtocol", "append"]
+- !private ["Ps14_ArrayProtocol", "init"]
+- !private ["Ps14_ArrayProtocol", "subscript"]
+- !private ["Ps23_BidirectionalIndexable", "append"]
+- !private ["Ps23_BidirectionalIndexable", "init"]
+- !private ["Ps23_BidirectionalIndexable", "subscript"]
+- !private ["Ps24_DestructorSafeContainer", "append"]
+- !private ["Ps24_DestructorSafeContainer", "init"]
+- !private ["Ps24_DestructorSafeContainer", "subscript"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "Constants"]
+- !private ["Ps9_Hashable", "Student"]
+- !private ["Ps9_Hashable", "StudentData"]
+- !private ["Ps9_Hashable", "UdacityClient"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "fromDictToStudentObject"]
+- !private ["Ps9_Hashable", "getSingleStudentLocation"]
+- !private ["Ps9_Hashable", "getStudentLocations"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "localStudent"]
+- !private ["Ps9_Hashable", "otherStudents"]
+- !private ["Ps9_Hashable", "print"]
+- !private ["Ps9_Hashable", "sharedInstance"]
+- !private ["Ps9_Hashable", "students"]
+- !private ["Ps9_Hashable", "taskForMethod"]
+- !private ["Ps9_Hashable", "userKey"]
+- !private ["Ps10_Indexable", "append"]
+- !private ["Ps10_Indexable", "init"]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "append"]
+- !private ["Ps14_IndexableBase", "init"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps17_MutableIndexable", "append"]
+- !private ["Ps17_MutableIndexable", "init"]
+- !private ["Ps17_MutableIndexable", "subscript"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "append"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- !private ["Ps22_RandomAccessIndexable", "append"]
+- !private ["Ps22_RandomAccessIndexable", "init"]
+- !private ["Ps22_RandomAccessIndexable", "subscript"]
+- !private ["Ps26_RangeReplaceableIndexable", "append"]
+- !private ["Ps26_RangeReplaceableIndexable", "init"]
+- !private ["Ps26_RangeReplaceableIndexable", "subscript"]
+depends-nominal:
+- !private "Ps9AnyObject"
+- !private "Sa"
+- !private "Ps23BidirectionalCollection"
+- !private "Sb"
+- !private "Ps7CVarArg"
+- !private "Ps10Collection"
+- !private "Ps10Comparable"
+- !private "V10On_The_Map9Constants"
+- !private "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- !private "Ps9Equatable"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "Ps8Hashable"
+- !private "Ps25LosslessStringConvertible"
+- !private "VV10On_The_Map9Constants7Methods"
+- !private "Ps10MirrorPath"
+- !private "Ps17MutableCollection"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "VVV10On_The_Map9Constants5Parse13ParameterKeys"
+- !private "VV10On_The_Map9Constants5Parse"
+- !private "Ps22RandomAccessCollection"
+- !private "Ps26RangeReplaceableCollection"
+- !private "Ps8Sequence"
+- !private "SS"
+- !private "V10On_The_Map7Student"
+- !private "VV10On_The_Map9Constants7Student"
+- !private "C10On_The_Map11StudentData"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- "C10On_The_Map13UdacityClient"
+- !private "Ps14_ArrayProtocol"
+- !private "Ps23_BidirectionalIndexable"
+- !private "Ps24_DestructorSafeContainer"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps33_ExpressibleByStringInterpolation"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- !private "Ps9_Hashable"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- !private "Ps17_MutableIndexable"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps22_RandomAccessIndexable"
+- !private "Ps26_RangeReplaceableIndexable"
+depends-dynamic-lookup:
+- !private "subscript"
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/MapKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/MapKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/SwiftOnoneSupport.swiftmodule"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "/Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On The Map/DerivedData/FBSDKLoginKit.framework/Modules/module.modulemap"
+interface-hash: "8e3b4df0639b3a9641fea488fc912bb5"
