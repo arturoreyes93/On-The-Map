@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD25BE631F5B1A9200F6B4E9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD25BE621F5B1A9200F6B4E9 /* FBSDKCoreKit.framework */; };
-		DD25BE651F5B1D2200F6B4E9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD25BE641F5B1D2200F6B4E9 /* FBSDKLoginKit.framework */; };
 		DD3611621F1178E400412FB2 /* PostLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3611611F1178E400412FB2 /* PostLocationVC.swift */; };
 		DD44C7181F1035DF002D9349 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD44C7171F1035DF002D9349 /* Student.swift */; };
 		DD69D16B1F07118D001B673D /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD69D16A1F07118D001B673D /* ParseClient.swift */; };
@@ -22,6 +20,8 @@
 		DD87D0EA1EFB546700A57F5C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87D0E91EFB546700A57F5C /* MapVC.swift */; };
 		DD8E91461F59D46A00BE56C1 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E91451F59D46A00BE56C1 /* StudentData.swift */; };
 		DD9883E31F05C15F00A666C7 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9883E21F05C15F00A666C7 /* ListVC.swift */; };
+		DDBCC85C1F61D97900BAAC18 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBCC85B1F61D97900BAAC18 /* FBSDKCoreKit.framework */; };
+		DDBCC85E1F61D97E00BAAC18 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDBCC85D1F61D97E00BAAC18 /* FBSDKLoginKit.framework */; };
 		DDE0576E1EFDB4B000298A74 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */; };
 		DDE057701EFDB62300298A74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE0576F1EFDB62300298A74 /* Constants.swift */; };
 		DDE057721EFDBDEF00298A74 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE057711EFDBDEF00298A74 /* UdacityClient.swift */; };
@@ -45,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DD25BE621F5B1A9200F6B4E9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		DD25BE641F5B1D2200F6B4E9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		DD3611611F1178E400412FB2 /* PostLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLocationVC.swift; sourceTree = "<group>"; };
 		DD44C7171F1035DF002D9349 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DD69D16A1F07118D001B673D /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
@@ -66,6 +64,8 @@
 		DD87D0E91EFB546700A57F5C /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		DD8E91451F59D46A00BE56C1 /* StudentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
 		DD9883E21F05C15F00A666C7 /* ListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		DDBCC85B1F61D97900BAAC18 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		DDBCC85D1F61D97E00BAAC18 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		DDCFD1641F5778FA00514E13 /* On The Map.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "On The Map.entitlements"; sourceTree = "<group>"; };
 		DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		DDE0576F1EFDB62300298A74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -77,8 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD25BE651F5B1D2200F6B4E9 /* FBSDKLoginKit.framework in Frameworks */,
-				DD25BE631F5B1A9200F6B4E9 /* FBSDKCoreKit.framework in Frameworks */,
+				DDBCC85E1F61D97E00BAAC18 /* FBSDKLoginKit.framework in Frameworks */,
+				DDBCC85C1F61D97900BAAC18 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,8 +164,8 @@
 		DD9AA3011F5240E200D92F2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD25BE641F5B1D2200F6B4E9 /* FBSDKLoginKit.framework */,
-				DD25BE621F5B1A9200F6B4E9 /* FBSDKCoreKit.framework */,
+				DDBCC85D1F61D97E00BAAC18 /* FBSDKLoginKit.framework */,
+				DDBCC85B1F61D97900BAAC18 /* FBSDKCoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -477,7 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L49JS5X5VY;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"$(PROJECT_DIR)/Frameworks/**",
+				);
 				INFOPLIST_FILE = "On The Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "arturoreyes.On-The-Map";
@@ -491,7 +494,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L49JS5X5VY;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"$(PROJECT_DIR)/Frameworks/**",
+				);
 				INFOPLIST_FILE = "On The Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "arturoreyes.On-The-Map";
