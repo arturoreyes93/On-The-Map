@@ -153,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="VZb-80-Mxk" id="NMt-Iz-FSN"/>
+                        <outlet property="fbLoginButton" destination="2iN-OW-oJ8" id="ZBK-Z1-so2"/>
                         <outlet property="loginButton" destination="FOe-U1-kr3" id="uLK-qv-VlN"/>
                         <outlet property="password" destination="iwr-2F-nIl" id="48Z-Qs-o8j"/>
                         <outlet property="signUpButton" destination="bvf-BB-hrc" id="2ZA-XV-xF7"/>

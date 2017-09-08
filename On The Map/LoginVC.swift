@@ -18,16 +18,17 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configure(username)
         configure(password)
+        
+        fbLoginButton.delegate = self
 
         self.activityIndicator.hidesWhenStopped = true
-        let FBLoginButton = FBSDKLoginButton()
-        FBLoginButton.delegate = self
         
     }
     
@@ -75,11 +76,6 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
                 }
             }
         }
-    }
-    
-    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
-        print("logging in")
-        return true
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
