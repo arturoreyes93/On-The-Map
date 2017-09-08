@@ -9,8 +9,9 @@
 import UIKit
 import Foundation
 import FBSDKLoginKit
+import FBSDKCoreKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -25,7 +26,8 @@ class LoginVC: UIViewController {
         configure(password)
 
         self.activityIndicator.hidesWhenStopped = true
-        _ = FBSDKLoginButton()
+        let FBLoginButton = FBSDKLoginButton()
+        FBLoginButton.delegate = self
         
     }
     
@@ -35,28 +37,6 @@ class LoginVC: UIViewController {
         password.text = ""
         setUIEnabled(true)
         
-        if let accessToken = FBSDKAccessToken.current() {
-            // User is logged in, use 'accessToken' here.
-            self.setUIEnabled(false)
-            performUIUpdatesOnMain {
-                self.activityIndicator.startAnimating()
-            }
-            UdacityClient.sharedInstance().accessToken = accessToken
-            UdacityClient.sharedInstance().logInWithFacebook() { (success, errorString) in
-                performUIUpdatesOnMain {
-                    if success {
-                        self.completeLogin()
-                        self.activityIndicator.stopAnimating()
-                    } else {
-                        self.activityIndicator.stopAnimating()
-                        self.postSimpleAlert(errorString!)
-                        self.setUIEnabled(true)
-                    }
-                }
-            }
-        } else {
-            self.postSimpleAlert("No access token retrieved from Facebook API")
-        }
     }
     
     @IBAction func signUp(_ sender: Any) {
@@ -97,9 +77,69 @@ class LoginVC: UIViewController {
         }
     }
     
-    @IBAction func facebookLoginPressed(_ sender: Any) {
+    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
+        print("logging in")
+        return true
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did log out of Facebook")
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print("Facebook Login request returned error: \(error!)")
+            self.postSimpleAlert("Facebook Login request returned error")
+        } else {
+            print("Login with Facebook successul")
+            if result.grantedPermissions != nil {
+                if result.grantedPermissions.contains("email") {
+                    print("getting user data")
+                    self.getFBUserData()
+                }
+            }
+        }
         
     }
+    
+    func getFBUserData() {
+        
+        if let accessToken = FBSDKAccessToken.current() {
+            print("access token: \(accessToken)")
+            // User is logged in, use 'accessToken' here.
+            self.setUIEnabled(false)
+            performUIUpdatesOnMain {
+                self.activityIndicator.startAnimating()
+            }
+            
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name"]).start { (connection, result, error) in
+                if error != nil {
+                    print(error!)
+                    self.postSimpleAlert("Failed to start graph request")
+                } else {
+                    print(result!)
+                    UdacityClient.sharedInstance().accessToken = accessToken
+                    UdacityClient.sharedInstance().logInWithFacebook() { (success, errorString) in
+                        performUIUpdatesOnMain {
+                            if success {
+                                self.completeLogin()
+                                self.activityIndicator.stopAnimating()
+                            } else {
+                                self.activityIndicator.stopAnimating()
+                                self.postSimpleAlert(errorString!)
+                                self.setUIEnabled(true)
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        } else {
+            self.postSimpleAlert("No access token retrieved from Facebook API")
+        }
+    }
+    
     
     private func completeLogin() {
         let controller = storyboard!.instantiateViewController(withIdentifier: "MapNavigatorController") as! UINavigationController

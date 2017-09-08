@@ -179,6 +179,7 @@ class UdacityClient : NSObject {
                 }
                 
                 if let accessToken = UdacityClient.sharedInstance().accessToken {
+                    print(accessToken)
                     request.httpBody = "{\"facebook_mobile\": {\"access_token\": \"\(accessToken)\"}}".data(using: String.Encoding.utf8)
                 }
                 
