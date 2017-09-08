@@ -15,35 +15,16 @@ class ListVC: UIViewController {
     @IBOutlet weak var userTableView: UITableView!
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        UdacityClient.sharedInstance().downloadData() { (results, errorString) in
-            if let studentData = results {
-                performUIUpdatesOnMain {
-                    self.userTableView.reloadData()
-                    print("success at loading students")
-                }
-            } else {
-                self.postSimpleAlert(errorString!)
+        if (StudentData.sharedInstance().students) != nil {
+            performUIUpdatesOnMain {
+                self.userTableView.reloadData()
+                print("success at loading students")
             }
         }
     }
-    
-    func postSimpleAlert(_ title: String) {
-        
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
-        alert.addAction(dismiss)
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    
 }
 
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
@@ -82,7 +63,8 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (self.view.frame.height)/10
+        let rowsPerView: CGFloat = 10
+        return (self.view.frame.height)/rowsPerView
     }
     
 

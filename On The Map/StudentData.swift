@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StudentData: NSObject {
+class StudentData {
     
     // stores students downloaded from getStudentLocations
     var otherStudents: [Student]!
@@ -25,5 +25,4 @@ class StudentData: NSObject {
         }
         return Singleton.sharedInstance
     }
-    
 }

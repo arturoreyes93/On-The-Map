@@ -37,28 +37,14 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
         super.viewWillAppear(animated)
         activityIndicator.stopAnimating()
         activityIndicator.hidesWhenStopped = true
-        setFindView()
+        enableMapView(false)
     }
+
     
-    func setFindView() {
-        locationSubview.isHidden = false
-        mapSubview.isHidden = true
-        self.submitButton.isHidden = true
-    }
-    
-    func setMapView() {
-        locationSubview.isHidden = true
-        mapSubview.isHidden = false
-        self.submitButton.isHidden = false
-    }
-    
-    func postSimpleAlert(_ title: String) {
-        
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
-        alert.addAction(dismiss)
-        self.present(alert, animated: true, completion: nil)
-        
+    func enableMapView(_ enabled: Bool) {
+        locationSubview.isHidden = enabled
+        mapSubview.isHidden = !(enabled)
+        self.submitButton.isHidden = !(enabled)
     }
     
     @IBAction func cancelMain(_ sender: Any) {
@@ -147,7 +133,7 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
                 
                 performUIUpdatesOnMain {
                     self.activityIndicator.stopAnimating()
-                    self.setMapView()
+                    self.enableMapView(true)
                 }
                 
                 self.newData["latitude"] = String(coordinate.latitude)

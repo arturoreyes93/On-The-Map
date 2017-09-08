@@ -16,7 +16,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
-        
+        loadMap()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -30,29 +30,9 @@ class MapVC: UIViewController, MKMapViewDelegate {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadMap()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     func goToPostController() {
         let controller = storyboard!.instantiateViewController(withIdentifier: "PostLocationVC") as! PostLocationVC
         self.present(controller, animated: true, completion: nil)
-    }
-    
-    func postSimpleAlert(_ title: String) {
-        
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
-        alert.addAction(dismiss)
-        self.present(alert, animated: true, completion: nil)
-        
     }
     
     func addLocation() {
@@ -70,8 +50,9 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     func logout() {
-        let manager: FBSDKLoginManager = FBSDKLoginManager()
+        
         if (FBSDKAccessToken.current()) != nil {
+            let manager: FBSDKLoginManager = FBSDKLoginManager()
             let alert = UIAlertController(title: nil, message: "Will you log out of Facebook too?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { action in manager.logOut() })
             alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
@@ -82,7 +63,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
             if success {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                print(errorString)
+                print(errorString!)
                 let alert = UIAlertController(title: nil, message: errorString, preferredStyle: UIAlertControllerStyle.alert)
                 let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
                 alert.addAction(dismiss)
@@ -125,7 +106,7 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
         
         UdacityClient.sharedInstance().downloadData() { (results, errorString) in
-            if let studentData = results {
+            if results != nil {
                 self.mapView.addAnnotations(self.populateMap())
             } else {
                 self.postSimpleAlert(errorString!)
@@ -175,18 +156,16 @@ class MapVC: UIViewController, MKMapViewDelegate {
             }
         }
     }
-    
-    //    func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-    //
-    //        if control == annotationView.rightCalloutAccessoryView {
-    //            let app = UIApplication.sharedApplication()
-    //            app.openURL(NSURL(string: annotationView.annotation.subtitle))
-    //        }
-    //    }
-    
-    // MARK: - Sample Data
-    
-    // Some sample data. This is a dictionary that is more or less similar to the
-    // JSON data that you will download from Parse.
+}
 
+extension UIViewController {
+    
+    func postSimpleAlert(_ title: String) {
+        
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(dismiss)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
