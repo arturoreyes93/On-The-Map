@@ -10,10 +10,13 @@ import Foundation
 
 class StudentData: NSObject {
     
+    // stores students downloaded from getStudentLocations
     var otherStudents: [Student]!
     
+    // stores the single student using the app
     var localStudent: [Student]!
     
+    // adds both local and other students to be used in the map and table views
     var students : [Student]!
     
     class func sharedInstance() -> StudentData {

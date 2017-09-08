@@ -100,7 +100,7 @@ class LoginVC: UIViewController, FBSDKLoginButtonDelegate {
     
     func getFBUserData() {
         
-        if let accessToken = FBSDKAccessToken.current() {
+        if let accessToken = FBSDKAccessToken.current().tokenString {
             print("access token: \(accessToken)")
             // User is logged in, use 'accessToken' here.
             self.setUIEnabled(false)

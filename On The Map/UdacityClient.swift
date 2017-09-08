@@ -15,8 +15,7 @@ class UdacityClient : NSObject {
 
     var userKey: String?
     
-    var accessToken: FBSDKAccessToken?
-
+    var accessToken: String?
     
     override init() {
         super.init()

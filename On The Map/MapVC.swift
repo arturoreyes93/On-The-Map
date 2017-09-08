@@ -8,7 +8,8 @@
 
 import UIKit
 import MapKit
-
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class MapVC: UIViewController, MKMapViewDelegate {
     
@@ -69,6 +70,14 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     func logout() {
+        let manager: FBSDKLoginManager = FBSDKLoginManager()
+        if (FBSDKAccessToken.current()) != nil {
+            let alert = UIAlertController(title: nil, message: "Will you log out of Facebook too?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { action in manager.logOut() })
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+        
         UdacityClient.sharedInstance().deleteSession() { (success, results, errorString) in
             if success {
                 self.dismiss(animated: true, completion: nil)
