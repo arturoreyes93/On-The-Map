@@ -13,11 +13,12 @@ import UIKit
 class ListVC: UIViewController {
 
     @IBOutlet weak var userTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        self.activityIndicator.hidesWhenStopped = true
         if (StudentData.sharedInstance().students) != nil {
             performUIUpdatesOnMain {
                 self.userTableView.reloadData()

@@ -39,7 +39,6 @@ class PostLocationVC: UIViewController, MKMapViewDelegate  {
         activityIndicator.hidesWhenStopped = true
         enableMapView(false)
     }
-
     
     func enableMapView(_ enabled: Bool) {
         locationSubview.isHidden = enabled

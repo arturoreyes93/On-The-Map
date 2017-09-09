@@ -99,6 +99,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD38A17A1F636C2700BC22D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD87D0E91EFB546700A57F5C /* MapVC.swift */,
+				DD3611611F1178E400412FB2 /* PostLocationVC.swift */,
+				DD9883E21F05C15F00A666C7 /* ListVC.swift */,
+				DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DD38A17B1F636C5700BC22D5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DD69D16A1F07118D001B673D /* ParseClient.swift */,
+				DDE057711EFDBDEF00298A74 /* UdacityClient.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		DD38A17C1F636C7100BC22D5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DDE0576F1EFDB62300298A74 /* Constants.swift */,
+				DD44C7171F1035DF002D9349 /* Student.swift */,
+				DD8E91451F59D46A00BE56C1 /* StudentData.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		DD87D0AF1EFB42D600A57F5C = {
 			isa = PBXGroup;
 			children = (
@@ -123,19 +153,13 @@
 		DD87D0BA1EFB42D600A57F5C /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
-				DD20C77E1F631A7C002D9AFE /* On The Map.entitlements */,
 				DD87D0BB1EFB42D600A57F5C /* AppDelegate.swift */,
-				DD87D0BD1EFB42D600A57F5C /* LoginVC.swift */,
 				DDE0576D1EFDB4B000298A74 /* GCDBlackBox.swift */,
-				DDE0576F1EFDB62300298A74 /* Constants.swift */,
-				DD69D16A1F07118D001B673D /* ParseClient.swift */,
-				DDE057711EFDBDEF00298A74 /* UdacityClient.swift */,
+				DD38A17C1F636C7100BC22D5 /* Data */,
+				DD38A17B1F636C5700BC22D5 /* Network */,
+				DD38A17A1F636C2700BC22D5 /* Controllers */,
+				DD20C77E1F631A7C002D9AFE /* On The Map.entitlements */,
 				DD87D0BF1EFB42D600A57F5C /* Main.storyboard */,
-				DD87D0E91EFB546700A57F5C /* MapVC.swift */,
-				DD3611611F1178E400412FB2 /* PostLocationVC.swift */,
-				DD44C7171F1035DF002D9349 /* Student.swift */,
-				DD8E91451F59D46A00BE56C1 /* StudentData.swift */,
-				DD9883E21F05C15F00A666C7 /* ListVC.swift */,
 				DD87D0C21EFB42D600A57F5C /* Assets.xcassets */,
 				DD87D0C41EFB42D600A57F5C /* LaunchScreen.storyboard */,
 				DD87D0C71EFB42D600A57F5C /* Info.plist */,

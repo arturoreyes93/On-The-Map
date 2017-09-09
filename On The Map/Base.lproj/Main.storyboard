@@ -373,17 +373,23 @@
                                     <outlet property="delegate" destination="Eah-4Y-nje" id="f1Y-R2-fjt"/>
                                 </connections>
                             </mapView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yOt-v1-dfx">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dqa-ey-jx8" firstAttribute="top" secondItem="f6b-Hk-V3L" secondAttribute="bottom" id="Idz-xf-lV8"/>
+                            <constraint firstItem="yOt-v1-dfx" firstAttribute="centerY" secondItem="sxU-Ks-ta8" secondAttribute="centerY" id="MNY-12-mDy"/>
                             <constraint firstAttribute="trailing" secondItem="f6b-Hk-V3L" secondAttribute="trailing" id="SDP-aP-JTY"/>
                             <constraint firstItem="f6b-Hk-V3L" firstAttribute="top" secondItem="OJP-DQ-fc4" secondAttribute="bottom" id="heu-K7-Hf0"/>
+                            <constraint firstItem="yOt-v1-dfx" firstAttribute="centerX" secondItem="sxU-Ks-ta8" secondAttribute="centerX" id="wGc-Lw-FKM"/>
                             <constraint firstItem="f6b-Hk-V3L" firstAttribute="leading" secondItem="sxU-Ks-ta8" secondAttribute="leading" id="zUD-MT-ZiO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="Bk2-yu-fYt" userLabel="mapview"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="yOt-v1-dfx" id="Xeh-HT-ker"/>
                         <outlet property="mapView" destination="f6b-Hk-V3L" id="5id-Ey-53f"/>
                     </connections>
                 </viewController>
@@ -446,17 +452,23 @@
                                     <outlet property="delegate" destination="Hui-GH-pge" id="NMF-Nf-Rde"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-WQ-cu1">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3I4-WQ-cu1" firstAttribute="centerX" secondItem="qQo-V4-KKk" secondAttribute="centerX" id="4sM-33-Kft"/>
                             <constraint firstItem="itm-wh-ceU" firstAttribute="top" secondItem="o9V-J6-XSh" secondAttribute="bottom" id="9Wh-hT-xBC"/>
                             <constraint firstItem="itm-wh-ceU" firstAttribute="leading" secondItem="qQo-V4-KKk" secondAttribute="leading" id="AiO-8f-6ER"/>
                             <constraint firstItem="cxJ-Yh-7j6" firstAttribute="top" secondItem="itm-wh-ceU" secondAttribute="bottom" id="Hoi-cw-Dxa"/>
                             <constraint firstAttribute="trailing" secondItem="itm-wh-ceU" secondAttribute="trailing" id="SyZ-U3-mvJ"/>
+                            <constraint firstItem="3I4-WQ-cu1" firstAttribute="centerY" secondItem="qQo-V4-KKk" secondAttribute="centerY" id="W0j-fH-9fn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="MF4-Se-HBN"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="3I4-WQ-cu1" id="T75-li-RGa"/>
                         <outlet property="userTableView" destination="itm-wh-ceU" id="bJh-ry-r0e"/>
                     </connections>
                 </viewController>

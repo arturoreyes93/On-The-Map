@@ -14,10 +14,13 @@ import FBSDKCoreKit
 class MapVC: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        loadMap()
         super.viewDidLoad()
+        self.activityIndicator.hidesWhenStopped = true
+        loadMap()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         guard let navigationBar = self.parent else {
@@ -49,30 +52,33 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func logout() {
+    public func logout() {
         
         if (FBSDKAccessToken.current()) != nil {
             let manager: FBSDKLoginManager = FBSDKLoginManager()
-            let alert = UIAlertController(title: nil, message: "Will you log out of Facebook too?", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { action in manager.logOut() })
-            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
-            present(alert, animated: true, completion: nil)
-        }
-        
-        UdacityClient.sharedInstance().deleteSession() { (success, results, errorString) in
-            if success {
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                print(errorString!)
-                let alert = UIAlertController(title: nil, message: errorString, preferredStyle: UIAlertControllerStyle.alert)
-                let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
-                alert.addAction(dismiss)
-                self.present(alert, animated: true, completion: nil)
+            manager.logOut()
+            
+            performUIUpdatesOnMain {
+                self.activityIndicator.startAnimating()
+            }
+            
+            UdacityClient.sharedInstance().deleteSession() { (success, results, errorString) in
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                    self.activityIndicator.stopAnimating()
+                    let controller = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
+                    self.present(controller, animated: true, completion: nil)
+                } else {
+                    self.activityIndicator.stopAnimating()
+                    print(errorString!)
+                    let alert = UIAlertController(title: nil, message: errorString, preferredStyle: UIAlertControllerStyle.alert)
+                    let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+                    alert.addAction(dismiss)
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
-        
     }
-    
     
     private func populateMap() -> [MKPointAnnotation] {
         
