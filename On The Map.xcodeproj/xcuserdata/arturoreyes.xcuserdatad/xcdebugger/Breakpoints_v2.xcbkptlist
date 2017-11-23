@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526591395.182879"
+            timestampString = "533085833.582808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526608813.415341"
+            timestampString = "533085833.583347"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -86,31 +86,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.logInPressed (Swift.AnyObject) -&gt; ()"
+                  symbolName = "On_The_Map.LoginVC.logInPressed(Swift.AnyObject) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.366857"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.213152"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "3361">
+                  offsetFromSymbolStart = "2632">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.(logInPressed (Swift.AnyObject) -&gt; ()).(closure #2)"
+                  symbolName = "closure #2 (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; () in On_The_Map.LoginVC.logInPressed(Swift.AnyObject) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.369067"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.215079"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
-                  offsetFromSymbolStart = "243">
+                  offsetFromSymbolStart = "216">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -134,31 +134,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.logInWithVC (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "On_The_Map.UdacityClient.logInWithVC(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.373421"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "533085838.219169"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "39">
+                  offsetFromSymbolStart = "40">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(logInWithVC (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in On_The_Map.UdacityClient.logInWithVC(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.375134"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "533085838.220716"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "173">
+                  offsetFromSymbolStart = "92">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -198,31 +198,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.getStudentLocations ((Swift.Bool, Swift.Optional&lt;__ObjC.NSArray&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "On_The_Map.UdacityClient.getStudentLocations((Swift.Bool, Swift.Optional&lt;__ObjC.NSArray&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "526609909.381912"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
+                  timestampString = "533085838.227255"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "923">
+                  offsetFromSymbolStart = "772">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(getStudentLocations ((Swift.Bool, Swift.Optional&lt;__ObjC.NSArray&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in On_The_Map.UdacityClient.getStudentLocations((Swift.Bool, Swift.Optional&lt;__ObjC.NSArray&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "526609909.383433"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
+                  timestampString = "533085838.228801"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "115">
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -305,38 +305,6 @@
             endingLineNumber = "175"
             landmarkName = "taskForMethod(client:method:pathExtension:parameters:newData:completionHandlerForGET:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.taskForMethod (client : Swift.String, method : Swift.Optional&lt;Swift.String&gt;, pathExtension : Swift.Optional&lt;Swift.String&gt;, parameters : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;, newData : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completionHandlerForGET : (Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; __ObjC.URLSessionTask"
-                  moduleName = "On The Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.396936"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "175"
-                  endingLineNumber = "175"
-                  offsetFromSymbolStart = "3254">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.taskForMethod (client : Swift.String, method : Swift.Optional&lt;Swift.String&gt;, pathExtension : Swift.Optional&lt;Swift.String&gt;, parameters : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;, newData : Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completionHandlerForGET : (Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; __ObjC.URLSessionTask"
-                  moduleName = "On The Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.398514"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "175"
-                  endingLineNumber = "175"
-                  offsetFromSymbolStart = "3553">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -441,13 +409,13 @@
                   symbolName = "On_The_Map.Student.latitude.getter : Swift.Double"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/Student.swift"
-                  timestampString = "526609909.417291"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/Student.swift"
+                  timestampString = "533085838.26218"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "508">
+                  offsetFromSymbolStart = "228">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -456,13 +424,13 @@
                   symbolName = "On_The_Map.Student.latitude.setter : Swift.Double"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/Student.swift"
-                  timestampString = "526609909.418799"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/Student.swift"
+                  timestampString = "533085838.263742"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "27">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -490,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526608900.868244"
+            timestampString = "533085833.583834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -518,31 +486,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.logInWithVC (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "On_The_Map.UdacityClient.logInWithVC(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.425362"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "533085838.269844"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
-                  offsetFromSymbolStart = "174">
+                  offsetFromSymbolStart = "156">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(logInWithVC (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin : (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in On_The_Map.UdacityClient.logInWithVC(Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;, completionHandlerForLogin: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.426809"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "533085838.271258"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
-                  offsetFromSymbolStart = "1213">
+                  offsetFromSymbolStart = "956">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -566,31 +534,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.postStudentLocation (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "On_The_Map.UdacityClient.postStudentLocation(Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "526609909.430657"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
+                  timestampString = "533085838.274292"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "59"
                   endingLineNumber = "59"
-                  offsetFromSymbolStart = "53">
+                  offsetFromSymbolStart = "44">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(postStudentLocation (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in On_The_Map.UdacityClient.postStudentLocation(Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, (Swift.Bool, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
-                  timestampString = "526609909.4322"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/ParseClient.swift"
+                  timestampString = "533085838.275695"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
                   endingLineNumber = "61"
-                  offsetFromSymbolStart = "115">
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -621,8 +589,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "submit(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -637,8 +605,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "PostLocationVC"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -653,8 +621,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
-            landmarkName = "getLocationFromAddress(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -685,8 +653,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "PostLocationVC"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -695,13 +663,13 @@
                   symbolName = "On_The_Map.PostLocationVC.newData.getter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.445319"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.286821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -710,43 +678,43 @@
                   symbolName = "On_The_Map.PostLocationVC.newData.setter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.446779"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.288247"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "124">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.PostLocationVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.PostLocationVC"
+                  symbolName = "On_The_Map.PostLocationVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.PostLocationVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.448176"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.290113"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "94">
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.PostLocationVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.PostLocationVC&gt;"
+                  symbolName = "On_The_Map.PostLocationVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.PostLocationVC&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.449581"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.291871"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -763,8 +731,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "PostLocationVC"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -773,13 +741,13 @@
                   symbolName = "On_The_Map.PostLocationVC.newData.getter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.454201"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.296998"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -788,43 +756,43 @@
                   symbolName = "On_The_Map.PostLocationVC.newData.setter : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.455669"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.298501"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "124">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.PostLocationVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.PostLocationVC"
+                  symbolName = "On_The_Map.PostLocationVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.PostLocationVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.45719"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.30018"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "94">
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.PostLocationVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.PostLocationVC&gt;"
+                  symbolName = "On_The_Map.PostLocationVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.PostLocationVC&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.45861"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.301612"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
                   endingLineNumber = "15"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -841,8 +809,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "getLocationFromAddress(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -857,8 +825,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "PostLocationVC"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -867,13 +835,13 @@
                   symbolName = "On_The_Map.PostLocationVC.locationText.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.465721"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.311272"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "34">
+                  offsetFromSymbolStart = "92">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -882,43 +850,43 @@
                   symbolName = "On_The_Map.PostLocationVC.locationText.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.467083"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.313159"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "47">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.PostLocationVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.PostLocationVC"
+                  symbolName = "On_The_Map.PostLocationVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.PostLocationVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.468694"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.314685"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "244">
+                  offsetFromSymbolStart = "388">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.PostLocationVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.PostLocationVC&gt;"
+                  symbolName = "On_The_Map.PostLocationVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.PostLocationVC&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
-                  timestampString = "526609909.470219"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/PostLocationVC.swift"
+                  timestampString = "533085838.316226"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "186">
+                  offsetFromSymbolStart = "348">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -962,7 +930,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526608900.868244"
+            timestampString = "533085833.584226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -978,7 +946,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526608900.868244"
+            timestampString = "533085833.584458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -994,7 +962,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526609908.148012"
+            timestampString = "533085833.58468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -1010,7 +978,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526608813.415341"
+            timestampString = "533085833.584918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -1025,13 +993,13 @@
                   symbolName = "On_The_Map.MapVC.activityIndicator.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIActivityIndicatorView&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
-                  timestampString = "526609909.488159"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
+                  timestampString = "533085838.333644"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "34">
+                  offsetFromSymbolStart = "92">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1040,43 +1008,43 @@
                   symbolName = "On_The_Map.MapVC.activityIndicator.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIActivityIndicatorView&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
-                  timestampString = "526609909.489513"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
+                  timestampString = "533085838.335096"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "47">
+                  offsetFromSymbolStart = "96">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.MapVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.MapVC"
+                  symbolName = "On_The_Map.MapVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.MapVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
-                  timestampString = "526609909.490926"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
+                  timestampString = "533085838.336439"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "151">
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.MapVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.MapVC&gt;"
+                  symbolName = "On_The_Map.MapVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.MapVC&gt;"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
-                  timestampString = "526609909.492387"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/MapVC.swift"
+                  timestampString = "533085838.338229"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "92">
+                  offsetFromSymbolStart = "148">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1092,7 +1060,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
-            endingLineNumber = "10">
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1101,8 +1071,8 @@
                   symbolName = "On_The_Map.LoginVC.__deallocating_deinit"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.49692"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.343056"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1113,61 +1083,61 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
+                  symbolName = "On_The_Map.LoginVC.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.498303"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
-                  moduleName = "On The Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.499642"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.344538"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  symbolName = "On_The_Map.LoginVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.501144"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "9">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
-                  moduleName = "On The Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.502573"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.346638"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.348232"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.349786"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1210,8 +1180,8 @@
                   symbolName = "On_The_Map.LoginVC.__deallocating_deinit"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.511886"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.358804"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1222,61 +1192,61 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
+                  symbolName = "On_The_Map.LoginVC.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.513552"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
-                  moduleName = "On The Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.515341"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.360257"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  symbolName = "On_The_Map.LoginVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; On_The_Map.LoginVC"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.517079"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "9">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.LoginVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
-                  moduleName = "On The Map"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
-                  timestampString = "526609909.518581"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.361841"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.363379"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_The_Map.LoginVC.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;On_The_Map.LoginVC&gt;"
+                  moduleName = "On The Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/LoginVC.swift"
+                  timestampString = "533085838.364808"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1300,31 +1270,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.postSessionWithFacebook ((Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "On_The_Map.UdacityClient.postSessionWithFacebook((Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.524114"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "533085838.369538"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "133"
                   endingLineNumber = "133"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "On_The_Map.UdacityClient.(postSessionWithFacebook ((Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;, Swift.Optional&lt;__ObjC.NSError&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in On_The_Map.UdacityClient.postSessionWithFacebook((Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "On The Map"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arturoreyes/Documents/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
-                  timestampString = "526609909.526328"
+                  urlString = "file:///Users/arturoreyes/Documents/Developer/Udacity/iOS/Onthemap/On%20The%20Map/On%20The%20Map/UdacityClient.swift"
+                  timestampString = "533085838.370961"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
                   endingLineNumber = "135"
-                  offsetFromSymbolStart = "115">
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1368,7 +1338,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "On The Map/MapVC.swift"
-            timestampString = "526609908.148012"
+            timestampString = "533085833.58523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
