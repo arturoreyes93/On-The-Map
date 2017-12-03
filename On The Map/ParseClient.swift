@@ -10,6 +10,7 @@ import Foundation
 
 extension UdacityClient {
     
+    //Retrieve student locations from client
     func getStudentLocations(_ completionHandlerForLocations: @escaping (_ success: Bool, _ studentArray: NSArray?, _ errorString: String?) -> Void) {
         
         var studentParameters = [Constants.Parse.ParameterKeys.limit: "100"]
@@ -32,7 +33,7 @@ extension UdacityClient {
             }
         }
     }
-    
+    //Retrieve user saved location from client
     func getSingleStudentLocation(studentKey: String, _ completionHandlerForSingleLocation: @escaping (_ success: Bool, _ localStudentArray: NSArray?, _ errorString: String?) -> Void) {
         
         let studentParameters = [Constants.Parse.ParameterKeys.at: "{\"\(Constants.Student.uniqueKey)\":\"\(studentKey)\"}"]
@@ -54,6 +55,7 @@ extension UdacityClient {
         }
     }
     
+    //Post the user location in the client data base
     func postStudentLocation(_ newData: [String:String]?, _ completionHandlerForPost: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
         let _ = taskForMethod(client: Constants.Parse.Client, method: Constants.Methods.Post, newData: newData) { (result, error, errorString) in
@@ -71,7 +73,7 @@ extension UdacityClient {
         }
         
     }
-    
+    //Overwrite the user location in the client data base
     func putStudentLocation(_ newData: [String:String]?, _ completionHandlerForPut: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
         let local = StudentData.sharedInstance().localStudent[0]
@@ -92,7 +94,7 @@ extension UdacityClient {
         }
         
     }
-    
+    //Download all users data including locations and websites
     func downloadData(_ completionHandlerForDownload: @escaping (_ results: [Student]?, _ errorString: String?) -> Void) {
         let userKey = UdacityClient.sharedInstance().userKey!
         UdacityClient.sharedInstance().getSingleStudentLocation(studentKey: userKey) { (success, localStudentArray, errorString) in
@@ -115,7 +117,7 @@ extension UdacityClient {
     }
     
     
-
+    //Convert the downloaded data dictionary into Student objects
     func fromDictToStudentObject(studentArray: NSArray) -> [Student] {
         
         var studentsArray = [Student]()
