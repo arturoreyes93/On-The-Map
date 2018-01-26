@@ -235,7 +235,6 @@ class UdacityClient : NSObject {
             /* GUARD: Was there an error? */
             guard (error == nil) else {
                 sendError("There was an error with your request")
-                print("There was an error with request: \(error)")
                 return
             }
             
